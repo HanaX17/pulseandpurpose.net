@@ -1,11 +1,11 @@
 # Pulse and Purpose
 
-A simple landing page for Pulse and Purpose, an IT startup using AI to help people live better today and build toward a brighter future.
+The marketing site for Pulse and Purpose — an AI-driven technology company building SaaS products and online retail experiences that help people live every moment and reach every purpose.
 
 ## Local Preview
 
-Open `index.html` in a browser, or serve the folder with any static file server.
+Open `index.html` directly in a browser, or serve the folder with any static file server (for example: `python3 -m http.server`).
 
 ## Deploy
 
-This site is ready for GitHub Pages or any static hosting provider.
+This is a fully static site (HTML + CSS only). It is ready for GitHub Pages, Cloudflare Pages, Netlify, Vercel, or any static host. Point your DNS at the host to serve it from `pulseandpurpose.net`.

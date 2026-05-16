@@ -5,101 +5,223 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta
       name="description"
-      content="Pulse and Purpose is an IT startup using AI to help people live better today and build toward a brighter future."
+      content="Pulse and Purpose is an AI-driven technology company building SaaS products and online retail experiences that help people live every moment and reach every purpose."
     >
-    <title>Pulse and Purpose</title>
+    <meta name="theme-color" content="#0b1020">
+    <title>Pulse and Purpose — AI, SaaS &amp; Online Retail for a better human moment</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap"
       rel="stylesheet"
     >
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
+    <div class="aurora" aria-hidden="true">
+      <span class="orb orb-a"></span>
+      <span class="orb orb-b"></span>
+      <span class="orb orb-c"></span>
+      <span class="grid"></span>
+    </div>
+
     <header class="site-header">
       <a class="logo" href="#top" aria-label="Pulse and Purpose home">
-        <span class="logo-mark"></span>
-        Pulse and Purpose
+        <span class="logo-mark" aria-hidden="true">
+          <span class="logo-dot"></span>
+        </span>
+        <span class="logo-text">
+          Pulse <span class="logo-amp">&amp;</span> Purpose
+        </span>
       </a>
       <nav aria-label="Main navigation">
         <a href="#mission">Mission</a>
-        <a href="#work">What We Do</a>
-        <a href="#contact">Contact</a>
+        <a href="#work">What We Build</a>
+        <a href="#philosophy">Philosophy</a>
+        <a href="#contact" class="nav-cta">Talk to us</a>
       </nav>
     </header>
 
     <main id="top">
       <section class="hero">
         <div class="hero-content">
-          <p class="eyebrow">AI for everyday progress</p>
-          <h1>Feel the pulse. Live with purpose.</h1>
+          <p class="eyebrow">
+            <span class="eyebrow-dot"></span>
+            AI · SaaS · Online Retail
+          </p>
+          <h1>
+            Live every <span class="grad-warm">moment</span>.<br>
+            Reach every <span class="grad-cool">purpose</span>.
+          </h1>
           <p class="hero-copy">
-            Pulse and Purpose is an IT startup building AI-powered tools that
-            help people improve daily life while moving confidently toward the
-            future.
+            Pulse and Purpose is an AI-driven technology company. We build SaaS
+            products and online retail experiences that put the latest
+            technology &mdash; including AI &mdash; to work for the humans who
+            actually use it.
           </p>
-          <a class="button" href="#contact">Start a conversation</a>
-        </div>
-        <div class="hero-card" aria-label="Company values">
-          <div>
-            <span>Pulse</span>
-            <p>Live in the moment, understand real needs, and respond with care.</p>
-          </div>
-          <div>
-            <span>Purpose</span>
-            <p>Build thoughtful technology that points people toward a better tomorrow.</p>
+          <div class="hero-actions">
+            <a class="button" href="#contact">
+              Talk to us
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+            </a>
+            <a class="button ghost" href="#work">See what we build</a>
           </div>
         </div>
+
+        <aside class="hero-card" aria-label="What Pulse and Purpose stands for">
+          <div class="hero-card-row">
+            <span class="pill pill-warm">Pulse</span>
+            <p>Be here. The best of life happens in the moments we actually feel.</p>
+          </div>
+          <div class="hero-card-row">
+            <span class="pill pill-cool">Purpose</span>
+            <p>Look ahead. Meaning comes from moving toward something bigger.</p>
+          </div>
+          <div class="hero-card-foot">
+            <span class="status"><span class="status-dot"></span>Building in 2026</span>
+            <span class="mono">v0.1 · early days</span>
+          </div>
+        </aside>
       </section>
 
-      <section id="mission" class="section">
-        <p class="eyebrow">Our mission</p>
-        <h2>Human-centered AI for meaningful impact.</h2>
-        <p>
-          We believe technology should serve people first. Our work combines
-          practical IT experience with modern AI to create helpful, accessible,
-          and future-ready solutions.
+      <section id="mission" class="section section-narrow">
+        <p class="eyebrow">Why we exist</p>
+        <h2>Technology should make humans <span class="grad-cool">more human</span>.</h2>
+        <p class="lead">
+          We&rsquo;re an IT startup with a simple belief: the best technology
+          quietly disappears into life and makes it better. We design AI,
+          software, and digital storefronts that help you feel more of the
+          moment you&rsquo;re in &mdash; and move with confidence toward the
+          future you want.
         </p>
       </section>
 
-      <section id="work" class="section feature-grid">
-        <article>
-          <h3>AI Solutions</h3>
-          <p>
-            We explore intelligent systems that simplify tasks, surface useful
-            insights, and support better decisions.
+      <section id="work" class="section">
+        <div class="section-head">
+          <p class="eyebrow">What we build</p>
+          <h2>Two products. <span class="grad-warm">One promise.</span></h2>
+          <p class="lead">
+            Every product we ship is shaped by AI, designed to be helpful by
+            default, and built for real people &mdash; not just power users.
           </p>
-        </article>
-        <article>
-          <h3>IT Innovation</h3>
-          <p>
-            We design digital products and services with a practical startup
-            mindset: clear, useful, and built to grow.
-          </p>
-        </article>
-        <article>
-          <h3>Future Focus</h3>
-          <p>
-            We help people benefit from today's technology while preparing for
-            the opportunities ahead.
-          </p>
-        </article>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature">
+            <div class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M3 9h18"/><path d="M8 20h8"/><path d="M12 17v3"/></svg>
+            </div>
+            <h3>SaaS Platforms</h3>
+            <p>
+              Intelligent software-as-a-service tools that help teams and
+              individuals work smarter, decide faster, and spend more time on
+              what actually matters.
+            </p>
+            <ul class="feature-list">
+              <li>AI built-in, not bolted on</li>
+              <li>Calm, focused interfaces</li>
+              <li>Designed for everyday people</li>
+            </ul>
+          </article>
+
+          <article class="feature feature-accent">
+            <div class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h18l-1.5 9.5a2 2 0 0 1-2 1.5h-11a2 2 0 0 1-2-1.5L3 9Z"/><path d="M8 9V6a4 4 0 0 1 8 0v3"/></svg>
+            </div>
+            <h3>Online Retail</h3>
+            <p>
+              Modern online retail experiences powered by AI &mdash;
+              personalized, fast, and built around what real shoppers actually
+              want, not what algorithms guess.
+            </p>
+            <ul class="feature-list">
+              <li>Personal without being creepy</li>
+              <li>Fast, beautiful storefronts</li>
+              <li>Honest, human commerce</li>
+            </ul>
+          </article>
+
+          <article class="feature">
+            <div class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3"/><path d="M12 19v3"/><path d="M4.2 4.2l2.1 2.1"/><path d="M17.7 17.7l2.1 2.1"/><path d="M2 12h3"/><path d="M19 12h3"/><path d="M4.2 19.8l2.1-2.1"/><path d="M17.7 6.3l2.1-2.1"/></svg>
+            </div>
+            <h3>AI at the Core</h3>
+            <p>
+              Every product we ship runs on modern AI &mdash; used thoughtfully,
+              transparently, and always in service of the person on the other
+              side of the screen.
+            </p>
+            <ul class="feature-list">
+              <li>Built on the latest models</li>
+              <li>Respects your data &amp; time</li>
+              <li>Always made to be useful</li>
+            </ul>
+          </article>
+        </div>
       </section>
 
-      <section id="contact" class="section contact">
-        <p class="eyebrow">Let's build what matters</p>
-        <h2>Pulse and Purpose is just getting started.</h2>
-        <p>
-          For partnerships, ideas, or early conversations, reach out and tell us
-          what you want AI to make better.
-        </p>
-        <a class="button secondary" href="mailto:hello@pulseandpurpose.net">hello@pulseandpurpose.net</a>
+      <section id="philosophy" class="section">
+        <div class="section-head">
+          <p class="eyebrow">Our philosophy</p>
+          <h2>Feel the <span class="grad-warm">pulse</span>. Live the <span class="grad-cool">purpose</span>.</h2>
+        </div>
+
+        <div class="pillars">
+          <article class="pillar pillar-warm">
+            <div class="pillar-tag">
+              <span class="pillar-letter">P</span>
+              <span class="pillar-name">Pulse</span>
+            </div>
+            <h3>Be here, fully.</h3>
+            <p>
+              Life happens in the moments we actually notice. We build
+              technology that gives people back their time and attention &mdash;
+              so the moments that matter aren&rsquo;t lost in the noise.
+            </p>
+          </article>
+
+          <article class="pillar pillar-cool">
+            <div class="pillar-tag">
+              <span class="pillar-letter">P</span>
+              <span class="pillar-name">Purpose</span>
+            </div>
+            <h3>Move toward what&rsquo;s next.</h3>
+            <p>
+              Meaning comes from movement. We build tools, platforms, and
+              storefronts that help people grow into who they want to become
+              and reach where they want to go.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact" class="section">
+        <div class="cta-card">
+          <p class="eyebrow eyebrow-light">Let&rsquo;s build something good</p>
+          <h2>Have an idea, a problem, or a partnership in mind?</h2>
+          <p class="lead lead-light">
+            We&rsquo;re a young company and we love a good conversation. Tell us
+            what you&rsquo;re working on, what frustrates you about today&rsquo;s
+            tech, or what you wish AI could quietly take off your plate.
+          </p>
+          <a class="button button-light" href="mailto:hello@pulseandpurpose.net">
+            hello@pulseandpurpose.net
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+          </a>
+        </div>
       </section>
     </main>
 
     <footer>
-      <p>&copy; 2026 Pulse and Purpose. All rights reserved.</p>
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="logo-mark" aria-hidden="true">
+            <span class="logo-dot"></span>
+          </span>
+          <span>Pulse &amp; Purpose</span>
+        </div>
+        <p>&copy; 2026 Pulse and Purpose. Built with care, in this moment, with the future in mind.</p>
+      </div>
     </footer>
   </body>
 </html>
