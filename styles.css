@@ -468,24 +468,24 @@ h3 {
   z-index: 1;
 }
 
-.section-narrow {
-  max-width: 860px;
-  text-align: center;
-}
-
-.section-narrow .eyebrow,
-.section-narrow .lead {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.section-narrow .eyebrow {
-  justify-content: center;
-}
-
 .section-head {
   margin-bottom: 48px;
   max-width: 760px;
+}
+
+.section-head-centered {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.section-head-centered .eyebrow {
+  justify-content: center;
+}
+
+.section-head-centered .lead {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* ───── Feature grid ───── */
