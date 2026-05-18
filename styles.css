@@ -295,6 +295,12 @@ h3 {
   max-width: 640px;
 }
 
+.lead em {
+  color: var(--ink);
+  font-style: italic;
+  font-weight: 600;
+}
+
 .hero-actions {
   display: flex;
   flex-wrap: wrap;

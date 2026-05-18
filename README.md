@@ -1,6 +1,6 @@
 # Pulse and Purpose
 
-The marketing site for Pulse and Purpose — an AI-driven technology company building SaaS, online retail, and other AI-powered products that help people live every pulse and reach every purpose.
+The marketing site for Pulse and Purpose — a technology company building cutting-edge AI-powered solutions and meticulously crafted physical products that elevate the enjoyment of every moment. Live the moment. Shape the future.
 
 ## Local Preview
 
