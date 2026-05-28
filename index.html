@@ -195,18 +195,80 @@
 
       <section id="contact" class="section">
         <div class="cta-card">
-          <p class="eyebrow eyebrow-light">Let&rsquo;s live the moment &amp; shape the future</p>
-          <h2>Have an idea, a problem, or a product in mind?</h2>
-          <p class="lead lead-light">
-            Whether it&rsquo;s an AI workflow you wish existed, a physical
-            product you&rsquo;d love to hold, or a partnership that sits
-            somewhere in between &mdash; we&rsquo;d love to hear what
-            you&rsquo;re working on.
-          </p>
-          <a class="button button-light" href="mailto:hello@pulseandpurpose.net">
-            hello@pulseandpurpose.net
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
-          </a>
+          <div class="cta-copy">
+            <p class="eyebrow eyebrow-light">Let&rsquo;s live the moment &amp; shape the future</p>
+            <h2>Have an idea, a problem, or a product in mind?</h2>
+            <p class="lead lead-light">
+              Whether it&rsquo;s an AI workflow you wish existed, a physical
+              product you&rsquo;d love to hold, or a partnership that sits
+              somewhere in between &mdash; we&rsquo;d love to hear what
+              you&rsquo;re working on.
+            </p>
+            <p class="cta-fallback">
+              Prefer email? Reach us at
+              <a href="mailto:hello@pulseandpurpose.net">hello@pulseandpurpose.net</a>.
+            </p>
+          </div>
+
+          <form
+            class="contact-form"
+            action="https://formspree.io/f/YOUR_FORM_ID"
+            method="POST"
+            aria-label="Contact Pulse and Purpose"
+          >
+            <div class="form-row">
+              <label for="contact-name">Your name</label>
+              <input
+                id="contact-name"
+                name="name"
+                type="text"
+                autocomplete="name"
+                placeholder="Ada Lovelace"
+                required
+              >
+            </div>
+
+            <div class="form-row">
+              <label for="contact-email">Email</label>
+              <input
+                id="contact-email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                placeholder="you@domain.com"
+                required
+              >
+            </div>
+
+            <div class="form-row">
+              <label for="contact-topic">What&rsquo;s this about?</label>
+              <select id="contact-topic" name="topic" required>
+                <option value="" disabled selected>Pick one</option>
+                <option value="ai-software">AI-powered software</option>
+                <option value="physical-product">A physical product</option>
+                <option value="partnership">A partnership</option>
+                <option value="other">Something else</option>
+              </select>
+            </div>
+
+            <div class="form-row">
+              <label for="contact-message">Tell us a little</label>
+              <textarea
+                id="contact-message"
+                name="message"
+                rows="4"
+                placeholder="What are you working on, or what would you love to see exist?"
+                required
+              ></textarea>
+            </div>
+
+            <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" class="hp-field">
+
+            <button type="submit" class="button button-light">
+              Send message
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+            </button>
+          </form>
         </div>
       </section>
     </main>
