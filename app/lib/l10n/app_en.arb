@@ -1,0 +1,19 @@
+{
+  "@@locale": "en",
+  "appTitle": "Pulse Family",
+  "tagline": "A private circle for your little one",
+  "signIn": "Sign in",
+  "createAccount": "Create account",
+  "feed": "Feed",
+  "growth": "Growth",
+  "family": "Family",
+  "settings": "Settings",
+  "newMemory": "New memory",
+  "share": "Share",
+  "addComment": "Add a comment…",
+  "invite": "Invite",
+  "createCircle": "Create a family circle",
+  "joinWithCode": "Join with a code",
+  "upgradeToPremium": "Upgrade to Premium",
+  "signOut": "Sign out"
+}

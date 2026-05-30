@@ -1,0 +1,26 @@
+name: Flutter CI
+
+on:
+  push:
+    branches: ["**"]
+    paths: ["app/**", ".github/workflows/flutter.yml"]
+  pull_request:
+    paths: ["app/**", ".github/workflows/flutter.yml"]
+
+jobs:
+  analyze-test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: app
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+      # Generate native folders so pub get / analyze resolve plugins.
+      - run: flutter create --org io.pulseandpurpose --project-name pulse_family .
+      - run: flutter pub get
+      - run: flutter gen-l10n
+      - run: flutter analyze
+      - run: flutter test

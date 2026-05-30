@@ -1,0 +1,19 @@
+{
+  "@@locale": "zh",
+  "appTitle": "亲宝家庭",
+  "tagline": "属于宝宝的私密家庭圈",
+  "signIn": "登录",
+  "createAccount": "注册",
+  "feed": "动态",
+  "growth": "成长",
+  "family": "家人",
+  "settings": "设置",
+  "newMemory": "新动态",
+  "share": "分享",
+  "addComment": "写评论…",
+  "invite": "邀请",
+  "createCircle": "创建家庭圈",
+  "joinWithCode": "用邀请码加入",
+  "upgradeToPremium": "升级会员",
+  "signOut": "退出登录"
+}
