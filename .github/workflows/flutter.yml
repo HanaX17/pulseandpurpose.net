@@ -19,7 +19,7 @@ jobs:
         with:
           channel: stable
       # Generate native folders so pub get / analyze resolve plugins.
-      - run: flutter create --org io.pulseandpurpose --project-name pulse_family .
+      - run: flutter create --org app.babymoments --project-name baby_moments .
       - run: flutter pub get
       - run: flutter gen-l10n
       - run: flutter analyze

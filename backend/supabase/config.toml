@@ -1,5 +1,5 @@
 # Supabase local development config. See https://supabase.com/docs/guides/cli/config
-project_id = "pulse-family-app"
+project_id = "baby-moments"
 
 [api]
 enabled = true
@@ -22,8 +22,8 @@ file_size_limit = "100MiB"
 
 [auth]
 enabled = true
-site_url = "io.pulseandpurpose.family://login-callback"
-additional_redirect_urls = ["io.pulseandpurpose.family://login-callback"]
+site_url = "app.babymoments://login-callback"
+additional_redirect_urls = ["app.babymoments://login-callback"]
 jwt_expiry = 3600
 enable_signup = true
 

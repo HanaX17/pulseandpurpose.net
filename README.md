@@ -1,7 +1,7 @@
 # Pulse & Purpose — Monorepo
 
 This repository contains the Pulse & Purpose marketing site **and** the
-**Pulse Family** app — a private family circle for sharing a baby's photos,
+**Baby Moments** app — a private family circle for sharing a baby's photos,
 videos and growth records (think 亲宝宝, for a worldwide audience).
 
 ## Layout
@@ -20,7 +20,7 @@ videos and growth records (think 亲宝宝, for a worldwide audience).
 cd backend && supabase start && supabase db reset
 
 # App
-cd app && flutter create --org io.pulseandpurpose --project-name pulse_family .
+cd app && flutter create --org app.babymoments --project-name baby_moments .
 cp .env.example .env            # paste the URL + anon key from `supabase start`
 flutter run --dart-define-from-file=.env
 ```

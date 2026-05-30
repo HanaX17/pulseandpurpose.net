@@ -5,15 +5,15 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'core/router.dart';
 import 'core/theme.dart';
 
-class PulseFamilyApp extends ConsumerWidget {
-  const PulseFamilyApp({super.key});
+class BabyMomentsApp extends ConsumerWidget {
+  const BabyMomentsApp({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final router = ref.watch(routerProvider);
 
     return MaterialApp.router(
-      title: 'Pulse Family',
+      title: 'Baby Moments',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.light(),
       routerConfig: router,

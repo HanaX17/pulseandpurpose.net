@@ -57,7 +57,7 @@ class _PaywallScreenState extends ConsumerState<PaywallScreen> {
           children: [
             const Icon(Icons.workspace_premium, size: 64),
             const SizedBox(height: 16),
-            Text('Pulse Family Premium',
+            Text('Baby Moments Premium',
                 textAlign: TextAlign.center,
                 style: Theme.of(context).textTheme.headlineSmall),
             const SizedBox(height: 24),

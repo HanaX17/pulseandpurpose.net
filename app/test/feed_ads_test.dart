@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:pulse_family/core/env.dart';
+import 'package:baby_moments/core/env.dart';
 
 // Mirrors the ad-interleaving math in FeedScreen so the indexing logic is
 // regression-tested without needing a Supabase backend.

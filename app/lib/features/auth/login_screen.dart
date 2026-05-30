@@ -69,7 +69,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                 children: [
                   const Icon(Icons.child_care, size: 64),
                   const SizedBox(height: 12),
-                  Text('Pulse Family',
+                  Text('Baby Moments',
                       textAlign: TextAlign.center,
                       style: Theme.of(context).textTheme.headlineSmall),
                   const SizedBox(height: 4),

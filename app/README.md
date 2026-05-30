@@ -1,4 +1,4 @@
-# App — Pulse Family (Flutter)
+# App — Baby Moments (Flutter)
 
 Android + iOS client for the private family photo / growth-sharing app.
 
@@ -9,7 +9,7 @@ generated platform folders (`android/`, `ios/`, etc.). Generate them once:
 
 ```bash
 cd app
-flutter create --org io.pulseandpurpose --project-name pulse_family .
+flutter create --org app.babymoments --project-name baby_moments .
 flutter pub get
 ```
 

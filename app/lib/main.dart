@@ -19,7 +19,7 @@ Future<void> main() async {
     anonKey: Env.supabaseAnonKey,
   );
 
-  runApp(const ProviderScope(child: PulseFamilyApp()));
+  runApp(const ProviderScope(child: BabyMomentsApp()));
 }
 
 class _ConfigErrorApp extends StatelessWidget {
