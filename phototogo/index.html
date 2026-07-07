@@ -26,6 +26,81 @@
       rel="stylesheet"
     >
     <link rel="stylesheet" href="/styles.css">
+    <style>
+      /* ---- PhotoToGo product page: device mockups, showcase, tighter rhythm ---- */
+      main .section { padding-block: clamp(3.25rem, 2.4rem + 3.4vw, 5.5rem); }
+      main > .section:first-child { padding-top: calc(var(--header-h) + clamp(1.75rem, 4vw, 3.25rem)); }
+
+      /* Hero: copy beside a device */
+      .pt-hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+        gap: clamp(2rem, 4vw, 4rem);
+        align-items: center;
+      }
+      .pt-hero .section-head { margin-bottom: 0; max-width: 34rem; }
+      .pt-hero h1 { font-size: clamp(2.5rem, 1.7rem + 3.3vw, 4rem); }
+
+      /* iPhone mockup */
+      .device {
+        width: 100%;
+        max-width: 300px;
+        margin-inline: auto;
+        background: linear-gradient(155deg, #17171e, #0a0a0e);
+        border-radius: 44px;
+        padding: 8px;
+        box-shadow:
+          0 48px 90px -42px color-mix(in oklab, var(--indigo) 60%, transparent),
+          0 18px 44px -22px rgba(10, 10, 30, 0.4),
+          inset 0 0 0 1.6px rgba(255, 255, 255, 0.09);
+      }
+      .device img { display: block; width: 100%; border-radius: 37px; }
+      .pt-hero .device { max-width: 300px; }
+
+      /* Showcase: alternating device + copy rows */
+      .showcase { display: grid; gap: clamp(2.5rem, 5vw, 4.5rem); margin-top: clamp(2.5rem, 5vw, 4rem); }
+      .showcase-row {
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: clamp(1.5rem, 4vw, 3.5rem);
+        align-items: center;
+      }
+      .showcase .device { max-width: 244px; }
+      .showcase-row.reverse .showcase-media { order: 2; }
+      .showcase-copy h3 {
+        font-size: var(--t-h2);
+        font-weight: 700;
+        letter-spacing: -0.024em;
+        line-height: 1.07;
+        text-wrap: balance;
+      }
+      .showcase-copy p {
+        color: var(--ink-muted);
+        margin-top: 14px;
+        font-size: var(--t-lead);
+        line-height: 1.55;
+        max-width: 44ch;
+        text-wrap: pretty;
+      }
+      .pill-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+      .pill {
+        font-size: 0.82rem;
+        font-weight: 600;
+        color: var(--ink-muted);
+        background: var(--paper-2);
+        border: 1px solid var(--line);
+        padding: 6px 13px;
+        border-radius: var(--r-pill);
+      }
+
+      @media (max-width: 880px) {
+        .pt-hero { grid-template-columns: 1fr; gap: clamp(2rem, 7vw, 3rem); }
+        .pt-hero .section-head { max-width: none; }
+        .showcase-row { grid-template-columns: 1fr; gap: 1.5rem; }
+        .showcase-row.reverse .showcase-media { order: 0; }
+        .device, .pt-hero .device { max-width: 264px; }
+      }
+    </style>
   </head>
   <body>
     <div class="aurora" aria-hidden="true">
@@ -52,24 +127,30 @@
     <main id="top">
       <section class="section">
         <div class="wrap">
-          <div class="section-head">
-            <p class="pillar-name pillar-name-pulse">PhotoToGo &middot; Swipe photo cleaner &amp; organizer</p>
-            <h1>Tidy your photos. <span class="accent-pulse-ink">Relive the good ones.</span></h1>
-            <p class="lead">
-              A calm, private way to clean up your camera roll. Swipe to sort the
-              keepers into albums, clear duplicates and clutter, and rediscover the
-              moments worth reliving &mdash; all on your iPhone.
-            </p>
-            <div class="hero-actions">
-              <a class="button button-coral button-lg" href="https://apps.apple.com/app/id6776543079">
-                Get it on the App Store
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
-              </a>
-              <a class="button button-quiet" href="#how" style="border-color: var(--line); color: var(--ink-text);">See how it works</a>
+          <div class="pt-hero">
+            <div class="section-head">
+              <p class="pillar-name pillar-name-pulse">PhotoToGo &middot; Swipe photo cleaner &amp; organizer</p>
+              <h1>Tidy your photos. <span class="accent-pulse-ink">Relive the good ones.</span></h1>
+              <p class="lead">
+                A calm, private way to clean up your camera roll. Swipe to sort the
+                keepers into albums, clear duplicates and clutter, and rediscover the
+                moments worth reliving &mdash; all on your iPhone.
+              </p>
+              <div class="hero-actions">
+                <a class="button button-coral button-lg" href="https://apps.apple.com/app/id6776543079">
+                  Get it on the App Store
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+                </a>
+                <a class="button button-quiet" href="#how" style="border-color: var(--line); color: var(--ink-text);">See how it works</a>
+              </div>
+              <p style="color: var(--ink-muted); font-size: var(--t-small); margin-top: 1.5rem;">
+                Free to start &middot; iPhone &middot; iOS 17+ &middot; No accounts, no ads
+              </p>
             </div>
-            <p style="color: var(--ink-muted); font-size: var(--t-small); margin-top: 1.5rem;">
-              Free to start &middot; iPhone &middot; iOS 17+ &middot; No accounts, no ads
-            </p>
+            <div class="device">
+              <img src="img/deck-web.jpg" width="720" height="1565"
+                   alt="PhotoToGo's swipe deck showing a coastal photo with Delete, Keep, Favorite, Bookmark and Album actions.">
+            </div>
           </div>
         </div>
       </section>
@@ -85,26 +166,50 @@
             </p>
           </div>
 
-          <div class="pillars">
-            <article class="pillar">
-              <p class="pillar-name pillar-name-pulse">Swipe to sort</p>
-              <h3>One thumb, one pass.</h3>
-              <p class="pillar-body">
-                Swipe to keep, file into an album, bookmark, or delete. Your camera
-                roll goes from chaos to sorted without feeling like work &mdash; and
-                you can remap each swipe to fit your hand.
-              </p>
-            </article>
+          <div class="showcase">
+            <div class="showcase-row">
+              <div class="showcase-media">
+                <div class="device">
+                  <img src="img/home-web.jpg" width="720" height="1565" loading="lazy"
+                       alt="PhotoToGo home dashboard: review progress, space freed, and photos ready to delete.">
+                </div>
+              </div>
+              <div class="showcase-copy">
+                <h3>Watch your library come together</h3>
+                <p>
+                  Your progress, the gigabytes you&rsquo;ve freed, and what&rsquo;s
+                  left to review &mdash; all on one calm dashboard. Every swipe moves
+                  the needle.
+                </p>
+                <div class="pill-row">
+                  <span class="pill">Review progress</span>
+                  <span class="pill">Space freed</span>
+                  <span class="pill">Albums &amp; favorites</span>
+                </div>
+              </div>
+            </div>
 
-            <article class="pillar">
-              <p class="pillar-name pillar-name-purpose">Relive the moments</p>
-              <h3>The happy part of tidying.</h3>
-              <p class="pillar-body">
-                PhotoToGo resurfaces the cheerful shots hiding in your library
-                &mdash; this month, on this day in past years, the ones you forgot.
-                Tidying up becomes a reason to smile.
-              </p>
-            </article>
+            <div class="showcase-row reverse">
+              <div class="showcase-media">
+                <div class="device">
+                  <img src="img/duplicates-web.jpg" width="720" height="1565" loading="lazy"
+                       alt="PhotoToGo duplicate finder in dark mode, grouping near-identical mountain photos.">
+                </div>
+              </div>
+              <div class="showcase-copy">
+                <h3>Find the duplicates hiding in plain sight</h3>
+                <p>
+                  PhotoToGo groups near-identical shots and bursts, keeps the best,
+                  and shows exactly how much space you&rsquo;ll reclaim. It looks just
+                  as good in the dark.
+                </p>
+                <div class="pill-row">
+                  <span class="pill">Near-duplicate detection</span>
+                  <span class="pill">Reclaim gigabytes</span>
+                  <span class="pill">Light &amp; dark</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
