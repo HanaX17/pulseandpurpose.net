@@ -36,6 +36,13 @@ background:var(--panel2);color:var(--ink)}
 .btn:hover{border-color:var(--coral);text-decoration:none}
 .audio{font-size:12px;color:var(--dim)}
 .audio audio{height:30px;vertical-align:middle}
+.voicebox{display:inline-flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.voicebox audio{height:30px;vertical-align:middle;max-width:210px}
+.vtoggle{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.vtoggle button{font:inherit;font-size:12px;padding:4px 11px;background:var(--panel2);color:var(--dim);
+border:none;cursor:pointer;line-height:1.4}
+.vtoggle button.on{background:var(--coral);color:#fff}
+.vtoggle button:not(.on):hover{color:var(--ink)}
 .missing{color:var(--dim);font-size:12px;opacity:.6}
 /* reading view */
 article{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:28px 30px}
@@ -46,6 +53,24 @@ article code{background:var(--panel2);padding:1px 6px;border-radius:6px;font-siz
 article hr{border:none;border-top:1px solid var(--line);margin:1.6em 0}
 .back{display:inline-block;margin-bottom:16px;font-size:13px}
 .foot{margin-top:40px;color:var(--dim);font-size:12px;text-align:center}
+/* outline 章节锚下钻 */
+.drill{display:flex;flex-direction:column;gap:8px}
+.dl-point{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--panel2)}
+.dl-head{width:100%;text-align:left;font:inherit;color:var(--ink);background:none;border:none;cursor:pointer;
+padding:12px 14px;display:flex;align-items:center;gap:10px}
+.dl-head:hover{background:rgba(255,255,255,.03)}
+.dl-caret{color:var(--coral);transition:transform .18s;font-size:12px}
+.dl-point.open .dl-caret{transform:rotate(90deg)}
+.dl-text{flex:1;font-weight:600;font-size:15px}
+.dl-chap{font-size:11px;color:var(--dim);border:1px solid var(--line);border-radius:999px;padding:1px 8px;white-space:nowrap}
+.dl-panel{display:none;padding:2px 16px 16px;border-top:1px solid var(--line)}
+.dl-point.open .dl-panel{display:block}
+.dl-tag{display:inline-block;font-size:11px;color:var(--coral);margin:12px 0 6px;letter-spacing:.03em}
+.dl-q{font-size:16px;line-height:1.9;padding:2px 0}
+.dl-qp{color:var(--dim);font-size:13px}
+.dl-deepbody{color:var(--ink);font-size:14px;line-height:1.8}
+.dl-deepbody p{margin:.5em 0}.dl-deepbody h2,.dl-deepbody h3{font-size:15px;margin:.6em 0 .3em}
+.dl-none{color:var(--dim);font-size:12px;padding:10px 0}
 </style></head><body><div class="wrap"><a class="back" href="../index.html">← 返回书语评审台</a><article><div class="badges"><span class="badge">精讲·深读</span><span class="badge">老子</span></div><p>如果今天有人跟你说——越想抓住什么，就越该松手；越想赢，就越该不争；越想管好一个团队，就越该少管——你大概会觉得，这又是一碗兑了水的职场鸡汤。但如果这句话写于两千五百年前，只有五千个字，却被翻译成世界上语种最多的经典之一，甚至成了无数顶尖思想家、科学家床头的案头书呢？</p>
 <p>它叫《老子》，也有人叫它《道德经》。薄薄一本，可能一个下午就能翻完。但你翻完以后，大概率会有一种奇怪的感觉：每一句你都认识，每一句你都觉得有道理，可合上书，你又说不清它到底在讲什么。</p>
 <p>这不奇怪。因为老子开篇第一句话就告诉你了——他接下来要说的东西，是说不清楚的。但他还是说了，而且一说就说了五千字，说了两千五百年，一直说到今天。</p>
@@ -136,4 +161,4 @@ article hr{border:none;border-top:1px solid var(--line);margin:1.6em 0}
 <p>两千五百年过去了，时间其实已经给出了答案。那些曾经坚不可摧的庞大帝国、不可一世的强权机器、试图用“有为”去强行扭转自然规律的宏大工程，大多已经成了历史的尘埃。而这五千字柔软的竹简，却像水一样，无声无息地渗入了人类文明的底层。它没有去攻克什么，但它也没有被任何东西真正击败。</p>
 <p>回头来看，老子用五千字做了一件事——从宇宙的本源，一路讲到人间的活法。这条线拉得很长，但核心赌注只有一个：在一个所有人都在争、在用力、在扩张的世界里，那个不争、守柔、知止的人，反而会走到最后。</p>
 <p>这个赌注，你信不信，其实不重要。重要的是他提供了一种完全不同的看世界的坐标系——不是教你躺平，而是告诉你，有时候松手比抓紧更需要力量，后退比冲锋更需要判断。当你下次在生活的重压下感到窒息，或者在欲望的拉扯中找不到方向时，不妨翻开这本小册子。它不会替你解决具体的麻烦，但它或许能让你在刚硬的世界里，找到一种柔软而坚韧的活法。</p>
-<p>《老子》只有五千字。它可能是你这辈子能读完的最短的经典，也可能是你需要一辈子去读的经典。如果你读完以后觉得它什么都没说，那很正常——因为它开篇就告诉你了：真正的道理，说不出来。但如果你读完以后，在某个瞬间突然觉得，世界好像不是你以为的那个样子了——那大概就是老子在两千五百年前，等着你的那个时刻。</p></article><div class="foot">生成 2026-07-10 14:51</div></div></body></html>
+<p>《老子》只有五千字。它可能是你这辈子能读完的最短的经典，也可能是你需要一辈子去读的经典。如果你读完以后觉得它什么都没说，那很正常——因为它开篇就告诉你了：真正的道理，说不出来。但如果你读完以后，在某个瞬间突然觉得，世界好像不是你以为的那个样子了——那大概就是老子在两千五百年前，等着你的那个时刻。</p></article><div class="foot">生成 2026-07-10 20:02</div></div></body></html>

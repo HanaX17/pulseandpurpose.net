@@ -36,6 +36,13 @@ background:var(--panel2);color:var(--ink)}
 .btn:hover{border-color:var(--coral);text-decoration:none}
 .audio{font-size:12px;color:var(--dim)}
 .audio audio{height:30px;vertical-align:middle}
+.voicebox{display:inline-flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.voicebox audio{height:30px;vertical-align:middle;max-width:210px}
+.vtoggle{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.vtoggle button{font:inherit;font-size:12px;padding:4px 11px;background:var(--panel2);color:var(--dim);
+border:none;cursor:pointer;line-height:1.4}
+.vtoggle button.on{background:var(--coral);color:#fff}
+.vtoggle button:not(.on):hover{color:var(--ink)}
 .missing{color:var(--dim);font-size:12px;opacity:.6}
 /* reading view */
 article{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:28px 30px}
@@ -46,6 +53,24 @@ article code{background:var(--panel2);padding:1px 6px;border-radius:6px;font-siz
 article hr{border:none;border-top:1px solid var(--line);margin:1.6em 0}
 .back{display:inline-block;margin-bottom:16px;font-size:13px}
 .foot{margin-top:40px;color:var(--dim);font-size:12px;text-align:center}
+/* outline 章节锚下钻 */
+.drill{display:flex;flex-direction:column;gap:8px}
+.dl-point{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--panel2)}
+.dl-head{width:100%;text-align:left;font:inherit;color:var(--ink);background:none;border:none;cursor:pointer;
+padding:12px 14px;display:flex;align-items:center;gap:10px}
+.dl-head:hover{background:rgba(255,255,255,.03)}
+.dl-caret{color:var(--coral);transition:transform .18s;font-size:12px}
+.dl-point.open .dl-caret{transform:rotate(90deg)}
+.dl-text{flex:1;font-weight:600;font-size:15px}
+.dl-chap{font-size:11px;color:var(--dim);border:1px solid var(--line);border-radius:999px;padding:1px 8px;white-space:nowrap}
+.dl-panel{display:none;padding:2px 16px 16px;border-top:1px solid var(--line)}
+.dl-point.open .dl-panel{display:block}
+.dl-tag{display:inline-block;font-size:11px;color:var(--coral);margin:12px 0 6px;letter-spacing:.03em}
+.dl-q{font-size:16px;line-height:1.9;padding:2px 0}
+.dl-qp{color:var(--dim);font-size:13px}
+.dl-deepbody{color:var(--ink);font-size:14px;line-height:1.8}
+.dl-deepbody p{margin:.5em 0}.dl-deepbody h2,.dl-deepbody h3{font-size:15px;margin:.6em 0 .3em}
+.dl-none{color:var(--dim);font-size:12px;padding:10px 0}
 </style></head><body><div class="wrap"><a class="back" href="../index.html">← 返回书语评审台</a><article><div class="badges"><span class="badge">精讲·深读</span><span class="badge">Hamlet</span></div><p>您听，有一出戏，开场就让人后脊梁发凉。您想啊——深夜，丹麦艾尔西诺城堡的露台上，寒风刺骨，两个哨兵裹紧了斗篷，旁边还站着一位从外地赶来的学者霍拉旭。他们仨盯着黑暗深处，忽然，一个全身披甲的身影从夜色里浮现出来。那面容——跟刚刚下葬的老国王一模一样。哨兵吓得说不出话，学者硬着头皮上前搭话，鬼魂一言不发，转身消失在黑暗里。您说这是幻觉？三个人同时看见，怕是没那么简单。这个画面一出来，就像有人把整部悲剧的发条猛地拧了一把，嘎吱一声，所有的齿轮都开始转了。</p>
 <p>可这出戏真正让人四百年来放不下、嚼不烂的，不是鬼魂，不是宫廷阴谋，甚至不是复仇本身——而是一个问题：一个明明知道该动手的人，为什么迟迟下不了手？就这一个问题，歌德想过、柯勒律治想过、弗洛伊德想过、艾略特想过，每个时代最聪明的脑袋都来解过这道题，答案还都不一样。这个想得太清楚、反而动不了的年轻人，就是丹麦王子哈姆雷特。</p>
 <p>今天咱们摊开聊的，就是威廉·莎士比亚这部《哈姆雷特》。听完这一期，您带走的不会只是一个复仇故事的梗概，而是一面镜子——四百年前的镜子，照的偏偏是咱们今天每个人心里那个犹豫不决的自己。来，咱们先从那个寒风刺骨的夜晚说起。</p>
@@ -101,4 +126,4 @@ article hr{border:none;border-top:1px solid var(--line);margin:1.6em 0}
 <hr>
 <p><strong>【延伸阅读】</strong></p>
 <p>如果您想顺着这个题目换个口味，可以在书单里找一部荒诞派名剧《罗森格兰兹与吉尔登斯吞死了》。它把原著里那两个被当成间谍使唤、最后莫名其妙送命的“发小”推到了聚光灯下，大人物在神仙打架，小人物在抛硬币，看完您会对时代洪流下的荒诞多一层冷汗。</p>
-<p>余下的只有沉默，但您的思考，才刚刚开始。</p></article><div class="foot">生成 2026-07-10 14:51</div></div></body></html>
+<p>余下的只有沉默，但您的思考，才刚刚开始。</p></article><div class="foot">生成 2026-07-10 20:02</div></div></body></html>

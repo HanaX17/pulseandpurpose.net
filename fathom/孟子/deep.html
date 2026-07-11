@@ -36,6 +36,13 @@ background:var(--panel2);color:var(--ink)}
 .btn:hover{border-color:var(--coral);text-decoration:none}
 .audio{font-size:12px;color:var(--dim)}
 .audio audio{height:30px;vertical-align:middle}
+.voicebox{display:inline-flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.voicebox audio{height:30px;vertical-align:middle;max-width:210px}
+.vtoggle{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.vtoggle button{font:inherit;font-size:12px;padding:4px 11px;background:var(--panel2);color:var(--dim);
+border:none;cursor:pointer;line-height:1.4}
+.vtoggle button.on{background:var(--coral);color:#fff}
+.vtoggle button:not(.on):hover{color:var(--ink)}
 .missing{color:var(--dim);font-size:12px;opacity:.6}
 /* reading view */
 article{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:28px 30px}
@@ -46,6 +53,24 @@ article code{background:var(--panel2);padding:1px 6px;border-radius:6px;font-siz
 article hr{border:none;border-top:1px solid var(--line);margin:1.6em 0}
 .back{display:inline-block;margin-bottom:16px;font-size:13px}
 .foot{margin-top:40px;color:var(--dim);font-size:12px;text-align:center}
+/* outline 章节锚下钻 */
+.drill{display:flex;flex-direction:column;gap:8px}
+.dl-point{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--panel2)}
+.dl-head{width:100%;text-align:left;font:inherit;color:var(--ink);background:none;border:none;cursor:pointer;
+padding:12px 14px;display:flex;align-items:center;gap:10px}
+.dl-head:hover{background:rgba(255,255,255,.03)}
+.dl-caret{color:var(--coral);transition:transform .18s;font-size:12px}
+.dl-point.open .dl-caret{transform:rotate(90deg)}
+.dl-text{flex:1;font-weight:600;font-size:15px}
+.dl-chap{font-size:11px;color:var(--dim);border:1px solid var(--line);border-radius:999px;padding:1px 8px;white-space:nowrap}
+.dl-panel{display:none;padding:2px 16px 16px;border-top:1px solid var(--line)}
+.dl-point.open .dl-panel{display:block}
+.dl-tag{display:inline-block;font-size:11px;color:var(--coral);margin:12px 0 6px;letter-spacing:.03em}
+.dl-q{font-size:16px;line-height:1.9;padding:2px 0}
+.dl-qp{color:var(--dim);font-size:13px}
+.dl-deepbody{color:var(--ink);font-size:14px;line-height:1.8}
+.dl-deepbody p{margin:.5em 0}.dl-deepbody h2,.dl-deepbody h3{font-size:15px;margin:.6em 0 .3em}
+.dl-none{color:var(--dim);font-size:12px;padding:10px 0}
 </style></head><body><div class="wrap"><a class="back" href="../index.html">← 返回书语评审台</a><article><div class="badges"><span class="badge">精讲·深读</span><span class="badge">孟子</span></div><p>梁惠王一见孟子，劈头就问：“老先生不远千里而来，将何以利吾国？”孟子毫不客气地顶了回去：“王何必曰利？亦有仁义而已矣。”你想想那个场面——一个国君张口就是利益，一个老头张口就是仁义，两个人根本不在一个频道上，却硬生生被历史摁在了同一张桌子前。这场两千三百年前的对话，到今天其实还在问我们同一个问题：人活着、国治着，到底图什么？</p>
 <p>你可能会觉得，这老头有点不识趣。人家一国之君，客客气气问你有什么高见，你上来就把人家的问题给否了——“你问错了”。但孟子这辈子干的，就是这种事。他周游列国，见一个怼一个，从梁惠王怼到齐宣王，从告子怼到许行，谁的面子都不给。可奇怪的是，这些被他怼过的人，不但没把他轰走，反而还恭恭敬敬地接着问。</p>
 <p>这说明什么？说明孟子身上有一种东西，让人即使不舒服，也没法忽视。那种东西，后来被他自己叫做“浩然之气”。但这口气不是凭空来的，它背后有一整套从人心到天道、从个人修养到天下治理的完整逻辑。这本《孟子》，记录的就是这套逻辑。今天咱们就顺着他走过的路，从那个倔老头闯入战国名利场开始，一步步看明白：他到底凭什么敢那么横？</p>
@@ -106,4 +131,4 @@ article hr{border:none;border-top:1px solid var(--line);margin:1.6em 0}
 <p>你会发现，这不是一本语录集，而是一条路——从“人性本善”这个原点出发，向外推出仁政王道的治国蓝图，向内修出浩然之气与舍生取义的底气，最终在“尽心知性知天”中完成安身立命。从心到天，从个人到宇宙，这条路他走得既倔强又完整。</p>
 <p>当然，书里还有很多咱们今天没来得及展开的东西——比如“父子之间不责善”的家庭伦理，“不孝有三无后为大”的孝道讨论，还有乐正子跟着子敖出游只为蹭饭、被孟子当面训斥的师生故事。这些细节都留在原书里，值得你自己去翻。</p>
 <p>我总觉得，读孟子最好的方式，不是去背那些金句——“天将降大任于是人也”、“生于忧患死于安乐”，这些你早就背过了。最好的读法，是进入他和梁惠王、齐宣王、告子的一场场辩论现场，看他怎么接招、怎么反击、怎么在对方以为赢定了的时候翻盘。你会发现，两千三百年前那个倔老头怼人的逻辑，今天依然锋利。</p>
-<p>如果你顺着孟子的“性善论”往下想，可能会好奇：那主张性恶的荀子到底怎么反驳他？可以对照着读读《荀子》。要是想从现代视角重新审视这场人性之争，斯蒂芬·平克的《人性中的善良天使》也是一个有意思的参照——虽然结论未必一样，但追问的方向是相通的。</p></article><div class="foot">生成 2026-07-10 14:51</div></div></body></html>
+<p>如果你顺着孟子的“性善论”往下想，可能会好奇：那主张性恶的荀子到底怎么反驳他？可以对照着读读《荀子》。要是想从现代视角重新审视这场人性之争，斯蒂芬·平克的《人性中的善良天使》也是一个有意思的参照——虽然结论未必一样，但追问的方向是相通的。</p></article><div class="foot">生成 2026-07-10 20:02</div></div></body></html>

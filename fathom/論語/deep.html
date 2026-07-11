@@ -36,6 +36,13 @@ background:var(--panel2);color:var(--ink)}
 .btn:hover{border-color:var(--coral);text-decoration:none}
 .audio{font-size:12px;color:var(--dim)}
 .audio audio{height:30px;vertical-align:middle}
+.voicebox{display:inline-flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.voicebox audio{height:30px;vertical-align:middle;max-width:210px}
+.vtoggle{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.vtoggle button{font:inherit;font-size:12px;padding:4px 11px;background:var(--panel2);color:var(--dim);
+border:none;cursor:pointer;line-height:1.4}
+.vtoggle button.on{background:var(--coral);color:#fff}
+.vtoggle button:not(.on):hover{color:var(--ink)}
 .missing{color:var(--dim);font-size:12px;opacity:.6}
 /* reading view */
 article{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:28px 30px}
@@ -46,6 +53,24 @@ article code{background:var(--panel2);padding:1px 6px;border-radius:6px;font-siz
 article hr{border:none;border-top:1px solid var(--line);margin:1.6em 0}
 .back{display:inline-block;margin-bottom:16px;font-size:13px}
 .foot{margin-top:40px;color:var(--dim);font-size:12px;text-align:center}
+/* outline 章节锚下钻 */
+.drill{display:flex;flex-direction:column;gap:8px}
+.dl-point{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--panel2)}
+.dl-head{width:100%;text-align:left;font:inherit;color:var(--ink);background:none;border:none;cursor:pointer;
+padding:12px 14px;display:flex;align-items:center;gap:10px}
+.dl-head:hover{background:rgba(255,255,255,.03)}
+.dl-caret{color:var(--coral);transition:transform .18s;font-size:12px}
+.dl-point.open .dl-caret{transform:rotate(90deg)}
+.dl-text{flex:1;font-weight:600;font-size:15px}
+.dl-chap{font-size:11px;color:var(--dim);border:1px solid var(--line);border-radius:999px;padding:1px 8px;white-space:nowrap}
+.dl-panel{display:none;padding:2px 16px 16px;border-top:1px solid var(--line)}
+.dl-point.open .dl-panel{display:block}
+.dl-tag{display:inline-block;font-size:11px;color:var(--coral);margin:12px 0 6px;letter-spacing:.03em}
+.dl-q{font-size:16px;line-height:1.9;padding:2px 0}
+.dl-qp{color:var(--dim);font-size:13px}
+.dl-deepbody{color:var(--ink);font-size:14px;line-height:1.8}
+.dl-deepbody p{margin:.5em 0}.dl-deepbody h2,.dl-deepbody h3{font-size:15px;margin:.6em 0 .3em}
+.dl-none{color:var(--dim);font-size:12px;padding:10px 0}
 </style></head><body><div class="wrap"><a class="back" href="../index.html">← 返回书语评审台</a><article><div class="badges"><span class="badge">精讲·深读</span><span class="badge">論語</span></div><p>很多人翻开《论语》，读到第三页就开始犯困——又是“子曰”，又是“子曰”，好像一个老头坐在讲台上，板着脸不停地往下撒格言。但如果你仔细读，会发现一件怪事：同一个问题，孔子每次给的答案都不一样。学生问“什么是孝”，他回答了至少四次，每次说法都不同；有人问“什么是仁”，他的回答更是五花八门。这是孔子自己也没想清楚吗？还是说，他根本就不是在给标准答案？</p>
 <p>其实你仔细看那些对话的现场，就会发现孔子做的事更像一个老中医——谁来了，他先看这个人的“病”在哪儿，然后开一张只属于这个人的方子。性子急的，他往回拽一拽；胆子小的，他往前推一推。同一个字，对不同的人来说，药引子完全不同。所以《论语》从来不是一本干瘪的道德格言集，它更像是一间两千多年前的学堂里，一位老师带着一群性格各异的学生，在乱世中追问“人到底该怎么活”的现场记录。每一句“子曰”背后，都站着一个具体的人、一份具体的困惑。</p>
 <p>这本书的作者，说是孔子，其实更准确地说是他的学生们——是他死后，弟子们把老师生前说过的话、做过的事，一段一段回忆、拼凑、编纂出来的。所以它不是一部体系严密的哲学著作，而是一本带着体温的课堂笔记。今天我们就回到那间简陋的学堂，顺着几条最重要的线索，看看这位老师和他的学生们，到底在聊些什么。</p>
@@ -85,4 +110,4 @@ article hr{border:none;border-top:1px solid var(--line);margin:1.6em 0}
 <p>这句话，是孔子对隐者最温柔也最坚决的拒绝。隐士们看透了时代的不可救药，选择保全自身的清白，这叫“避世”；但孔子说，人终究不能和飞鸟走兽生活在一起，我如果不和这世间受苦的人在一起，我又该和谁在一起呢？如果天下有道，我自然也会去享受那份从容；正因为天下无道，我才必须站出来去改变它。这就把入世的担当和出世的向往，构成了一个完整的逻辑闭环。他深知那个“浴乎沂，风乎舞雩”的世界在礼崩乐坏的现实中有多脆弱，所以他必须让子路、冉有们去撑起那个现实的骨架；但他心底最柔软的归宿，永远留在了曾皙的瑟声里。读完《论语》，脑海里如果只留下几条干巴巴的道德训诫，那或许是看轻了这位老师。他真正想留给后人的，是在看透了现实的残酷与无奈之后，依然能在心里保留一块“风乎舞雩”的自留地，同时，绝不放弃对现实世界的责任。</p>
 <p>从春秋末期的那间学堂走到今天，《论语》已经流传了两千多年。这两千年里，它被捧上过天，也被踩进过泥里。它身上包浆太厚，以至于我们今天一翻开它，总觉得是在面对一套居高临下的道德说教，本能地想往后退。但如果你拿一块抹布，擦掉这层厚厚的“圣人包浆”，重新遇见那个有脾气、会叹息、偶尔还会发牢骚的老师，你会惊讶地发现，他当年和学生们讨论的那些困惑，今天依然在场。我不确定孔子如果活在今天，面对信息茧房和瞬息万变的时代，会不会也感到片刻的无力。或者说，他其实根本不在乎给出一个一劳永逸的标准答案，他在乎的是“追问”这个动作本身。《论语》从来不是一本写满道德格言的说明书，而是一位老师在礼崩乐坏的乱世中，带着几十个学生摸黑走夜路的现场记录。</p>
 <p>在书的末尾，记录了一个极其微小却重若千钧的场景。孔子周游列国，处处碰壁，一天清晨，他的学生子路在石门这个地方借宿。守城门的人（晨门）是个隐士，他问子路：“你从哪里来？”子路答：“从孔氏那里来。”守门人听完，淡淡地说了一句：“是知其不可而为之者与？”——这就是那个明明知道做不到，却偏偏还要去做的人吧？</p>
-<p>这句话，是当时的隐士对孔子的评价，也是整部《论语》最悲壮的底色。守门人看透了时代的不可救药，所以他选择避世，这叫“知其不可而不为”；但孔子看着这艘下沉的大船，依然选择每天风尘仆仆地进城，去擦拭那根黄铜栏杆。他们也会争吵，会走散，会怀疑，会在陈蔡之间绝粮饿肚子。但就在这跌跌撞撞的追问里，他们硬生生蹚出了一条“人到底该怎么活”的路。当你亲自翻开这本书，越过两千年的尘埃，听到那声悠长的叹息，看到那个在晨雾中“知其不可而为之”的背影时，或许你会明白，有些问题注定没有终点，但一群人不肯放弃地走在路上，本身就是一种回答。</p></article><div class="foot">生成 2026-07-10 14:51</div></div></body></html>
+<p>这句话，是当时的隐士对孔子的评价，也是整部《论语》最悲壮的底色。守门人看透了时代的不可救药，所以他选择避世，这叫“知其不可而不为”；但孔子看着这艘下沉的大船，依然选择每天风尘仆仆地进城，去擦拭那根黄铜栏杆。他们也会争吵，会走散，会怀疑，会在陈蔡之间绝粮饿肚子。但就在这跌跌撞撞的追问里，他们硬生生蹚出了一条“人到底该怎么活”的路。当你亲自翻开这本书，越过两千年的尘埃，听到那声悠长的叹息，看到那个在晨雾中“知其不可而为之”的背影时，或许你会明白，有些问题注定没有终点，但一群人不肯放弃地走在路上，本身就是一种回答。</p></article><div class="foot">生成 2026-07-10 20:02</div></div></body></html>

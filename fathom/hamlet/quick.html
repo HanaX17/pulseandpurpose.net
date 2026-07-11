@@ -36,6 +36,13 @@ background:var(--panel2);color:var(--ink)}
 .btn:hover{border-color:var(--coral);text-decoration:none}
 .audio{font-size:12px;color:var(--dim)}
 .audio audio{height:30px;vertical-align:middle}
+.voicebox{display:inline-flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.voicebox audio{height:30px;vertical-align:middle;max-width:210px}
+.vtoggle{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.vtoggle button{font:inherit;font-size:12px;padding:4px 11px;background:var(--panel2);color:var(--dim);
+border:none;cursor:pointer;line-height:1.4}
+.vtoggle button.on{background:var(--coral);color:#fff}
+.vtoggle button:not(.on):hover{color:var(--ink)}
 .missing{color:var(--dim);font-size:12px;opacity:.6}
 /* reading view */
 article{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:28px 30px}
@@ -46,6 +53,24 @@ article code{background:var(--panel2);padding:1px 6px;border-radius:6px;font-siz
 article hr{border:none;border-top:1px solid var(--line);margin:1.6em 0}
 .back{display:inline-block;margin-bottom:16px;font-size:13px}
 .foot{margin-top:40px;color:var(--dim);font-size:12px;text-align:center}
+/* outline 章节锚下钻 */
+.drill{display:flex;flex-direction:column;gap:8px}
+.dl-point{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--panel2)}
+.dl-head{width:100%;text-align:left;font:inherit;color:var(--ink);background:none;border:none;cursor:pointer;
+padding:12px 14px;display:flex;align-items:center;gap:10px}
+.dl-head:hover{background:rgba(255,255,255,.03)}
+.dl-caret{color:var(--coral);transition:transform .18s;font-size:12px}
+.dl-point.open .dl-caret{transform:rotate(90deg)}
+.dl-text{flex:1;font-weight:600;font-size:15px}
+.dl-chap{font-size:11px;color:var(--dim);border:1px solid var(--line);border-radius:999px;padding:1px 8px;white-space:nowrap}
+.dl-panel{display:none;padding:2px 16px 16px;border-top:1px solid var(--line)}
+.dl-point.open .dl-panel{display:block}
+.dl-tag{display:inline-block;font-size:11px;color:var(--coral);margin:12px 0 6px;letter-spacing:.03em}
+.dl-q{font-size:16px;line-height:1.9;padding:2px 0}
+.dl-qp{color:var(--dim);font-size:13px}
+.dl-deepbody{color:var(--ink);font-size:14px;line-height:1.8}
+.dl-deepbody p{margin:.5em 0}.dl-deepbody h2,.dl-deepbody h3{font-size:15px;margin:.6em 0 .3em}
+.dl-none{color:var(--dim);font-size:12px;padding:10px 0}
 </style></head><body><div class="wrap"><a class="back" href="../index.html">← 返回书语评审台</a><article><div class="badges"><span class="badge">速览·15分</span><span class="badge">Hamlet</span></div><p>一个王子，深夜在城堡露台撞见亲爹的鬼魂，得知叔父毒杀先王、篡位娶嫂。他立下毒誓要复仇，可整部戏看下来，他大部分时间都在装疯卖傻、安排戏班子演戏。为啥呢？很多人给他贴标签，说这是个“重度拖延症患者”。但咱们今天得翻个案：哈姆雷特的迟疑，根本不是懦弱，而是一个思想者在面对道德深渊时的必然瘫痪。</p>
 <p>您想想，父亲刚死不到两个月，母亲就匆匆改嫁。哈姆雷特绝望地吐出那句：“脆弱啊，你的名字就是女人！”紧接着鬼魂现身。换作一般人，脑子一热就拔剑了。但您别忘了，哈姆雷特是在威登堡大学读过书的人。这所学校是当时的新教思想中心。咱们多交代一句背景：当时新教刚兴起，正跟天主教对着干；天主教讲究人死后要在“炼狱”里受苦赎罪，可新教根本不承认有炼狱。这就让哈姆雷特犯了嘀咕：鬼魂口口声声说自己在炼狱受苦，这会不会是恶魔化身，故意利用我的仇恨诱骗我去杀人？</p>
 <p>更深层的是，哈姆雷特是人文主义教育的产物。他曾由衷赞叹“人是一件多么了不起的杰作”，可现实的背叛让他对“人”的信仰彻底崩塌。这种人文信仰的破灭和宗教上的疑虑，其实是同一枚硬币的两面——当世界褪去神圣与理性的光环，他拔剑的手，自然就沉重了。</p>
@@ -55,4 +80,4 @@ article hr{border:none;border-top:1px solid var(--line);margin:1.6em 0}
 <p>您看，满朝文武皆是间谍，恋人疯死，仇人逼近。在这众叛亲离的绝境里，只有他的挚友霍拉旭，始终坚定地站在他身后。霍拉旭的存在，就像一面镜子，照出了哈姆雷特内心最极致的孤独——一个思想者，注定只能与不盲从的智者同行。</p>
 <p>到了全书最后，哈姆雷特在墓地里，拿着小时候逗他开心的宫廷小丑约里克的骷髅，突然悟了。死亡面前，一切身份与算计都归于虚无。他不再纠结，走上了决斗场，最终在互换毒剑、误饮毒酒的惨烈中，与仇敌同归于尽。临死前，他拦住想要饮下残酒殉死的霍拉旭，喘着气嘱托他活下去传述真相，留下了全剧最后一句台词：“余下的只有沉默。”</p>
 <p>您细品这句“沉默”。它不仅是哈姆雷特的遗言，更暗示了语言与思想在死亡面前的彻底失效。他一生都在用思想丈量世界，最终却发现，行动与毁灭才是现实的底色，思想与行动的张力在此刻彻底收束。</p>
-<p>剧中有句特别出名的台词，叫“对你自己要诚实”。可您猜这话是谁说的？正是那个满肚子算计、虚伪透顶的大臣波洛涅斯。莎士比亚用这种极致的反讽告诉咱们：在这个脱节的时代里，完美的道德时机永远等不到，而余下的，只有沉默。</p></article><div class="foot">生成 2026-07-10 14:51</div></div></body></html>
+<p>剧中有句特别出名的台词，叫“对你自己要诚实”。可您猜这话是谁说的？正是那个满肚子算计、虚伪透顶的大臣波洛涅斯。莎士比亚用这种极致的反讽告诉咱们：在这个脱节的时代里，完美的道德时机永远等不到，而余下的，只有沉默。</p></article><div class="foot">生成 2026-07-10 20:02</div></div></body></html>
