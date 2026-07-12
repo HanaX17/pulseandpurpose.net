@@ -101,6 +101,22 @@ ul { margin: 0; }
   border-radius: 4px;
 }
 
+/* Keyboard skip-link — hidden until focused */
+.skip-link {
+  position: absolute;
+  left: 8px;
+  top: -56px;
+  z-index: 100;
+  padding: 10px 16px;
+  border-radius: var(--r-pill);
+  background: var(--ink);
+  color: var(--on-ink);
+  font-weight: 600;
+  font-size: 0.92rem;
+  transition: top 180ms var(--ease-out);
+}
+.skip-link:focus { top: 8px; }
+
 .wrap {
   width: 100%;
   max-width: var(--maxw);
@@ -234,6 +250,7 @@ nav a:hover { opacity: 1; }
               background 220ms var(--ease-out), border-color 220ms var(--ease-out);
 }
 .button svg { width: 16px; height: 16px; }
+.button:active { transform: translateY(0) scale(0.98); }
 
 .button-coral {
   background: var(--coral);
