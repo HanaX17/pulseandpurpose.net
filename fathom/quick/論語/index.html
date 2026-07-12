@@ -1,0 +1,195 @@
+<!doctype html><html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#100f17"><title>論語 · Quick 评审</title><script>(function(){try{var m=localStorage.getItem('fathom-theme');document.documentElement.dataset.theme=m||((window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light');}catch(e){}})();</script><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&display=swap"><style>:root{
+--coral:oklch(0.705 0.182 35);--ink-2:oklch(0.205 0.026 274);
+--on-ink:oklch(0.965 0.004 250);--on-ink-mut:oklch(0.740 0.016 262);
+--line-dark:color-mix(in oklab,white 14%,transparent);
+--font:"Bricolage Grotesque",ui-sans-serif,system-ui,-apple-system,"PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif;
+--font-quote:"Songti SC","STSong","Noto Serif SC","Source Han Serif SC",Georgia,"Times New Roman",serif;
+--t-h1:clamp(1.85rem,1.4rem+1.7vw,2.6rem);--t-h2:clamp(1.4rem,1.2rem+0.8vw,1.85rem);
+--t-h3:clamp(1.12rem,1.03rem+0.4vw,1.3rem);--read:1.145rem;
+--gutter:clamp(1.15rem,0.7rem+2vw,2.25rem);--maxw:1080px;--readw:44rem;
+--r-sm:9px;--r-md:14px;--r-lg:20px;--r-pill:999px;--ease:cubic-bezier(0.16,1,0.3,1);--z-head:50;
+color-scheme:light dark;
+
+--paper:oklch(0.987 0.002 250);--paper-2:oklch(0.966 0.004 255);--paper-3:oklch(0.945 0.006 258);
+--ink-text:oklch(0.235 0.020 274);--ink-muted:oklch(0.470 0.018 268);
+--coral-ink:oklch(0.555 0.165 33);--indigo:oklch(0.505 0.155 274);
+--good:oklch(0.56 0.12 155);--warn:oklch(0.575 0.14 60);
+--ink:oklch(0.165 0.022 274);
+--line:color-mix(in oklab,oklch(0.165 0.022 274) 12%,transparent);
+--line-2:color-mix(in oklab,oklch(0.165 0.022 274) 7%,transparent);
+--shadow:color-mix(in oklab,oklch(0.165 0.022 274) 20%,transparent);
+}[data-theme="dark"]{
+--paper:oklch(0.185 0.024 274);--paper-2:oklch(0.223 0.026 274);--paper-3:oklch(0.264 0.028 274);
+--ink-text:oklch(0.955 0.004 250);--ink-muted:oklch(0.725 0.016 262);
+--coral-ink:oklch(0.745 0.170 37);--indigo:oklch(0.780 0.110 268);
+--good:oklch(0.75 0.15 158);--warn:oklch(0.80 0.13 72);
+--ink:oklch(0.145 0.020 274);
+--line:color-mix(in oklab,white 13%,transparent);
+--line-2:color-mix(in oklab,white 7%,transparent);
+--shadow:color-mix(in oklab,black 55%,transparent);
+}@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+--paper:oklch(0.185 0.024 274);--paper-2:oklch(0.223 0.026 274);--paper-3:oklch(0.264 0.028 274);
+--ink-text:oklch(0.955 0.004 250);--ink-muted:oklch(0.725 0.016 262);
+--coral-ink:oklch(0.745 0.170 37);--indigo:oklch(0.780 0.110 268);
+--good:oklch(0.75 0.15 158);--warn:oklch(0.80 0.13 72);
+--ink:oklch(0.145 0.020 274);
+--line:color-mix(in oklab,white 13%,transparent);
+--line-2:color-mix(in oklab,white 7%,transparent);
+--shadow:color-mix(in oklab,black 55%,transparent);
+}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink-text);font-family:var(--font);
+  font-size:var(--read);line-height:1.75;font-optical-sizing:auto;
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden;
+  transition:background .3s var(--ease),color .3s var(--ease)}
+a{color:var(--coral-ink);text-decoration:none}
+h1,h2,h3,p,dl,dd,dt,figure{margin:0}ul,ol{margin:0}
+::selection{background:color-mix(in oklab,var(--coral) 28%,transparent);color:var(--ink-text)}
+:focus-visible{outline:2.5px solid var(--coral-ink);outline-offset:3px;border-radius:5px}
+.wrap{width:100%;max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter)}
+
+.btn{display:inline-flex;align-items:center;gap:6px;font-size:.85rem;font-weight:600;
+  padding:7px 14px;border-radius:var(--r-pill);border:1.5px solid var(--line);
+  background:var(--paper);color:var(--ink-text);cursor:pointer;
+  transition:border-color .18s var(--ease),color .18s var(--ease),transform .18s var(--ease),background .18s var(--ease)}
+.btn:hover{border-color:var(--coral-ink);color:var(--coral-ink);transform:translateY(-1px)}
+.btn:active{transform:translateY(0) scale(.985)}
+.btn.ghost{border-color:transparent;color:var(--ink-muted)}
+.btn.ghost:hover{border-color:var(--line);color:var(--ink-text)}
+
+/* 主题开关 */
+.theme-tgl{display:inline-flex;align-items:center;justify-content:center;flex:none;
+  width:36px;height:36px;border-radius:var(--r-pill);border:1.5px solid currentColor;
+  background:transparent;color:currentColor;cursor:pointer;opacity:.72;
+  transition:opacity .18s var(--ease),transform .18s var(--ease),background .18s var(--ease)}
+.theme-tgl:hover{opacity:1;transform:translateY(-1px)}
+.theme-tgl:active{transform:scale(.94)}
+.theme-tgl svg{width:17px;height:17px}
+.theme-tgl .ti-sun{display:none}
+[data-theme="dark"] .theme-tgl .ti-moon{display:none}
+[data-theme="dark"] .theme-tgl .ti-sun{display:inline}
+
+/* 页脚 */
+.foot{border-top:1px solid var(--line);margin-top:clamp(3rem,6vw,5rem);
+  padding:clamp(2rem,3.5vw,2.75rem) var(--gutter);color:var(--ink-muted);font-size:.86rem}
+.foot .wrap-f{max-width:var(--maxw);margin-inline:auto;display:flex;flex-wrap:wrap;gap:8px 18px;
+  align-items:center;justify-content:space-between}
+.foot .brand-f{display:inline-flex;align-items:center;gap:9px;color:var(--ink-text);font-weight:600}
+.foot .brand-f .dot{width:7px;height:7px;border-radius:var(--r-pill);background:var(--coral-ink)}
+
+@keyframes fade{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+@keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition-duration:.01ms !important;animation:none !important}}
+
+.qbar{position:sticky;top:0;z-index:var(--z-head);display:flex;align-items:center;gap:14px;
+  padding:9px var(--gutter);background:color-mix(in oklab,var(--paper) 86%,transparent);
+  backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);
+  border-bottom:1px solid var(--line-2)}
+.qbar .back{font-size:.9rem;font-weight:600;color:var(--ink-muted);flex:none}
+.qbar .back:hover{color:var(--coral-ink)}
+.qbar-title{font-weight:700;letter-spacing:-.01em;font-size:1rem;color:var(--ink-text);flex:1;min-width:0;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.qbar .theme-tgl{width:32px;height:32px}.qbar .theme-tgl svg{width:15px;height:15px}
+
+.qhero{max-width:var(--maxw);margin:0 auto;padding:clamp(1.9rem,3.6vw,2.9rem) var(--gutter) 0}
+.qhero .kick{font-size:.86rem;font-weight:600;color:var(--coral-ink);letter-spacing:.01em}
+.qhero h1{margin-top:8px;font-size:var(--t-h1);font-weight:700;letter-spacing:-.028em;line-height:1.04;text-wrap:balance}
+.qhero .sub{margin-top:.6rem;color:var(--ink-muted);font-size:.95rem;font-variant-numeric:tabular-nums}
+
+main.qwrap{max-width:var(--maxw);margin:0 auto;padding:clamp(1.3rem,2.6vw,1.9rem) var(--gutter) clamp(4rem,7vw,6rem)}
+
+.booklist{display:grid;gap:3px;margin-top:1rem}
+.bookcard{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:16px 18px;
+  border-radius:var(--r-md);background:var(--paper-2);transition:background .2s var(--ease),transform .2s var(--ease)}
+.bookcard:hover{background:var(--paper-3);transform:translateX(2px)}
+.bookcard b{font-size:1.08rem;letter-spacing:-.01em}
+.bookcard .n{color:var(--ink-muted);font-size:.85rem;margin-top:3px;font-variant-numeric:tabular-nums}
+.bookcard .go{color:var(--coral-ink);font-weight:700;font-size:1.1rem;flex:none}
+
+.q{background:var(--paper-2);border:1px solid var(--line);border-radius:var(--r-lg);padding:17px 19px;margin:15px 0}
+.qhead{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px}
+.score{font-size:1.5rem;font-weight:700;color:var(--coral-ink);min-width:30px;font-variant-numeric:tabular-nums}
+.badge{font-size:.75rem;padding:2px 11px;border-radius:var(--r-pill);font-weight:700}
+.pt{font-size:.72rem;color:var(--ink-muted);border:1px solid var(--line);border-radius:var(--r-pill);padding:2px 9px}
+.vbadge{font-size:.72rem;color:var(--good);border:1px solid color-mix(in oklab,var(--good) 40%,transparent);
+  border-radius:var(--r-pill);padding:2px 9px;font-weight:600}
+.qtitle{font-size:1.08rem;font-weight:700;flex:1;min-width:200px;letter-spacing:-.01em}
+.hook{color:var(--ink-muted);font-size:.95rem;margin:2px 0 10px}
+.q audio{width:100%;height:36px;margin:4px 0 10px}
+.cards{display:flex;gap:8px;overflow-x:auto;padding-bottom:8px;scrollbar-width:thin}
+.cards img{height:230px;border-radius:10px;border:1px solid var(--line);flex:0 0 auto}
+.q details{margin-top:6px}
+.q summary{cursor:pointer;color:var(--ink-muted);font-size:.86rem;font-weight:600;list-style:none;padding:4px 0}
+.q summary::-webkit-details-marker{display:none}.q summary::marker{content:""}
+.q summary:hover{color:var(--coral-ink)}
+.script{white-space:pre-wrap;font-size:.96rem;line-height:1.9;color:var(--ink-text);margin-top:8px;
+  padding:14px 16px;background:var(--paper-3);border-radius:var(--r-md)}
+.meta{color:var(--ink-muted);font-size:.8rem;margin-top:8px;font-variant-numeric:tabular-nums}
+.meta b{color:var(--ink-text)}
+.tag{color:var(--ink-muted);font-size:.85rem}
+.note{max-width:var(--maxw);margin:0 auto 1rem;padding:13px 17px;border-radius:var(--r-md);font-size:.92rem;
+  color:var(--ink-text);background:color-mix(in oklab,var(--warn) 9%,var(--paper));
+  border:1px solid color-mix(in oklab,var(--warn) 35%,transparent)}
+.note b{color:color-mix(in oklab,var(--warn) 60%,var(--ink-text))}
+@media (max-width:640px){.qbar-title{display:none}}
+</style></head><body><header class="qbar"><a class="back" href="../index.html">← Quick 评审台</a><span class="qbar-title">論語</span><button class="theme-tgl" type="button" aria-label="切换深色 / 浅色主题" title="深色 / 浅色"><svg class="ti ti-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg class="ti ti-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.4M12 19.6V22M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M2 12h2.4M19.6 12H22M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7"/></svg></button></header><div class="qhero"><p class="kick">Quick 短视频候选</p><h1>論語</h1><p class="sub">2 条 · 映照1 洞见1 · 更新 2026-07-12 11:08</p></div><main class="qwrap"><div class="q"><div class="qhead"><span class="score">92</span><span class="badge" style="background:color-mix(in oklab,#c2456f 16%,transparent);color:#c2456f;border:1px solid color-mix(in oklab,#c2456f 34%,transparent)">映照</span><span class="pt">scene</span><span class="pt">公版</span><span class="qtitle">成年人的顶级自律：把控制欲收回来</span></div><div class="hook">🎬 为什么你越努力管别人，别人越反感？因为孔子早在两千年前就戳破了这个真相。</div><span class="tag">🎵 音频待生成</span><div class="cards"><span class=tag>图卡待生成</span></div><details><summary>口播稿全文</summary><div class="script">为什么你越努力管别人，别人越反感？
+
+因为两千多年前，孔子早就戳破了这个真相：痛苦往往不是来自外界，而是来自我们对外部环境的控制欲。
+
+在《论语·颜渊》里，颜渊问什么是仁。孔子的回答非常干脆：“克己复礼为仁。”
+
+注意，这里的“克己”，不是让你去克制别人，也不是让你去改变环境。孔子紧接着补了一句更狠的话：“为仁由己，而由人乎哉？”
+
+这句话太关键了。行仁德这件事，完全在于你自己，难道还取决于别人吗？
+
+很多现代人的焦虑，恰恰是因为把“由己”搞反了。我们总想着怎么让伴侣听话、让孩子上进、让老板认可。一旦对方不按我们的剧本走，我们就愤怒、焦虑、失控。这本质上是一种隐形的控制欲——我想通过改变外部，来获得内心的秩序感。
+
+但孔子给出的解药是收回目光。
+
+颜渊接着问具体怎么做。孔子说：“非礼勿视，非礼勿听，非礼勿言，非礼勿动。”
+
+这不是教条，这是一套心理止损机制。当外界的信息、声音、互动不符合你的预期（即“非礼”）时，你首先要做的，是切断自己对这些信息的反应。不看、不听、不说、不动。把那个试图向外抓取的控制手，硬生生收回来，放在自己身上。
+
+你看孔子的一生，他在陈绝粮，随从的人都病倒了，子路还生气地质问：“君子亦有穷乎？”
+
+这时候孔子说什么？他说：“君子固穷，小人穷斯滥矣。”
+
+君子在困顿中能坚守，小人在困顿时就会胡作非为。为什么？因为君子的价值坐标是“由己”的，不依赖外部环境的顺遂；而小人的坐标是“由人”的，环境一变，他就乱了。
+
+所以，最高级的自律，不是去管理别人，而是把控制欲收回来。
+
+当你不再执着于“他为什么这样对我”，而是问自己“此刻我能做什么”时，你就从受害者变成了掌控者。
+
+别去求风停，去修你的帆。</div></details><div class="meta">🧑‍⚖️ 判官 92 · </div><div class="meta">维度 — · 锚 [颜渊问仁，孔子答‘克己复礼为仁’, ‘为仁由己，而由人乎哉’, 核心论点：实践仁德完全在于自身]</div></div><div class="q"><div class="qhead"><span class="score">89</span><span class="badge" style="background:color-mix(in oklab,#2f79c9 16%,transparent);color:#2f79c9;border:1px solid color-mix(in oklab,#2f79c9 34%,transparent)">洞见</span><span class="pt">scene</span><span class="pt">公版</span><span class="qtitle">别做‘聪明’的庸人：学思辩证法</span></div><div class="hook">🎬 为什么你读了很多书却依然过不好这一生？因为你掉进了孔子的两个陷阱。</div><span class="tag">🎵 音频待生成</span><div class="cards"><span class=tag>图卡待生成</span></div><details><summary>口播稿全文</summary><div class="script">你以为读书多就能破局？其实你只是掉进了孔子早就看穿的“聪明陷阱”。
+
+很多人有个误区，觉得只要我输入够多，知识量够大，人生自然就有答案。但《论语》里有一句极其冷酷的判词，直接戳破了这种幻想：“学而不思则罔”。
+
+注意这个字，“罔”，通“惘”，是迷乱、是糊涂。
+
+什么意思？就是你读了一万本书，刷了一百个小时的干货视频，信息填满了大脑，但如果没有经过你个人的“深度处理”和“逻辑重构”，这些知识对你来说就是垃圾内存。它们只是堆在那里的数据，而不是你的智慧。这就是现代人的通病：信息过载，认知瘫痪。我们以为自己在思考，其实只是在搬运观点。
+
+那反过来呢？只思考不学习，行不行？孔子给了另一个词：“思而不学则殆”。
+
+“殆”，是危险、是疲怠。当你脱离了对经典、对事实、对前人经验的汲取，纯粹靠自己的小聪明去空想，你的思维就会陷入闭环，变得偏激且虚弱。就像子路，他勇猛过人，但孔子评价他“由也喭”，就是粗鲁、缺乏文饰和根基。没有“学”作为底座，“思”就会变成空中楼阁，甚至走向极端。
+
+所以，孔子的核心算法不是让你去“记”，而是建立一套严密的“输入-处理”机制。
+
+他在《为政》篇里说：“温故而知新，可以为师矣。”注意，是“温故”之后才能“知新”。这个“温”，就是反复的咀嚼、反思、关联。他把学习比作“如切如磋，如琢如磨”，这是一个物理上的打磨过程，而不是简单的下载过程。
+
+再看《卫灵公》里，子贡问孔子：“老师，您是不是天生就知道很多？”孔子说：“非也！予一以贯之。”
+
+什么叫“一以贯之”？就是用一条主线，把你学到的所有碎片串联起来。这条主线是什么？在《里仁》篇里，曾子解释得很清楚：“夫子之道，忠恕而已矣。”
+
+这就是孔子的“学习科学家”视角：
+第一，拒绝无效输入。他讲“敏而好学，不耻下问”，但也讲“巧言令色，鲜矣仁”。不是所有信息都值得学，要筛选。
+第二，强制深度处理。他讲“吾日三省吾身”，这就是在运行后台程序，清理缓存，检查逻辑漏洞。
+第三，输出验证。他讲“先行其言，而后从之”。知识不经过行动的去伪存真，就永远停留在“罔”和“殆”的中间地带，既不清醒，也不稳固。
+
+所以，别再做那个装满数据的硬盘了。去做一个有处理能力的CPU。
+
+在这个信息爆炸的时代，最稀缺的能力，不是获取信息的速度，而是让信息穿过你、留下痕迹的深度。
+
+读书不是为了记住多少字，而是为了在关键时刻，你能从混沌中提炼出那条“一以贯之”的线。
+
+这才是真正的聪明。</div></details><div class="meta">🧑‍⚖️ 判官 89 · </div><div class="meta">维度 — · 锚 [‘学而不思则罔，思而不学则殆’, 深度章节：学思之间：孔子可能是中国第一个&#x27;学习科学家&#x27;]</div></div></main><footer class="foot"><div class="wrap-f"><span class="brand-f"><span class="dot"></span>书语 · Fathom</span><span>Quick 短视频 · 内部评审 · noindex · 生成 2026-07-12 11:08</span></div></footer><script>(function(){function set(t){document.documentElement.dataset.theme=t;try{localStorage.setItem('fathom-theme',t);}catch(e){}}document.querySelectorAll('.theme-tgl').forEach(function(b){b.addEventListener('click',function(){var cur=document.documentElement.dataset.theme==='dark'?'dark':'light';set(cur==='dark'?'light':'dark');});});})();</script></body></html>
