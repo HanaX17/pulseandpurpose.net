@@ -1,88 +1,240 @@
-<!doctype html><html lang="zh"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex,nofollow">
-<title>老子 · 精讲·深读</title>
-<style>
-:root{--bg:#100f17;--panel:#191826;--panel2:#201e30;--ink:#ece9f5;--dim:#a49fc0;
---line:rgba(255,255,255,.10);--coral:#ff6b5e;--good:#4ecb8f;--warn:#f5c451;--bad:#ff6b5e;--radius:14px;
---font:'Bricolage Grotesque',ui-sans-serif,-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;}
+<!doctype html><html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#100f17"><title>老子 · 精讲·深读</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&display=swap"><style>
+:root{
+  /* Surfaces — 与主页同源 */
+  --ink:oklch(0.165 0.022 274); --ink-2:oklch(0.205 0.026 274);
+  --paper:oklch(0.987 0.002 250); --paper-2:oklch(0.966 0.004 255); --paper-3:oklch(0.945 0.006 258);
+  /* Brand */
+  --coral:oklch(0.705 0.182 35); --coral-ink:oklch(0.555 0.165 33);
+  --indigo:oklch(0.505 0.155 274); --indigo-lt:oklch(0.760 0.115 268);
+  /* Text */
+  --ink-text:oklch(0.235 0.020 274); --ink-muted:oklch(0.470 0.018 268);
+  --on-ink:oklch(0.965 0.004 250); --on-ink-mut:oklch(0.740 0.016 262);
+  /* States */
+  --good:oklch(0.56 0.12 155); --warn:oklch(0.58 0.14 62);
+  /* Lines */
+  --line:color-mix(in oklab, var(--ink) 12%, transparent);
+  --line-2:color-mix(in oklab, var(--ink) 7%, transparent);
+  --line-dark:color-mix(in oklab, white 14%, transparent);
+  /* Type */
+  --font:"Bricolage Grotesque",ui-sans-serif,system-ui,-apple-system,"PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif;
+  --font-quote:"Songti SC","STSong","Noto Serif SC","Source Han Serif SC",Georgia,"Times New Roman",serif;
+  --t-h1:clamp(1.85rem,1.4rem+1.7vw,2.6rem);
+  --t-h2:clamp(1.4rem,1.2rem+0.8vw,1.85rem);
+  --t-h3:clamp(1.12rem,1.03rem+0.4vw,1.3rem);
+  --read:1.145rem;
+  /* Space / shape */
+  --gutter:clamp(1.15rem,0.7rem+2vw,2.25rem); --maxw:1080px; --readw:44rem;
+  --r-sm:9px; --r-md:14px; --r-lg:20px; --r-pill:999px;
+  --ease:cubic-bezier(0.16,1,0.3,1);
+  --z-head:50;
+  color-scheme:light;
+}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);line-height:1.7;
--webkit-font-smoothing:antialiased}
-a{color:var(--coral);text-decoration:none}a:hover{text-decoration:underline}
-.wrap{max-width:960px;margin:0 auto;padding:32px 20px 80px}
-header.top{display:flex;flex-direction:column;gap:6px;margin-bottom:8px}
-.top h1{margin:0;font-size:26px;letter-spacing:-.02em}
-.top .sub{color:var(--dim);font-size:14px}
-.note{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--warn);
-border-radius:10px;padding:10px 14px;margin:16px 0;color:var(--dim);font-size:13px}
-.book{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
-padding:18px 20px;margin:16px 0}
-.book h2{margin:0 0 2px;font-size:19px}
-.book .oneliner{color:var(--dim);font-size:13px;margin:0 0 12px}
-.badges{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 10px}
-.badge{font-size:11px;padding:2px 9px;border-radius:999px;border:1px solid var(--line);color:var(--dim)}
-.badge.pub{color:var(--good);border-color:color-mix(in oklab,var(--good) 45%,transparent)}
-.badge.cr{color:var(--warn);border-color:color-mix(in oklab,var(--warn) 45%,transparent)}
-.badge.v-PUBLISH{color:var(--good)}.badge.v-HOLD{color:var(--warn)}
-.fmt{display:grid;grid-template-columns:110px 1fr auto;gap:10px 14px;align-items:center;
-padding:10px 0;border-top:1px solid var(--line)}
-.fmt .name{font-weight:600;font-size:14px}
-.fmt .name small{display:block;color:var(--dim);font-weight:400;font-size:11px}
-.fmt .state{font-size:12px;color:var(--dim)}
-.fmt .actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
-.btn{font-size:12px;padding:5px 12px;border-radius:8px;border:1px solid var(--line);
-background:var(--panel2);color:var(--ink)}
-.btn:hover{border-color:var(--coral);text-decoration:none}
-.audio{font-size:12px;color:var(--dim)}
-.audio audio{height:30px;vertical-align:middle}
-.voicebox{display:inline-flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end}
-.voicebox audio{height:30px;vertical-align:middle;max-width:210px}
-.vtoggle{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden}
-.vtoggle button{font:inherit;font-size:12px;padding:4px 11px;background:var(--panel2);color:var(--dim);
-border:none;cursor:pointer;line-height:1.4}
-.vtoggle button.on{background:var(--coral);color:#fff}
-.vtoggle button:not(.on):hover{color:var(--ink)}
-.missing{color:var(--dim);font-size:12px;opacity:.6}
-/* reading view */
-article{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:28px 30px}
-article h1{font-size:24px;margin:.2em 0 .6em}article h2{font-size:20px;margin:1.3em 0 .5em}
-article h3{font-size:17px;margin:1.1em 0 .4em}
-article blockquote{margin:1em 0;padding:6px 16px;border-left:3px solid var(--coral);color:var(--dim)}
-article code{background:var(--panel2);padding:1px 6px;border-radius:6px;font-size:.9em}
-article hr{border:none;border-top:1px solid var(--line);margin:1.6em 0}
-.back{display:inline-block;margin-bottom:16px;font-size:13px}
-.foot{margin-top:40px;color:var(--dim);font-size:12px;text-align:center}
-/* outline 章节锚下钻 */
-.drill{display:flex;flex-direction:column;gap:8px}
-.dl-point{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--panel2)}
-.dl-head{width:100%;text-align:left;font:inherit;color:var(--ink);background:none;border:none;cursor:pointer;
-padding:12px 14px;display:flex;align-items:center;gap:10px}
-.dl-head:hover{background:rgba(255,255,255,.03)}
-.dl-caret{color:var(--coral);transition:transform .18s;font-size:12px}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink-text);font-family:var(--font);
+  font-size:var(--read);line-height:1.75;font-optical-sizing:auto;
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden}
+a{color:var(--coral-ink);text-decoration:none}
+h1,h2,h3,p,dl,dd,dt,figure{margin:0}
+ul,ol{margin:0}
+::selection{background:color-mix(in oklab,var(--coral) 28%,transparent);color:var(--ink-text)}
+:focus-visible{outline:2.5px solid var(--coral-ink);outline-offset:3px;border-radius:5px}
+.wrap{width:100%;max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter)}
+
+/* ───── 品牌报头（暗色，回声主页 hero）───── */
+.masthead{position:relative;background:var(--ink);color:var(--on-ink);isolation:isolate;overflow:hidden}
+.mast-ekg{position:absolute;inset:0;width:100%;height:100%;z-index:-1;opacity:.28;pointer-events:none;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 18%,#000 82%,transparent);
+          mask-image:linear-gradient(90deg,transparent,#000 18%,#000 82%,transparent)}
+.mast-inner{padding-block:clamp(2.2rem,4vw,3.4rem) clamp(1.9rem,3.5vw,3rem)}
+.brand{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:.98rem;
+  letter-spacing:-.01em;color:var(--on-ink)}
+.brand .dot{width:8px;height:8px;border-radius:var(--r-pill);background:var(--coral);
+  box-shadow:0 0 0 4px color-mix(in oklab,var(--coral) 24%,transparent)}
+.brand .amp{opacity:.6;font-weight:500}
+.masthead h1{margin-top:clamp(1rem,2.2vw,1.5rem);font-size:var(--t-h1);font-weight:700;
+  letter-spacing:-.03em;line-height:1.02;text-wrap:balance;max-width:20ch}
+.mast-sub{margin-top:.7rem;color:var(--on-ink-mut);font-size:.95rem;max-width:56ch;text-wrap:pretty}
+.mast-link{display:inline-flex;align-items:center;gap:8px;margin-top:1.5rem;padding:9px 16px;
+  border-radius:var(--r-pill);border:1.5px solid var(--line-dark);color:var(--on-ink);
+  font-size:.9rem;font-weight:600;transition:border-color .2s var(--ease),transform .2s var(--ease)}
+.mast-link:hover{border-color:color-mix(in oklab,white 40%,transparent);transform:translateY(-1px)}
+.mast-link svg{width:15px;height:15px}
+
+/* ───── 私有评审提示 ───── */
+.note{background:color-mix(in oklab,var(--warn) 9%,var(--paper));border:1px solid color-mix(in oklab,var(--warn) 35%,transparent);
+  border-radius:var(--r-md);padding:13px 17px;margin:26px 0 0;color:var(--ink-text);font-size:.92rem}
+.note b{color:color-mix(in oklab,var(--warn) 60%,var(--ink-text))}
+
+/* ───── 书目：编辑式栏目（非千篇一律卡片格）───── */
+main.wrap{padding-block:clamp(2.2rem,4vw,3.6rem) clamp(3.5rem,7vw,6rem)}
+.book{padding-block:clamp(1.7rem,3vw,2.4rem);border-bottom:1px solid var(--line)}
+.book:first-of-type{border-top:1px solid var(--line)}
+.book-head{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:baseline;justify-content:space-between}
+.book-head h2{font-size:var(--t-h2);font-weight:700;letter-spacing:-.02em;line-height:1.1}
+.oneliner{margin-top:8px;color:var(--ink-muted);max-width:64ch;font-size:1rem;line-height:1.6;text-wrap:pretty}
+.pills{display:flex;gap:8px;flex-wrap:wrap;flex:none}
+.pill{font-size:.76rem;font-weight:600;letter-spacing:.01em;padding:3px 11px;border-radius:var(--r-pill);
+  border:1px solid var(--line);color:var(--ink-muted);white-space:nowrap}
+.pill.pub{color:var(--good);border-color:color-mix(in oklab,var(--good) 42%,transparent);
+  background:color-mix(in oklab,var(--good) 8%,transparent)}
+.pill.cr{color:var(--warn);border-color:color-mix(in oklab,var(--warn) 42%,transparent);
+  background:color-mix(in oklab,var(--warn) 8%,transparent)}
+.pill.v-PUBLISH{color:var(--good);border-color:color-mix(in oklab,var(--good) 42%,transparent)}
+.pill.v-HOLD{color:var(--warn);border-color:color-mix(in oklab,var(--warn) 42%,transparent)}
+
+.fmts{list-style:none;padding:0;margin-top:clamp(1rem,2vw,1.4rem);display:grid;gap:2px}
+.fmt{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px 18px;align-items:center;
+  padding:13px 15px;border-radius:var(--r-md);background:var(--paper-2);
+  transition:background .2s var(--ease)}
+.fmt:hover{background:var(--paper-3)}
+.fmt.dim{opacity:.55}
+.fmt-name{font-weight:600;font-size:1.01rem;letter-spacing:-.01em}
+.fmt-meta{display:block;margin-top:2px;font-size:.82rem;font-weight:400;color:var(--ink-muted);
+  font-variant-numeric:tabular-nums}
+.fmt-meta .ok{color:var(--good)}
+.fmt-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+
+/* ───── 按钮 / 播放器 ───── */
+.btn{display:inline-flex;align-items:center;gap:6px;font-size:.85rem;font-weight:600;
+  padding:7px 14px;border-radius:var(--r-pill);border:1.5px solid var(--line);
+  background:var(--paper);color:var(--ink-text);cursor:pointer;
+  transition:border-color .18s var(--ease),color .18s var(--ease),transform .18s var(--ease)}
+.btn:hover{border-color:var(--coral-ink);color:var(--coral-ink);transform:translateY(-1px)}
+.btn:active{transform:translateY(0) scale(.985)}
+.btn.ghost{border-color:transparent;color:var(--ink-muted)}
+.btn.ghost:hover{border-color:var(--line);color:var(--ink-text)}
+.voicebox{display:inline-flex;align-items:center;gap:9px;flex-wrap:wrap;justify-content:flex-end}
+.voicebox audio{height:34px;vertical-align:middle;max-width:216px}
+.audio{font-size:.82rem;color:var(--ink-muted)}
+.vtoggle{display:inline-flex;border:1px solid var(--line);border-radius:var(--r-pill);overflow:hidden}
+.vtoggle button{font:inherit;font-size:.8rem;font-weight:600;padding:5px 12px;background:transparent;
+  color:var(--ink-muted);border:none;cursor:pointer;line-height:1.4;transition:color .15s,background .15s}
+.vtoggle button.on{background:var(--coral-ink);color:#fff}
+.vtoggle button:not(.on):hover{color:var(--ink-text)}
+.missing{color:var(--ink-muted);opacity:.7}
+
+/* ───── 阅读页：吸顶头 + 格式切换 ───── */
+.rhead{position:sticky;top:0;z-index:var(--z-head);display:flex;align-items:center;gap:14px;
+  padding:11px var(--gutter);background:color-mix(in oklab,var(--paper) 88%,transparent);
+  backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);
+  border-bottom:1px solid var(--line-2)}
+.rback{font-size:.9rem;font-weight:600;color:var(--ink-muted);flex:none}
+.rback:hover{color:var(--coral-ink)}
+.rtitle{font-weight:700;letter-spacing:-.01em;font-size:1rem;color:var(--ink-text);
+  flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.rswitch{display:flex;gap:4px;flex:none;padding:3px;background:var(--paper-2);border-radius:var(--r-pill)}
+.rsw{font-size:.83rem;font-weight:600;padding:5px 13px;border-radius:var(--r-pill);color:var(--ink-muted);
+  transition:color .15s,background .15s}
+.rsw:hover{color:var(--ink-text)}
+.rsw.on{background:var(--paper);color:var(--coral-ink);box-shadow:0 1px 4px -1px color-mix(in oklab,var(--ink) 22%,transparent)}
+.rsw.off{color:color-mix(in oklab,var(--ink-muted) 55%,transparent);cursor:default}
+
+.reader{max-width:var(--readw);margin-inline:auto;
+  padding:clamp(2rem,4vw,3.4rem) var(--gutter) clamp(4rem,8vw,6.5rem)}
+.doc-kicker{font-size:.86rem;font-weight:600;color:var(--coral-ink);letter-spacing:.01em}
+.doc-title{margin-top:8px;font-size:var(--t-h1);font-weight:700;letter-spacing:-.025em;
+  line-height:1.06;text-wrap:balance}
+.doc-rule{height:1px;background:var(--line);margin:clamp(1.4rem,3vw,2rem) 0}
+
+article{font-size:var(--read);line-height:1.95}
+article h1{font-size:var(--t-h2);font-weight:700;letter-spacing:-.02em;line-height:1.15;margin:1.9em 0 .55em}
+article h2{font-size:var(--t-h3);font-weight:700;letter-spacing:-.015em;line-height:1.25;
+  margin:1.7em 0 .5em;padding-top:.2em}
+article h3{font-size:1.06rem;font-weight:700;margin:1.4em 0 .4em;color:var(--ink-text)}
+article p{margin:0 0 1.05em}
+article strong{font-weight:700;color:var(--ink-text)}
+article em{font-style:normal;font-weight:600;color:var(--coral-ink)}
+article ul,article ol{margin:0 0 1.1em;padding-left:1.35em}
+article li{margin-bottom:.4em}
+article li::marker{color:var(--coral-ink)}
+article a{border-bottom:1px solid color-mix(in oklab,var(--coral-ink) 40%,transparent)}
+article a:hover{border-bottom-color:var(--coral-ink)}
+article code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.9em;
+  background:var(--paper-2);border:1px solid var(--line-2);padding:1px 6px;border-radius:6px}
+article hr{border:none;border-top:1px solid var(--line);margin:2.2em 0}
+/* 引文：整块底纹 + 古文衬线（无侧边条）*/
+article blockquote{position:relative;margin:1.5em 0;padding:1.1em 1.3em 1.1em 1.5em;
+  background:var(--paper-2);border:1px solid var(--line-2);border-radius:var(--r-md);
+  font-family:var(--font-quote);font-size:1.12em;line-height:1.9;color:var(--ink-text)}
+article blockquote::before{content:"“";position:absolute;left:.34em;top:.06em;
+  font-family:var(--font-quote);font-size:2.1em;line-height:1;color:color-mix(in oklab,var(--coral) 55%,transparent)}
+article blockquote p{margin:0}
+
+/* ───── outline 章节锚下钻 ───── */
+.lead-note{color:var(--ink-muted);font-size:.98rem;margin-bottom:1.3em}
+.drill{display:flex;flex-direction:column;gap:9px}
+.dl-point{border:1px solid var(--line);border-radius:var(--r-md);overflow:hidden;background:var(--paper)}
+.dl-point.open{background:var(--paper-2);border-color:color-mix(in oklab,var(--coral) 30%,var(--line))}
+.dl-head{width:100%;text-align:left;font:inherit;color:var(--ink-text);background:none;border:none;
+  cursor:pointer;padding:14px 16px;display:flex;align-items:center;gap:11px}
+.dl-head:hover{background:var(--paper-2)}
+.dl-point.open .dl-head:hover{background:transparent}
+.dl-caret{color:var(--coral-ink);transition:transform .2s var(--ease);font-size:.72rem;flex:none}
 .dl-point.open .dl-caret{transform:rotate(90deg)}
-.dl-text{flex:1;font-weight:600;font-size:15px}
-.dl-chap{font-size:11px;color:var(--dim);border:1px solid var(--line);border-radius:999px;padding:1px 8px;white-space:nowrap}
-.dl-panel{display:none;padding:2px 16px 16px;border-top:1px solid var(--line)}
-.dl-point.open .dl-panel{display:block}
-.dl-tag{display:inline-block;font-size:11px;color:var(--coral);margin:12px 0 6px;letter-spacing:.03em}
-.dl-q{font-size:16px;line-height:1.9;padding:2px 0}
-.dl-qp{color:var(--dim);font-size:13px}
-.dl-deepbody{color:var(--ink);font-size:14px;line-height:1.8}
-.dl-deepbody p{margin:.5em 0}.dl-deepbody h2,.dl-deepbody h3{font-size:15px;margin:.6em 0 .3em}
-.dl-none{color:var(--dim);font-size:12px;padding:10px 0}
-/* 溯源面板 */
-details.trace{margin-top:20px;border:1px solid var(--line);border-radius:12px;background:var(--panel);padding:0 16px}
-details.trace>summary{cursor:pointer;padding:12px 0;font-size:14px;color:var(--dim);list-style:none}
-details.trace>summary::-webkit-details-marker{display:none}
-details.trace[open]>summary{border-bottom:1px solid var(--line);margin-bottom:10px}
-.tr-tier{font-size:12px;color:var(--coral);margin:12px 0 6px;letter-spacing:.02em}
-.tr-row{display:flex;gap:8px;align-items:baseline;padding:4px 0;font-size:13px;flex-wrap:wrap}
-.tr-q{color:var(--ink)}.tr-chap{color:var(--dim);white-space:nowrap}
-.tr-deep{color:var(--coral);font-size:12px}
-.tr-ext{color:var(--dim);font-size:12.5px;line-height:1.9}
-.tr-sum b{color:var(--ink)}
-</style></head><body><div class="wrap"><a class="back" href="../index.html">← 返回书语评审台</a><article><div class="badges"><span class="badge">精讲·深读</span><span class="badge">老子</span></div><p>如果今天有人跟你说——越想抓住什么，就越该松手；越想赢，就越该不争；越想管好一个团队，就越该少管——你大概会觉得，这又是一碗兑了水的职场鸡汤。但如果这句话写于两千五百年前，只有五千个字，却被翻译成世界上语种最多的经典之一，甚至成了无数顶尖思想家、科学家床头的案头书呢？</p>
+.dl-text{flex:1;font-weight:600;font-size:1.02rem;letter-spacing:-.01em}
+.dl-chap{font-size:.74rem;color:var(--ink-muted);border:1px solid var(--line);border-radius:var(--r-pill);
+  padding:2px 9px;white-space:nowrap;flex:none}
+.dl-panel{display:none;padding:2px 18px 18px}
+.dl-point.open .dl-panel{display:block;animation:fade .35s var(--ease)}
+.dl-tag{display:inline-block;font-size:.78rem;font-weight:600;color:var(--coral-ink);
+  margin:14px 0 7px;letter-spacing:.02em}
+.dl-q{font-family:var(--font-quote);font-size:1.1rem;line-height:1.9;padding:2px 0}
+.dl-qp{color:var(--ink-muted);font-size:.92rem;margin-top:3px}
+.dl-deepbody{color:var(--ink-text);font-size:.98rem;line-height:1.85}
+.dl-deepbody p{margin:.5em 0}.dl-deepbody h2,.dl-deepbody h3{font-size:1rem;font-weight:700;margin:.7em 0 .3em}
+.dl-none{color:var(--ink-muted);font-size:.9rem;padding:8px 0}
+
+/* ───── 溯源面板（summary 必须是 details 直接子元素）───── */
+details.trace{max-width:var(--readw);margin:0 auto clamp(1rem,2vw,1.5rem);padding:0 var(--gutter)}
+details.trace summary{cursor:pointer;list-style:none;padding:15px 20px;font-size:.94rem;color:var(--ink-text);
+  background:var(--paper-2);border:1px solid var(--line);border-radius:var(--r-lg);
+  transition:background .18s var(--ease),border-color .18s var(--ease)}
+details.trace summary::-webkit-details-marker{display:none}
+details.trace summary::marker{content:""}
+details.trace summary:hover{background:var(--paper-3);border-color:color-mix(in oklab,var(--coral) 30%,var(--line))}
+details.trace[open] summary{border-radius:var(--r-lg) var(--r-lg) 0 0;border-bottom:none}
+.trace-box{border:1px solid var(--line);border-top:none;border-radius:0 0 var(--r-lg) var(--r-lg);
+  background:var(--paper-2);padding:4px 20px 16px}
+.tr-sum b{color:var(--coral-ink)}
+.tr-tier{font-size:.82rem;font-weight:600;color:var(--coral-ink);margin:14px 0 6px;letter-spacing:.02em}
+.tr-row{display:flex;gap:9px;align-items:baseline;padding:5px 0;font-size:.92rem;flex-wrap:wrap;
+  border-top:1px solid var(--line-2)}
+.tr-row:first-of-type{border-top:none}
+.tr-q{color:var(--ink-text);font-family:var(--font-quote)}
+.tr-chap{color:var(--ink-muted);white-space:nowrap;font-size:.85rem}
+.tr-deep{color:var(--coral-ink);font-size:.85rem}
+.tr-ext{color:var(--ink-muted);font-size:.9rem;line-height:1.95;padding-bottom:14px}
+
+/* ───── 页脚 ───── */
+.foot{border-top:1px solid var(--line);margin-top:clamp(3rem,6vw,5rem);
+  padding:clamp(2rem,3.5vw,2.75rem) var(--gutter);color:var(--ink-muted);font-size:.86rem}
+.foot .wrap-f{max-width:var(--maxw);margin-inline:auto;display:flex;flex-wrap:wrap;gap:8px 18px;
+  align-items:center;justify-content:space-between}
+.foot .brand-f{display:inline-flex;align-items:center;gap:9px;color:var(--ink-text);font-weight:600}
+.foot .brand-f .dot{width:7px;height:7px;border-radius:var(--r-pill);background:var(--coral-ink)}
+.reader ~ .foot,article ~ .foot{text-align:center}
+
+@keyframes fade{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+@keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+
+@media (prefers-reduced-motion:no-preference){
+  .book{animation:rise .55s var(--ease) both}
+  .book:nth-child(2){animation-delay:.04s}.book:nth-child(3){animation-delay:.08s}
+  .book:nth-child(4){animation-delay:.12s}.book:nth-child(5){animation-delay:.16s}
+  .book:nth-child(6){animation-delay:.2s}.book:nth-child(n+7){animation-delay:.24s}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition-duration:.01ms !important;animation:none !important}}
+
+@media (max-width:640px){
+  .book-head{flex-direction:column;gap:10px}
+  .fmt{grid-template-columns:1fr;gap:10px}
+  .fmt-actions{justify-content:flex-start}
+  .rtitle{display:none}
+  .rswitch{margin-left:auto}
+  details.trace,.foot .wrap-f{}
+}
+</style></head><body><header class="rhead"><a class="rback" href="../index.html">← 评审台</a><span class="rtitle">老子</span><nav class="rswitch" aria-label="格式切换"><a class="rsw" href="outline.html">脉络</a><a class="rsw" href="quick.html">速览</a><span class="rsw on">精讲</span></nav></header><div class="reader"><p class="doc-kicker">精讲·深读</p><h1 class="doc-title">老子</h1><div class="doc-rule"></div><article><p>如果今天有人跟你说——越想抓住什么，就越该松手；越想赢，就越该不争；越想管好一个团队，就越该少管——你大概会觉得，这又是一碗兑了水的职场鸡汤。但如果这句话写于两千五百年前，只有五千个字，却被翻译成世界上语种最多的经典之一，甚至成了无数顶尖思想家、科学家床头的案头书呢？</p>
 <p>它叫《老子》，也有人叫它《道德经》。薄薄一本，可能一个下午就能翻完。但你翻完以后，大概率会有一种奇怪的感觉：每一句你都认识，每一句你都觉得有道理，可合上书，你又说不清它到底在讲什么。</p>
 <p>这不奇怪。因为老子开篇第一句话就告诉你了——他接下来要说的东西，是说不清楚的。但他还是说了，而且一说就说了五千字，说了两千五百年，一直说到今天。</p>
 <p>今天这期，我们就试着泡上一壶茶，沿着老子的思路走一遍：从“道到底是什么”这个最玄的问题开始，一路往下走，走到“道怎么用”——怎么治一个国、怎么跟世界相处、怎么面对自己的欲望，最后走到他给人类画的那张终极蓝图。你会发现，这些听起来像废话的话，其实每一句都锋利得很。</p>
@@ -172,4 +324,4 @@ details.trace[open]>summary{border-bottom:1px solid var(--line);margin-bottom:10
 <p>两千五百年过去了，时间其实已经给出了答案。那些曾经坚不可摧的庞大帝国、不可一世的强权机器、试图用“有为”去强行扭转自然规律的宏大工程，大多已经成了历史的尘埃。而这五千字柔软的竹简，却像水一样，无声无息地渗入了人类文明的底层。它没有去攻克什么，但它也没有被任何东西真正击败。</p>
 <p>回头来看，老子用五千字做了一件事——从宇宙的本源，一路讲到人间的活法。这条线拉得很长，但核心赌注只有一个：在一个所有人都在争、在用力、在扩张的世界里，那个不争、守柔、知止的人，反而会走到最后。</p>
 <p>这个赌注，你信不信，其实不重要。重要的是他提供了一种完全不同的看世界的坐标系——不是教你躺平，而是告诉你，有时候松手比抓紧更需要力量，后退比冲锋更需要判断。当你下次在生活的重压下感到窒息，或者在欲望的拉扯中找不到方向时，不妨翻开这本小册子。它不会替你解决具体的麻烦，但它或许能让你在刚硬的世界里，找到一种柔软而坚韧的活法。</p>
-<p>《老子》只有五千字。它可能是你这辈子能读完的最短的经典，也可能是你需要一辈子去读的经典。如果你读完以后觉得它什么都没说，那很正常——因为它开篇就告诉你了：真正的道理，说不出来。但如果你读完以后，在某个瞬间突然觉得，世界好像不是你以为的那个样子了——那大概就是老子在两千五百年前，等着你的那个时刻。</p></article><details class="trace"><summary class="tr-sum">🔎 溯源：<b>40</b> 处逐字对到原文、<b>1</b> 处近引大致定位、<b>59</b> 处讲者延伸（无原文对应）— 点开看逐条</summary><div class="tr-tier">① 逐字原文（可回溯确切章节）</div><div class="tr-row"><span class="tr-q">「道可道，非常道」</span><span class="tr-chap">第一章</span></div><div class="tr-row"><span class="tr-q">「道可道，非常道。名可名，非常名。」</span><span class="tr-chap">第一章</span></div><div class="tr-row"><span class="tr-q">「無名天地之始，有名萬物之母。」</span><span class="tr-chap">第一章</span></div><div class="tr-row"><span class="tr-q">「反者道之动」</span><span class="tr-chap">第四十章</span></div><div class="tr-row"><span class="tr-q">「天下皆知美之為美，斯惡已。皆知善之為善，斯不善已。」</span><span class="tr-chap">第二章</span></div><div class="tr-row"><span class="tr-q">「有無相生，難易相成，長短相較，高下相傾，音聲相和，前後相隨。」</span><span class="tr-chap">第二章</span></div><div class="tr-row"><span class="tr-q">「反者道之動」</span><span class="tr-chap">第四十章</span></div><div class="tr-row"><span class="tr-q">「萬物並作，吾以觀復。夫物芸芸，各復歸其根。」</span><span class="tr-chap">第十六章</span></div><div class="tr-row"><span class="tr-q">「万物并作」</span><span class="tr-chap">第十六章</span></div><div class="tr-row"><span class="tr-q">「有无相生」</span><span class="tr-chap">第二章</span></div><div class="tr-row"><span class="tr-q">「為學日益，為道日損。損之又損，以至於無為。無為而無不為。」</span><span class="tr-chap">第四十八章</span></div><div class="tr-row"><span class="tr-q">「为无为，则无不治。」</span><span class="tr-chap">第三章</span></div><div class="tr-row"><span class="tr-q">「虚其心，实其腹。」</span><span class="tr-chap">第三章</span></div><div class="tr-row"><span class="tr-q">「我無為，而民自化；我好靜，而民自正；我無事，而民自富；我無欲，而民自樸。」</span><span class="tr-chap">第五十七章</span></div><div class="tr-row"><span class="tr-q">「治大國，若烹小鮮。」</span><span class="tr-chap">第六十章</span></div><div class="tr-row"><span class="tr-q">「无为而无不为」</span><span class="tr-chap">第三十七章</span></div><div class="tr-row"><span class="tr-q">「人之生也柔弱，其死也坚强。万物草木之生也柔脆，其死也枯槁」</span><span class="tr-chap">第七十六章</span></div><div class="tr-row"><span class="tr-q">「堅強者死之徒，柔弱者生之徒」</span><span class="tr-chap">第七十六章</span></div><div class="tr-row"><span class="tr-q">「上善若水。水善利萬物而不爭，處眾人之所惡，故幾於道」</span><span class="tr-chap">第八章</span></div><div class="tr-row"><span class="tr-q">「天下莫柔弱於水，而攻堅強者莫之能勝」</span><span class="tr-chap">第七十八章</span></div><div class="tr-row"><span class="tr-q">「弱之勝強，柔之勝剛，天下莫不知，莫能行」</span><span class="tr-chap">第七十八章</span></div><div class="tr-row"><span class="tr-q">「弱者道之用」</span><span class="tr-chap">第四十章</span></div><div class="tr-row"><span class="tr-q">「处众人之所恶」</span><span class="tr-chap">第八章</span></div><div class="tr-row"><span class="tr-q">「柔弱胜刚强」</span><span class="tr-chap">第三十六章</span></div><div class="tr-row"><span class="tr-q">「是故甚愛必大費，多藏必厚亡，知足不辱，知止不殆，可以長久。」</span><span class="tr-chap">第四十四章</span></div><div class="tr-row"><span class="tr-q">「知足不辱，知止不殆」</span><span class="tr-chap">第四十四章</span></div><div class="tr-row"><span class="tr-q">「禍莫大於不知足；咎莫大於欲得。」</span><span class="tr-chap">第四十六章</span></div><div class="tr-row"><span class="tr-q">「不知足」</span><span class="tr-chap">第四十六章</span></div><div class="tr-row"><span class="tr-q">「知止不殆」</span><span class="tr-chap">第四十四章</span></div><div class="tr-row"><span class="tr-q">「多藏必厚亡」</span><span class="tr-chap">第四十四章</span></div><div class="tr-row"><span class="tr-q">「小国寡民」</span><span class="tr-chap">第八十章</span></div><div class="tr-row"><span class="tr-q">「小國寡民。使有什伯之器而不用，使民重死而不遠徙。雖有舟輿，無所乘之，雖有甲兵，無所陳之。」</span><span class="tr-chap">第八十章</span></div><div class="tr-row"><span class="tr-q">「甘其食，美其服，安其居，乐其俗」</span><span class="tr-chap">第八十章</span></div><div class="tr-row"><span class="tr-q">「什伯之器」</span><span class="tr-chap">第八十章</span></div><div class="tr-row"><span class="tr-q">「甘其食，美其服」</span><span class="tr-chap">第八十章</span></div><div class="tr-row"><span class="tr-q">「信言不美，美言不信。善者不辩，辩者不善」</span><span class="tr-chap">第八十一章</span></div><div class="tr-row"><span class="tr-q">「鑿戶牖以為室，當其無，有室之用」</span><span class="tr-chap">第十一章</span></div><div class="tr-row"><span class="tr-q">「天網恢恢，疏而不失。」</span><span class="tr-chap">第七十三章</span></div><div class="tr-row"><span class="tr-q">「知足不辱」</span><span class="tr-chap">第四十四章</span></div><div class="tr-row"><span class="tr-q">「天之道，不爭而善勝」</span><span class="tr-chap">第七十三章</span></div><div class="tr-tier">② 近引 / 概括（定位到大致章节）</div><div class="tr-row"><span class="tr-q">「天下多忌諱，而民彌貧……法令滋彰，盜賊多有。」</span><span class="tr-chap">≈ 第五十七章</span></div><div class="tr-tier">③ 讲者延伸 / 自造概念（无原文对应，属正常）</div><div class="tr-ext">道到底是什么、道怎么用、拆了自己的台、免责声明、观察者效应、叠加态、观测与命名即是一种限制、凡是能够说的事情，都能够、勉强言说、因为社会上缺美德，所以才、对立概念的结构性共生、不是什么、物极必反、失败是成功之母、线性思维、多就是好、快就是赢、烹小鲜、不妄为、无不为、瞎折腾、我必须做点什么来证明我很、礼乐教化、直升机父母</div></details><div class="foot">生成 2026-07-11 23:10</div></div></body></html>
+<p>《老子》只有五千字。它可能是你这辈子能读完的最短的经典，也可能是你需要一辈子去读的经典。如果你读完以后觉得它什么都没说，那很正常——因为它开篇就告诉你了：真正的道理，说不出来。但如果你读完以后，在某个瞬间突然觉得，世界好像不是你以为的那个样子了——那大概就是老子在两千五百年前，等着你的那个时刻。</p></article></div><details class="trace"><summary class="tr-sum">🔎 溯源：<b>40</b> 处逐字对到原文、<b>1</b> 处近引大致定位、<b>59</b> 处讲者延伸（无原文对应）· 点开看逐条</summary><div class="trace-box"><div class="tr-tier">① 逐字原文（可回溯确切章节）</div><div class="tr-row"><span class="tr-q">「道可道，非常道」</span><span class="tr-chap">第一章</span></div><div class="tr-row"><span class="tr-q">「道可道，非常道。名可名，非常名。」</span><span class="tr-chap">第一章</span></div><div class="tr-row"><span class="tr-q">「無名天地之始，有名萬物之母。」</span><span class="tr-chap">第一章</span></div><div class="tr-row"><span class="tr-q">「反者道之动」</span><span class="tr-chap">第四十章</span></div><div class="tr-row"><span class="tr-q">「天下皆知美之為美，斯惡已。皆知善之為善，斯不善已。」</span><span class="tr-chap">第二章</span></div><div class="tr-row"><span class="tr-q">「有無相生，難易相成，長短相較，高下相傾，音聲相和，前後相隨。」</span><span class="tr-chap">第二章</span></div><div class="tr-row"><span class="tr-q">「反者道之動」</span><span class="tr-chap">第四十章</span></div><div class="tr-row"><span class="tr-q">「萬物並作，吾以觀復。夫物芸芸，各復歸其根。」</span><span class="tr-chap">第十六章</span></div><div class="tr-row"><span class="tr-q">「万物并作」</span><span class="tr-chap">第十六章</span></div><div class="tr-row"><span class="tr-q">「有无相生」</span><span class="tr-chap">第二章</span></div><div class="tr-row"><span class="tr-q">「為學日益，為道日損。損之又損，以至於無為。無為而無不為。」</span><span class="tr-chap">第四十八章</span></div><div class="tr-row"><span class="tr-q">「为无为，则无不治。」</span><span class="tr-chap">第三章</span></div><div class="tr-row"><span class="tr-q">「虚其心，实其腹。」</span><span class="tr-chap">第三章</span></div><div class="tr-row"><span class="tr-q">「我無為，而民自化；我好靜，而民自正；我無事，而民自富；我無欲，而民自樸。」</span><span class="tr-chap">第五十七章</span></div><div class="tr-row"><span class="tr-q">「治大國，若烹小鮮。」</span><span class="tr-chap">第六十章</span></div><div class="tr-row"><span class="tr-q">「无为而无不为」</span><span class="tr-chap">第三十七章</span></div><div class="tr-row"><span class="tr-q">「人之生也柔弱，其死也坚强。万物草木之生也柔脆，其死也枯槁」</span><span class="tr-chap">第七十六章</span></div><div class="tr-row"><span class="tr-q">「堅強者死之徒，柔弱者生之徒」</span><span class="tr-chap">第七十六章</span></div><div class="tr-row"><span class="tr-q">「上善若水。水善利萬物而不爭，處眾人之所惡，故幾於道」</span><span class="tr-chap">第八章</span></div><div class="tr-row"><span class="tr-q">「天下莫柔弱於水，而攻堅強者莫之能勝」</span><span class="tr-chap">第七十八章</span></div><div class="tr-row"><span class="tr-q">「弱之勝強，柔之勝剛，天下莫不知，莫能行」</span><span class="tr-chap">第七十八章</span></div><div class="tr-row"><span class="tr-q">「弱者道之用」</span><span class="tr-chap">第四十章</span></div><div class="tr-row"><span class="tr-q">「处众人之所恶」</span><span class="tr-chap">第八章</span></div><div class="tr-row"><span class="tr-q">「柔弱胜刚强」</span><span class="tr-chap">第三十六章</span></div><div class="tr-row"><span class="tr-q">「是故甚愛必大費，多藏必厚亡，知足不辱，知止不殆，可以長久。」</span><span class="tr-chap">第四十四章</span></div><div class="tr-row"><span class="tr-q">「知足不辱，知止不殆」</span><span class="tr-chap">第四十四章</span></div><div class="tr-row"><span class="tr-q">「禍莫大於不知足；咎莫大於欲得。」</span><span class="tr-chap">第四十六章</span></div><div class="tr-row"><span class="tr-q">「不知足」</span><span class="tr-chap">第四十六章</span></div><div class="tr-row"><span class="tr-q">「知止不殆」</span><span class="tr-chap">第四十四章</span></div><div class="tr-row"><span class="tr-q">「多藏必厚亡」</span><span class="tr-chap">第四十四章</span></div><div class="tr-row"><span class="tr-q">「小国寡民」</span><span class="tr-chap">第八十章</span></div><div class="tr-row"><span class="tr-q">「小國寡民。使有什伯之器而不用，使民重死而不遠徙。雖有舟輿，無所乘之，雖有甲兵，無所陳之。」</span><span class="tr-chap">第八十章</span></div><div class="tr-row"><span class="tr-q">「甘其食，美其服，安其居，乐其俗」</span><span class="tr-chap">第八十章</span></div><div class="tr-row"><span class="tr-q">「什伯之器」</span><span class="tr-chap">第八十章</span></div><div class="tr-row"><span class="tr-q">「甘其食，美其服」</span><span class="tr-chap">第八十章</span></div><div class="tr-row"><span class="tr-q">「信言不美，美言不信。善者不辩，辩者不善」</span><span class="tr-chap">第八十一章</span></div><div class="tr-row"><span class="tr-q">「鑿戶牖以為室，當其無，有室之用」</span><span class="tr-chap">第十一章</span></div><div class="tr-row"><span class="tr-q">「天網恢恢，疏而不失。」</span><span class="tr-chap">第七十三章</span></div><div class="tr-row"><span class="tr-q">「知足不辱」</span><span class="tr-chap">第四十四章</span></div><div class="tr-row"><span class="tr-q">「天之道，不爭而善勝」</span><span class="tr-chap">第七十三章</span></div><div class="tr-tier">② 近引 / 概括（定位到大致章节）</div><div class="tr-row"><span class="tr-q">「天下多忌諱，而民彌貧……法令滋彰，盜賊多有。」</span><span class="tr-chap">≈ 第五十七章</span></div><div class="tr-tier">③ 讲者延伸 / 自造概念（无原文对应，属正常）</div><div class="tr-ext">道到底是什么、道怎么用、拆了自己的台、免责声明、观察者效应、叠加态、观测与命名即是一种限制、凡是能够说的事情，都能够、勉强言说、因为社会上缺美德，所以才、对立概念的结构性共生、不是什么、物极必反、失败是成功之母、线性思维、多就是好、快就是赢、烹小鲜、不妄为、无不为、瞎折腾、我必须做点什么来证明我很、礼乐教化、直升机父母</div></div></details><footer class="foot"><div class="wrap-f"><span class="brand-f"><span class="dot"></span>书语 · Fathom 评审台</span><span>内部评审子站 · noindex · 生成 2026-07-12 10:34</span></div></footer></body></html>

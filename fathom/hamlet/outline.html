@@ -1,94 +1,246 @@
-<!doctype html><html lang="zh"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex,nofollow">
-<title>Hamlet · 极简·脉络</title>
-<style>
-:root{--bg:#100f17;--panel:#191826;--panel2:#201e30;--ink:#ece9f5;--dim:#a49fc0;
---line:rgba(255,255,255,.10);--coral:#ff6b5e;--good:#4ecb8f;--warn:#f5c451;--bad:#ff6b5e;--radius:14px;
---font:'Bricolage Grotesque',ui-sans-serif,-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;}
+<!doctype html><html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#100f17"><title>Hamlet · 极简·脉络</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&display=swap"><style>
+:root{
+  /* Surfaces — 与主页同源 */
+  --ink:oklch(0.165 0.022 274); --ink-2:oklch(0.205 0.026 274);
+  --paper:oklch(0.987 0.002 250); --paper-2:oklch(0.966 0.004 255); --paper-3:oklch(0.945 0.006 258);
+  /* Brand */
+  --coral:oklch(0.705 0.182 35); --coral-ink:oklch(0.555 0.165 33);
+  --indigo:oklch(0.505 0.155 274); --indigo-lt:oklch(0.760 0.115 268);
+  /* Text */
+  --ink-text:oklch(0.235 0.020 274); --ink-muted:oklch(0.470 0.018 268);
+  --on-ink:oklch(0.965 0.004 250); --on-ink-mut:oklch(0.740 0.016 262);
+  /* States */
+  --good:oklch(0.56 0.12 155); --warn:oklch(0.58 0.14 62);
+  /* Lines */
+  --line:color-mix(in oklab, var(--ink) 12%, transparent);
+  --line-2:color-mix(in oklab, var(--ink) 7%, transparent);
+  --line-dark:color-mix(in oklab, white 14%, transparent);
+  /* Type */
+  --font:"Bricolage Grotesque",ui-sans-serif,system-ui,-apple-system,"PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif;
+  --font-quote:"Songti SC","STSong","Noto Serif SC","Source Han Serif SC",Georgia,"Times New Roman",serif;
+  --t-h1:clamp(1.85rem,1.4rem+1.7vw,2.6rem);
+  --t-h2:clamp(1.4rem,1.2rem+0.8vw,1.85rem);
+  --t-h3:clamp(1.12rem,1.03rem+0.4vw,1.3rem);
+  --read:1.145rem;
+  /* Space / shape */
+  --gutter:clamp(1.15rem,0.7rem+2vw,2.25rem); --maxw:1080px; --readw:44rem;
+  --r-sm:9px; --r-md:14px; --r-lg:20px; --r-pill:999px;
+  --ease:cubic-bezier(0.16,1,0.3,1);
+  --z-head:50;
+  color-scheme:light;
+}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);line-height:1.7;
--webkit-font-smoothing:antialiased}
-a{color:var(--coral);text-decoration:none}a:hover{text-decoration:underline}
-.wrap{max-width:960px;margin:0 auto;padding:32px 20px 80px}
-header.top{display:flex;flex-direction:column;gap:6px;margin-bottom:8px}
-.top h1{margin:0;font-size:26px;letter-spacing:-.02em}
-.top .sub{color:var(--dim);font-size:14px}
-.note{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--warn);
-border-radius:10px;padding:10px 14px;margin:16px 0;color:var(--dim);font-size:13px}
-.book{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
-padding:18px 20px;margin:16px 0}
-.book h2{margin:0 0 2px;font-size:19px}
-.book .oneliner{color:var(--dim);font-size:13px;margin:0 0 12px}
-.badges{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 10px}
-.badge{font-size:11px;padding:2px 9px;border-radius:999px;border:1px solid var(--line);color:var(--dim)}
-.badge.pub{color:var(--good);border-color:color-mix(in oklab,var(--good) 45%,transparent)}
-.badge.cr{color:var(--warn);border-color:color-mix(in oklab,var(--warn) 45%,transparent)}
-.badge.v-PUBLISH{color:var(--good)}.badge.v-HOLD{color:var(--warn)}
-.fmt{display:grid;grid-template-columns:110px 1fr auto;gap:10px 14px;align-items:center;
-padding:10px 0;border-top:1px solid var(--line)}
-.fmt .name{font-weight:600;font-size:14px}
-.fmt .name small{display:block;color:var(--dim);font-weight:400;font-size:11px}
-.fmt .state{font-size:12px;color:var(--dim)}
-.fmt .actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
-.btn{font-size:12px;padding:5px 12px;border-radius:8px;border:1px solid var(--line);
-background:var(--panel2);color:var(--ink)}
-.btn:hover{border-color:var(--coral);text-decoration:none}
-.audio{font-size:12px;color:var(--dim)}
-.audio audio{height:30px;vertical-align:middle}
-.voicebox{display:inline-flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end}
-.voicebox audio{height:30px;vertical-align:middle;max-width:210px}
-.vtoggle{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden}
-.vtoggle button{font:inherit;font-size:12px;padding:4px 11px;background:var(--panel2);color:var(--dim);
-border:none;cursor:pointer;line-height:1.4}
-.vtoggle button.on{background:var(--coral);color:#fff}
-.vtoggle button:not(.on):hover{color:var(--ink)}
-.missing{color:var(--dim);font-size:12px;opacity:.6}
-/* reading view */
-article{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:28px 30px}
-article h1{font-size:24px;margin:.2em 0 .6em}article h2{font-size:20px;margin:1.3em 0 .5em}
-article h3{font-size:17px;margin:1.1em 0 .4em}
-article blockquote{margin:1em 0;padding:6px 16px;border-left:3px solid var(--coral);color:var(--dim)}
-article code{background:var(--panel2);padding:1px 6px;border-radius:6px;font-size:.9em}
-article hr{border:none;border-top:1px solid var(--line);margin:1.6em 0}
-.back{display:inline-block;margin-bottom:16px;font-size:13px}
-.foot{margin-top:40px;color:var(--dim);font-size:12px;text-align:center}
-/* outline 章节锚下钻 */
-.drill{display:flex;flex-direction:column;gap:8px}
-.dl-point{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--panel2)}
-.dl-head{width:100%;text-align:left;font:inherit;color:var(--ink);background:none;border:none;cursor:pointer;
-padding:12px 14px;display:flex;align-items:center;gap:10px}
-.dl-head:hover{background:rgba(255,255,255,.03)}
-.dl-caret{color:var(--coral);transition:transform .18s;font-size:12px}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink-text);font-family:var(--font);
+  font-size:var(--read);line-height:1.75;font-optical-sizing:auto;
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden}
+a{color:var(--coral-ink);text-decoration:none}
+h1,h2,h3,p,dl,dd,dt,figure{margin:0}
+ul,ol{margin:0}
+::selection{background:color-mix(in oklab,var(--coral) 28%,transparent);color:var(--ink-text)}
+:focus-visible{outline:2.5px solid var(--coral-ink);outline-offset:3px;border-radius:5px}
+.wrap{width:100%;max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter)}
+
+/* ───── 品牌报头（暗色，回声主页 hero）───── */
+.masthead{position:relative;background:var(--ink);color:var(--on-ink);isolation:isolate;overflow:hidden}
+.mast-ekg{position:absolute;inset:0;width:100%;height:100%;z-index:-1;opacity:.28;pointer-events:none;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 18%,#000 82%,transparent);
+          mask-image:linear-gradient(90deg,transparent,#000 18%,#000 82%,transparent)}
+.mast-inner{padding-block:clamp(2.2rem,4vw,3.4rem) clamp(1.9rem,3.5vw,3rem)}
+.brand{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:.98rem;
+  letter-spacing:-.01em;color:var(--on-ink)}
+.brand .dot{width:8px;height:8px;border-radius:var(--r-pill);background:var(--coral);
+  box-shadow:0 0 0 4px color-mix(in oklab,var(--coral) 24%,transparent)}
+.brand .amp{opacity:.6;font-weight:500}
+.masthead h1{margin-top:clamp(1rem,2.2vw,1.5rem);font-size:var(--t-h1);font-weight:700;
+  letter-spacing:-.03em;line-height:1.02;text-wrap:balance;max-width:20ch}
+.mast-sub{margin-top:.7rem;color:var(--on-ink-mut);font-size:.95rem;max-width:56ch;text-wrap:pretty}
+.mast-link{display:inline-flex;align-items:center;gap:8px;margin-top:1.5rem;padding:9px 16px;
+  border-radius:var(--r-pill);border:1.5px solid var(--line-dark);color:var(--on-ink);
+  font-size:.9rem;font-weight:600;transition:border-color .2s var(--ease),transform .2s var(--ease)}
+.mast-link:hover{border-color:color-mix(in oklab,white 40%,transparent);transform:translateY(-1px)}
+.mast-link svg{width:15px;height:15px}
+
+/* ───── 私有评审提示 ───── */
+.note{background:color-mix(in oklab,var(--warn) 9%,var(--paper));border:1px solid color-mix(in oklab,var(--warn) 35%,transparent);
+  border-radius:var(--r-md);padding:13px 17px;margin:26px 0 0;color:var(--ink-text);font-size:.92rem}
+.note b{color:color-mix(in oklab,var(--warn) 60%,var(--ink-text))}
+
+/* ───── 书目：编辑式栏目（非千篇一律卡片格）───── */
+main.wrap{padding-block:clamp(2.2rem,4vw,3.6rem) clamp(3.5rem,7vw,6rem)}
+.book{padding-block:clamp(1.7rem,3vw,2.4rem);border-bottom:1px solid var(--line)}
+.book:first-of-type{border-top:1px solid var(--line)}
+.book-head{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:baseline;justify-content:space-between}
+.book-head h2{font-size:var(--t-h2);font-weight:700;letter-spacing:-.02em;line-height:1.1}
+.oneliner{margin-top:8px;color:var(--ink-muted);max-width:64ch;font-size:1rem;line-height:1.6;text-wrap:pretty}
+.pills{display:flex;gap:8px;flex-wrap:wrap;flex:none}
+.pill{font-size:.76rem;font-weight:600;letter-spacing:.01em;padding:3px 11px;border-radius:var(--r-pill);
+  border:1px solid var(--line);color:var(--ink-muted);white-space:nowrap}
+.pill.pub{color:var(--good);border-color:color-mix(in oklab,var(--good) 42%,transparent);
+  background:color-mix(in oklab,var(--good) 8%,transparent)}
+.pill.cr{color:var(--warn);border-color:color-mix(in oklab,var(--warn) 42%,transparent);
+  background:color-mix(in oklab,var(--warn) 8%,transparent)}
+.pill.v-PUBLISH{color:var(--good);border-color:color-mix(in oklab,var(--good) 42%,transparent)}
+.pill.v-HOLD{color:var(--warn);border-color:color-mix(in oklab,var(--warn) 42%,transparent)}
+
+.fmts{list-style:none;padding:0;margin-top:clamp(1rem,2vw,1.4rem);display:grid;gap:2px}
+.fmt{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px 18px;align-items:center;
+  padding:13px 15px;border-radius:var(--r-md);background:var(--paper-2);
+  transition:background .2s var(--ease)}
+.fmt:hover{background:var(--paper-3)}
+.fmt.dim{opacity:.55}
+.fmt-name{font-weight:600;font-size:1.01rem;letter-spacing:-.01em}
+.fmt-meta{display:block;margin-top:2px;font-size:.82rem;font-weight:400;color:var(--ink-muted);
+  font-variant-numeric:tabular-nums}
+.fmt-meta .ok{color:var(--good)}
+.fmt-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+
+/* ───── 按钮 / 播放器 ───── */
+.btn{display:inline-flex;align-items:center;gap:6px;font-size:.85rem;font-weight:600;
+  padding:7px 14px;border-radius:var(--r-pill);border:1.5px solid var(--line);
+  background:var(--paper);color:var(--ink-text);cursor:pointer;
+  transition:border-color .18s var(--ease),color .18s var(--ease),transform .18s var(--ease)}
+.btn:hover{border-color:var(--coral-ink);color:var(--coral-ink);transform:translateY(-1px)}
+.btn:active{transform:translateY(0) scale(.985)}
+.btn.ghost{border-color:transparent;color:var(--ink-muted)}
+.btn.ghost:hover{border-color:var(--line);color:var(--ink-text)}
+.voicebox{display:inline-flex;align-items:center;gap:9px;flex-wrap:wrap;justify-content:flex-end}
+.voicebox audio{height:34px;vertical-align:middle;max-width:216px}
+.audio{font-size:.82rem;color:var(--ink-muted)}
+.vtoggle{display:inline-flex;border:1px solid var(--line);border-radius:var(--r-pill);overflow:hidden}
+.vtoggle button{font:inherit;font-size:.8rem;font-weight:600;padding:5px 12px;background:transparent;
+  color:var(--ink-muted);border:none;cursor:pointer;line-height:1.4;transition:color .15s,background .15s}
+.vtoggle button.on{background:var(--coral-ink);color:#fff}
+.vtoggle button:not(.on):hover{color:var(--ink-text)}
+.missing{color:var(--ink-muted);opacity:.7}
+
+/* ───── 阅读页：吸顶头 + 格式切换 ───── */
+.rhead{position:sticky;top:0;z-index:var(--z-head);display:flex;align-items:center;gap:14px;
+  padding:11px var(--gutter);background:color-mix(in oklab,var(--paper) 88%,transparent);
+  backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);
+  border-bottom:1px solid var(--line-2)}
+.rback{font-size:.9rem;font-weight:600;color:var(--ink-muted);flex:none}
+.rback:hover{color:var(--coral-ink)}
+.rtitle{font-weight:700;letter-spacing:-.01em;font-size:1rem;color:var(--ink-text);
+  flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.rswitch{display:flex;gap:4px;flex:none;padding:3px;background:var(--paper-2);border-radius:var(--r-pill)}
+.rsw{font-size:.83rem;font-weight:600;padding:5px 13px;border-radius:var(--r-pill);color:var(--ink-muted);
+  transition:color .15s,background .15s}
+.rsw:hover{color:var(--ink-text)}
+.rsw.on{background:var(--paper);color:var(--coral-ink);box-shadow:0 1px 4px -1px color-mix(in oklab,var(--ink) 22%,transparent)}
+.rsw.off{color:color-mix(in oklab,var(--ink-muted) 55%,transparent);cursor:default}
+
+.reader{max-width:var(--readw);margin-inline:auto;
+  padding:clamp(2rem,4vw,3.4rem) var(--gutter) clamp(4rem,8vw,6.5rem)}
+.doc-kicker{font-size:.86rem;font-weight:600;color:var(--coral-ink);letter-spacing:.01em}
+.doc-title{margin-top:8px;font-size:var(--t-h1);font-weight:700;letter-spacing:-.025em;
+  line-height:1.06;text-wrap:balance}
+.doc-rule{height:1px;background:var(--line);margin:clamp(1.4rem,3vw,2rem) 0}
+
+article{font-size:var(--read);line-height:1.95}
+article h1{font-size:var(--t-h2);font-weight:700;letter-spacing:-.02em;line-height:1.15;margin:1.9em 0 .55em}
+article h2{font-size:var(--t-h3);font-weight:700;letter-spacing:-.015em;line-height:1.25;
+  margin:1.7em 0 .5em;padding-top:.2em}
+article h3{font-size:1.06rem;font-weight:700;margin:1.4em 0 .4em;color:var(--ink-text)}
+article p{margin:0 0 1.05em}
+article strong{font-weight:700;color:var(--ink-text)}
+article em{font-style:normal;font-weight:600;color:var(--coral-ink)}
+article ul,article ol{margin:0 0 1.1em;padding-left:1.35em}
+article li{margin-bottom:.4em}
+article li::marker{color:var(--coral-ink)}
+article a{border-bottom:1px solid color-mix(in oklab,var(--coral-ink) 40%,transparent)}
+article a:hover{border-bottom-color:var(--coral-ink)}
+article code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.9em;
+  background:var(--paper-2);border:1px solid var(--line-2);padding:1px 6px;border-radius:6px}
+article hr{border:none;border-top:1px solid var(--line);margin:2.2em 0}
+/* 引文：整块底纹 + 古文衬线（无侧边条）*/
+article blockquote{position:relative;margin:1.5em 0;padding:1.1em 1.3em 1.1em 1.5em;
+  background:var(--paper-2);border:1px solid var(--line-2);border-radius:var(--r-md);
+  font-family:var(--font-quote);font-size:1.12em;line-height:1.9;color:var(--ink-text)}
+article blockquote::before{content:"“";position:absolute;left:.34em;top:.06em;
+  font-family:var(--font-quote);font-size:2.1em;line-height:1;color:color-mix(in oklab,var(--coral) 55%,transparent)}
+article blockquote p{margin:0}
+
+/* ───── outline 章节锚下钻 ───── */
+.lead-note{color:var(--ink-muted);font-size:.98rem;margin-bottom:1.3em}
+.drill{display:flex;flex-direction:column;gap:9px}
+.dl-point{border:1px solid var(--line);border-radius:var(--r-md);overflow:hidden;background:var(--paper)}
+.dl-point.open{background:var(--paper-2);border-color:color-mix(in oklab,var(--coral) 30%,var(--line))}
+.dl-head{width:100%;text-align:left;font:inherit;color:var(--ink-text);background:none;border:none;
+  cursor:pointer;padding:14px 16px;display:flex;align-items:center;gap:11px}
+.dl-head:hover{background:var(--paper-2)}
+.dl-point.open .dl-head:hover{background:transparent}
+.dl-caret{color:var(--coral-ink);transition:transform .2s var(--ease);font-size:.72rem;flex:none}
 .dl-point.open .dl-caret{transform:rotate(90deg)}
-.dl-text{flex:1;font-weight:600;font-size:15px}
-.dl-chap{font-size:11px;color:var(--dim);border:1px solid var(--line);border-radius:999px;padding:1px 8px;white-space:nowrap}
-.dl-panel{display:none;padding:2px 16px 16px;border-top:1px solid var(--line)}
-.dl-point.open .dl-panel{display:block}
-.dl-tag{display:inline-block;font-size:11px;color:var(--coral);margin:12px 0 6px;letter-spacing:.03em}
-.dl-q{font-size:16px;line-height:1.9;padding:2px 0}
-.dl-qp{color:var(--dim);font-size:13px}
-.dl-deepbody{color:var(--ink);font-size:14px;line-height:1.8}
-.dl-deepbody p{margin:.5em 0}.dl-deepbody h2,.dl-deepbody h3{font-size:15px;margin:.6em 0 .3em}
-.dl-none{color:var(--dim);font-size:12px;padding:10px 0}
-/* 溯源面板 */
-details.trace{margin-top:20px;border:1px solid var(--line);border-radius:12px;background:var(--panel);padding:0 16px}
-details.trace>summary{cursor:pointer;padding:12px 0;font-size:14px;color:var(--dim);list-style:none}
-details.trace>summary::-webkit-details-marker{display:none}
-details.trace[open]>summary{border-bottom:1px solid var(--line);margin-bottom:10px}
-.tr-tier{font-size:12px;color:var(--coral);margin:12px 0 6px;letter-spacing:.02em}
-.tr-row{display:flex;gap:8px;align-items:baseline;padding:4px 0;font-size:13px;flex-wrap:wrap}
-.tr-q{color:var(--ink)}.tr-chap{color:var(--dim);white-space:nowrap}
-.tr-deep{color:var(--coral);font-size:12px}
-.tr-ext{color:var(--dim);font-size:12.5px;line-height:1.9}
-.tr-sum b{color:var(--ink)}
-</style></head><body><div class="wrap"><a class="back" href="../index.html">← 返回书语评审台</a><article><div class="badges"><span class="badge">极简·脉络</span><span class="badge">Hamlet</span></div><p class="dl-none">点开任一条，展开该章节的<b>原文题眼</b>与<b>精讲</b>片段 ▾</p><div class="drill"><div class="dl-point"><button class="dl-head" onclick="this.parentNode.classList.toggle('open')"><span class="dl-caret">▸</span><span class="dl-text">全书总纲：哈姆雷特在复仇使命与理性犹疑之间的撕裂构成悲剧核心驱动力</span><span class="dl-chap">全书</span></button><div class="dl-panel"><div><span class="dl-tag">原文·全书</span><div class="dl-q">「I must be cruel, only to be kind」</div><div class="dl-qp">我必须残忍，才能仁慈——哈姆雷特对母亲说的话，揭示其行动的道德悖论</div></div></div></div><div class="dl-point"><button class="dl-head" onclick="this.parentNode.classList.toggle('open')"><span class="dl-caret">▸</span><span class="dl-text">鬼魂揭罪与装疯：超自然复仇使命与宫廷政治猜忌的交织</span><span class="dl-chap">全书</span></button><div class="dl-panel"><div><span class="dl-tag">原文·全书</span><div class="dl-q">「Something is rotten in the state of Denmark.」</div><div class="dl-qp">丹麦国里有些东西腐烂了。——揭示宫廷道德溃败的名句</div></div><div><span class="dl-tag">精讲·烂透的丹麦与装疯的保护色</span><div class="dl-deepbody"><h3>烂透的丹麦与装疯的保护色</h3>
+.dl-text{flex:1;font-weight:600;font-size:1.02rem;letter-spacing:-.01em}
+.dl-chap{font-size:.74rem;color:var(--ink-muted);border:1px solid var(--line);border-radius:var(--r-pill);
+  padding:2px 9px;white-space:nowrap;flex:none}
+.dl-panel{display:none;padding:2px 18px 18px}
+.dl-point.open .dl-panel{display:block;animation:fade .35s var(--ease)}
+.dl-tag{display:inline-block;font-size:.78rem;font-weight:600;color:var(--coral-ink);
+  margin:14px 0 7px;letter-spacing:.02em}
+.dl-q{font-family:var(--font-quote);font-size:1.1rem;line-height:1.9;padding:2px 0}
+.dl-qp{color:var(--ink-muted);font-size:.92rem;margin-top:3px}
+.dl-deepbody{color:var(--ink-text);font-size:.98rem;line-height:1.85}
+.dl-deepbody p{margin:.5em 0}.dl-deepbody h2,.dl-deepbody h3{font-size:1rem;font-weight:700;margin:.7em 0 .3em}
+.dl-none{color:var(--ink-muted);font-size:.9rem;padding:8px 0}
+
+/* ───── 溯源面板（summary 必须是 details 直接子元素）───── */
+details.trace{max-width:var(--readw);margin:0 auto clamp(1rem,2vw,1.5rem);padding:0 var(--gutter)}
+details.trace summary{cursor:pointer;list-style:none;padding:15px 20px;font-size:.94rem;color:var(--ink-text);
+  background:var(--paper-2);border:1px solid var(--line);border-radius:var(--r-lg);
+  transition:background .18s var(--ease),border-color .18s var(--ease)}
+details.trace summary::-webkit-details-marker{display:none}
+details.trace summary::marker{content:""}
+details.trace summary:hover{background:var(--paper-3);border-color:color-mix(in oklab,var(--coral) 30%,var(--line))}
+details.trace[open] summary{border-radius:var(--r-lg) var(--r-lg) 0 0;border-bottom:none}
+.trace-box{border:1px solid var(--line);border-top:none;border-radius:0 0 var(--r-lg) var(--r-lg);
+  background:var(--paper-2);padding:4px 20px 16px}
+.tr-sum b{color:var(--coral-ink)}
+.tr-tier{font-size:.82rem;font-weight:600;color:var(--coral-ink);margin:14px 0 6px;letter-spacing:.02em}
+.tr-row{display:flex;gap:9px;align-items:baseline;padding:5px 0;font-size:.92rem;flex-wrap:wrap;
+  border-top:1px solid var(--line-2)}
+.tr-row:first-of-type{border-top:none}
+.tr-q{color:var(--ink-text);font-family:var(--font-quote)}
+.tr-chap{color:var(--ink-muted);white-space:nowrap;font-size:.85rem}
+.tr-deep{color:var(--coral-ink);font-size:.85rem}
+.tr-ext{color:var(--ink-muted);font-size:.9rem;line-height:1.95;padding-bottom:14px}
+
+/* ───── 页脚 ───── */
+.foot{border-top:1px solid var(--line);margin-top:clamp(3rem,6vw,5rem);
+  padding:clamp(2rem,3.5vw,2.75rem) var(--gutter);color:var(--ink-muted);font-size:.86rem}
+.foot .wrap-f{max-width:var(--maxw);margin-inline:auto;display:flex;flex-wrap:wrap;gap:8px 18px;
+  align-items:center;justify-content:space-between}
+.foot .brand-f{display:inline-flex;align-items:center;gap:9px;color:var(--ink-text);font-weight:600}
+.foot .brand-f .dot{width:7px;height:7px;border-radius:var(--r-pill);background:var(--coral-ink)}
+.reader ~ .foot,article ~ .foot{text-align:center}
+
+@keyframes fade{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+@keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+
+@media (prefers-reduced-motion:no-preference){
+  .book{animation:rise .55s var(--ease) both}
+  .book:nth-child(2){animation-delay:.04s}.book:nth-child(3){animation-delay:.08s}
+  .book:nth-child(4){animation-delay:.12s}.book:nth-child(5){animation-delay:.16s}
+  .book:nth-child(6){animation-delay:.2s}.book:nth-child(n+7){animation-delay:.24s}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition-duration:.01ms !important;animation:none !important}}
+
+@media (max-width:640px){
+  .book-head{flex-direction:column;gap:10px}
+  .fmt{grid-template-columns:1fr;gap:10px}
+  .fmt-actions{justify-content:flex-start}
+  .rtitle{display:none}
+  .rswitch{margin-left:auto}
+  details.trace,.foot .wrap-f{}
+}
+</style></head><body><header class="rhead"><a class="rback" href="../index.html">← 评审台</a><span class="rtitle">Hamlet</span><nav class="rswitch" aria-label="格式切换"><span class="rsw on">脉络</span><a class="rsw" href="quick.html">速览</a><a class="rsw" href="deep.html">精讲</a></nav></header><div class="reader"><p class="doc-kicker">极简·脉络</p><h1 class="doc-title">Hamlet</h1><div class="doc-rule"></div><article><p class="lead-note">点开任一条，展开该章节的<strong>原文题眼</strong>与<strong>精讲</strong>片段 ▾</p><div class="drill"><div class="dl-point"><button class="dl-head" onclick="this.parentNode.classList.toggle('open')"><span class="dl-caret">▸</span><span class="dl-text">全书总纲：哈姆雷特在复仇使命与理性犹疑之间的撕裂构成悲剧核心驱动力</span><span class="dl-chap">全书</span></button><div class="dl-panel"><div><span class="dl-tag">原文·全书</span><div class="dl-q">「I must be cruel, only to be kind」</div><div class="dl-qp">我必须残忍，才能仁慈——哈姆雷特对母亲说的话，揭示其行动的道德悖论</div></div></div></div><div class="dl-point"><button class="dl-head" onclick="this.parentNode.classList.toggle('open')"><span class="dl-caret">▸</span><span class="dl-text">鬼魂揭罪与装疯：超自然复仇使命与宫廷政治猜忌的交织</span><span class="dl-chap">全书</span></button><div class="dl-panel"><div><span class="dl-tag">原文·全书</span><div class="dl-q">「Something is rotten in the state of Denmark.」</div><div class="dl-qp">丹麦国里有些东西腐烂了。——揭示宫廷道德溃败的名句</div></div><div><span class="dl-tag">精讲 · 烂透的丹麦与装疯的保护色</span><div class="dl-deepbody"><h3>烂透的丹麦与装疯的保护色</h3>
 <p>很多粗心的读者以为，哈姆雷特那句著名的“脆弱啊，你的名字就是女人！”（Frailty, thy name is woman!）是在见到鬼魂、发誓复仇时喊出来的。其实不然，咱们得把时序理清。这话出自第一幕第二场，那时候鬼魂还没影子呢。哈姆雷特刚参加完父亲的葬礼，转头就喝上了母亲的喜酒——他母亲匆匆改嫁给了他的亲叔叔、新王克劳狄斯。看着母亲在宴席上笑脸盈盈，哈姆雷特在心里滴血，叹出了这句话。这不是复仇的誓言，这是一个理想主义青年对人性底线崩塌的绝望悲叹。</p>
 <p>等哈姆雷特亲自上了城墙，这戏才进入了核心。鬼魂不搭理别人，单单冲他招手。鬼魂把他拉到暗处，倒出了一个惊天大秘密：先王根本不是被蛇咬死的，而是被亲弟弟克劳狄斯，趁他在果园午睡时，往耳朵里灌了毒药。鬼魂下达了死命令：“为他那惨绝人寰的谋杀复仇吧。”</p>
 <p>咱们在这儿停一下。您注意，莎士比亚在这儿没用刀剑，用的是“灌耳朵”。这其实是个绝妙的隐喻，咱们往深了挖一层：这不仅仅是物理上的下毒，更是“语言与听觉”作为权力武器的隐喻。您想，克劳狄斯杀了人，对外宣称是“被毒蛇咬了”，这个谎言通过宫廷的喇叭、大臣的嘴巴，灌进了全丹麦老百姓的耳朵里，毒害了整个国家的认知。而现在，鬼魂用血淋淋的真相，反向灌进了哈姆雷特的耳朵里。到了后头，哈姆雷特要复仇，靠的也是排一出“戏中戏”，用台词和视觉刺激去试探凶手，这叫什么？这就叫以彼之道还施彼身，用“听觉的毒药”去逼出真凶心里的鬼。</p>
 <p>您看哈姆雷特听完第一反应是什么？他没拔剑，也没嚎啕大哭，而是掏出个小本本，飞快地记下一句：“That one may smile, and smile, and be a villain”——一个人可以微笑着，微笑着，却是个恶棍！这句原话太狠了，没有多余的修饰，直接把丹麦宫廷那层温情脉脉的窗户纸捅破了。接着，他逼着霍拉旭他们按着剑柄发誓保密，还特意交代了一句：以后我可能会装出一副疯疯癫癫的样子（put an antic disposition on），你们见着可别漏了底。</p>
 <p>咱们把这事儿掰开揉碎了看。鬼魂降临，表面上是给了哈姆雷特一个复仇的明确目标，但实际上，它是把哈姆雷特脑子里的一根发条，瞬间拧到了极限。他面对的不只是叔父一个人，而是整个已经脱了节的时代。所以，他选择装疯。装疯，看似是他给自己披上的一层保护色，用来掩人耳目；但换个角度看，这层疯癫的假面，何尝不是他潜意识里给自己找的一个缓冲地带？</p>
-<p>咱们借个历史的镜子照照。三国里头，司马懿为了麻痹曹爽，装病装得那叫一个绝，喝粥漏得满身都是，话都说不利索，最后趁曹爽出城祭陵，一招高平陵之变翻了盘。司马懿装病，是为了积蓄力量、一击致命；可哈姆雷特装疯呢？他演着演着，这种疯癫带来的疏离感，反而成了他推迟行动的完美借口。一旦戴上疯子的面具，他就可以名正言顺地只说不做，用无尽的思考去代替致命的行动。当命运把一个血海深仇砸在一个想得太多的人头上时，悲剧的发条，就已经开始倒计时了。</p></div></div></div></div><div class="dl-point"><button class="dl-head" onclick="this.parentNode.classList.toggle('open')"><span class="dl-caret">▸</span><span class="dl-text">戏中戏证罪：哈姆雷特用戏剧试探国王，以艺术为镜子照出罪行</span><span class="dl-chap">全书</span></button><div class="dl-panel"><div><span class="dl-tag">原文·全书</span><div class="dl-q">「The readiness is all.」</div><div class="dl-qp">准备好就是一切——哈姆雷特接受命运、坦然赴死的最终态度</div></div><div><span class="dl-tag">精讲·骷髅、毒剑与终极的沉默</span><div class="dl-deepbody"><h3>骷髅、毒剑与终极的沉默</h3>
+<p>咱们借个历史的镜子照照。三国里头，司马懿为了麻痹曹爽，装病装得那叫一个绝，喝粥漏得满身都是，话都说不利索，最后趁曹爽出城祭陵，一招高平陵之变翻了盘。司马懿装病，是为了积蓄力量、一击致命；可哈姆雷特装疯呢？他演着演着，这种疯癫带来的疏离感，反而成了他推迟行动的完美借口。一旦戴上疯子的面具，他就可以名正言顺地只说不做，用无尽的思考去代替致命的行动。当命运把一个血海深仇砸在一个想得太多的人头上时，悲剧的发条，就已经开始倒计时了。</p></div></div></div></div><div class="dl-point"><button class="dl-head" onclick="this.parentNode.classList.toggle('open')"><span class="dl-caret">▸</span><span class="dl-text">戏中戏证罪：哈姆雷特用戏剧试探国王，以艺术为镜子照出罪行</span><span class="dl-chap">全书</span></button><div class="dl-panel"><div><span class="dl-tag">原文·全书</span><div class="dl-q">「The readiness is all.」</div><div class="dl-qp">准备好就是一切——哈姆雷特接受命运、坦然赴死的最终态度</div></div><div><span class="dl-tag">精讲 · 骷髅、毒剑与终极的沉默</span><div class="dl-deepbody"><h3>骷髅、毒剑与终极的沉默</h3>
 <p>故事讲到这儿，复仇、误杀、疯癫、溺亡，该发生的都发生了。可莎士比亚还不肯收手，他要在最后的终局里，让哈姆雷特直面那个最大的问题：死亡面前，这一切到底算什么？</p>
 <p>到了第五幕，哈姆雷特从海上死里逃生回到丹麦，他第一件事干嘛？——不是去拔剑报仇，而是去了墓地。在这儿，他碰见两个掘墓人，挖出了一个小丑弄臣的骷髅头。这弄臣叫约里克，小时候还背过哈姆雷特。哈姆雷特捧着这颗骷髅，说出了一段特别通透的死亡哲思。他接着往下推演——书里写得很绝，亚历山大大帝死了，化为尘土，尘土变成泥，这泥说不定就被拿去塞了啤酒桶的窟窿。</p>
 <p>您想想这个画面，一代霸主和宫廷弄臣，在死亡面前被彻底拉平，最后都成了塞酒桶的泥巴。这就是莎士比亚给哈姆雷特安排的“以物为镜”——当死亡这个终极的平等者摆在眼前，生前那些纠结、算计、王位和仇恨，到底还有多大分量？</p>
@@ -97,7 +249,7 @@ details.trace[open]>summary{border-bottom:1px solid var(--line);margin-bottom:10
 <p>咱们来看看这场比剑是怎么收网的。国王设了双重保险：雷欧提斯的剑尖涂了剧毒；桌上还备了一杯毒酒。第一回合，哈姆雷特赢了。国王假惺惺地往酒杯里扔了一颗“珍珠”——其实是毒药。哈姆雷特说，等打完这局再喝。第二回合，王后心疼儿子，端起那杯酒说：“哈姆雷特，母亲替你喝。”国王急了，低声阻拦说“那是毒酒”，但晚了，王后一饮而尽。您看，阴谋的第一个反噬，就这么精准地落在了自己老婆身上。</p>
 <p>到了第三回合，两人一交手，雷欧提斯偷袭划破了哈姆雷特的皮。哈姆雷特大怒，夺过那把毒剑，反手也给了雷欧提斯一下。这时候，王后毒发倒地咽了气。雷欧提斯也倒下了，临死前良心发现，喊出了真相：“是国王，国王才是罪魁祸首！”</p>
 <p>哈姆雷特终于不再犹豫。他拿起那把涂毒的剑，刺向国王，又把剩下的毒酒灌进他嘴里，看着他咽气。大仇得报，但哈姆雷特自己也毒发了。他拦住想喝毒酒殉情的霍拉旭，说：“你必须活下去，在这残酷的世界上忍受痛苦，把我的故事告诉世人。”最后，他留下一句“The rest is silence”——余下的只有沉默，气绝身亡。</p>
-<p>从第一幕的鬼魂降临，到最后一幕的毒剑穿心，哈姆雷特用一场同归于尽，完成了从“想太多”到“准备好就是一切”的蜕变。死亡抹平了国王与弄臣的界限，但也正是在死亡的阴影下，哈姆雷特终于放下了脑子里的那些“如果”和“万一”，用行动给自己的人生盖了章。</p></div></div></div></div><div class="dl-point"><button class="dl-head" onclick="this.parentNode.classList.toggle('open')"><span class="dl-caret">▸</span><span class="dl-text">复仇迟疑与误杀波洛涅斯：放弃祈祷时的复仇良机，却因冲动误杀导致不可挽回的连锁反应</span><span class="dl-chap">全书</span></button><div class="dl-panel"><div><span class="dl-tag">原文·全书</span><div class="dl-q">「Though this be madness, yet there is method in&#x27;t」</div><div class="dl-qp">这虽然是疯话，却有道理在其中——波洛涅斯对哈姆雷特&#x27;装疯&#x27;的直觉判断</div></div><div><span class="dl-tag">精讲·刺穿帷幕的冲动与美人鱼的沉没</span><div class="dl-deepbody"><h3>刺穿帷幕的冲动与美人鱼的沉没</h3>
+<p>从第一幕的鬼魂降临，到最后一幕的毒剑穿心，哈姆雷特用一场同归于尽，完成了从“想太多”到“准备好就是一切”的蜕变。死亡抹平了国王与弄臣的界限，但也正是在死亡的阴影下，哈姆雷特终于放下了脑子里的那些“如果”和“万一”，用行动给自己的人生盖了章。</p></div></div></div></div><div class="dl-point"><button class="dl-head" onclick="this.parentNode.classList.toggle('open')"><span class="dl-caret">▸</span><span class="dl-text">复仇迟疑与误杀波洛涅斯：放弃祈祷时的复仇良机，却因冲动误杀导致不可挽回的连锁反应</span><span class="dl-chap">全书</span></button><div class="dl-panel"><div><span class="dl-tag">原文·全书</span><div class="dl-q">「Though this be madness, yet there is method in&#x27;t」</div><div class="dl-qp">这虽然是疯话，却有道理在其中——波洛涅斯对哈姆雷特&#x27;装疯&#x27;的直觉判断</div></div><div><span class="dl-tag">精讲 · 刺穿帷幕的冲动与美人鱼的沉没</span><div class="dl-deepbody"><h3>刺穿帷幕的冲动与美人鱼的沉没</h3>
 <p>哈姆雷特收剑不杀祈祷的国王，转头去了王后的寝宫。夜深人静，母子俩在屋里对峙。老首相波洛涅斯，也就是奥菲莉娅的父亲，为了偷听，悄悄躲在墙上的挂毯帷幕后头。哈姆雷特正言辞激烈地痛斥母亲，王后害怕了，大喊救命。帷幕后头的波洛涅斯跟着喊了一嗓子。</p>
 <p>哈姆雷特神经正紧绷着呢，一听有动静，脱口而出一句：“怎么？有老鼠？”拔出剑来，隔着挂毯就是一记狠刺。等他把尸体拖出来一看，傻眼了，地上躺着的不是篡位的叔父，而是首相波洛涅斯。</p>
 <p>您注意，这是全剧最关键的一个转折点。前面国王祈祷时，他因为“想太多”放弃了绝佳的复仇机会；现在，他因为“想太少”，杀了一个无辜的旁观者。理性过剩让他延宕，理性缺席让他滥杀。当一个人被压抑的仇恨逼到极点，他的第一次爆发，往往不是精准的复仇，而是盲目的破坏。</p>
@@ -105,7 +257,7 @@ details.trace[open]>summary{border-bottom:1px solid var(--line);margin-bottom:10
 <p>波洛涅斯一死，多米诺骨牌倒下的第二张，就是他的女儿奥菲莉娅。</p>
 <p>这里得跟您澄清一个原著的处理手法：奥菲莉娅的溺亡，并不是在舞台上直接演出来的，而是到了第四幕第七场，由王后乔特鲁德用一段极具诗意却又残忍的悼词转述出来的。莎士比亚为什么不直接演？因为这种“别人的讲述”，更凸显了奥菲莉娅在这个宫廷里毫无存在感的悲剧——她连死，都只能成为别人嘴里的一段谈资。</p>
 <p>您回想一下奥菲莉娅的处境。哥哥把她当家族荣誉的挂件，父亲把她当政治试探的棋子，恋人把她当发泄厌女情绪的垃圾桶。当父亲被恋人杀死，她世界里最后一根支柱塌了。王后是怎么描述她死前的画面的呢？她爬上一棵柳树，想把花环挂在树枝上，树枝断了，她掉进了冰冷的河水里。王后的原话美得让人心碎：“Her clothes spread wide, and mermaid-like...”——她的衣服散开，如同美人鱼的裙摆，她在水里漂浮着，嘴里还断断续续地唱着古老的歌谣，仿佛对即将到来的死亡毫无察觉，直到衣服吸满了水，把她拖进泥沼。</p>
-<p>后世很多文学评论家，喜欢把这段做符号化的解读，说花环代表着她内心残存的感性纯真，而吞噬她的河水代表着冷酷理性的丹麦宫廷。虽然原著并没有明说这层隐喻，但咱们顺着这个思路想，确实能品出一种极致的残忍：当理性的男人们在王座前争夺生死、算计灵魂上不上天堂时，一个感性的女孩，已经在冰冷的河水里无声地沉没了。哈姆雷特用装疯来对抗世界，他的疯里藏着清醒的算计；可奥菲莉娅的疯，是彻头彻尾的毁灭。</p></div></div></div></div><div class="dl-point"><button class="dl-head" onclick="this.parentNode.classList.toggle('open')"><span class="dl-caret">▸</span><span class="dl-text">奥菲莉娅疯癫溺亡与雷欧提斯逼宫：复仇的代价波及无辜，悲剧扩散</span><span class="dl-chap">全书</span></button><div class="dl-panel"><div><span class="dl-tag">原文·全书</span><div class="dl-q">「The readiness is all.」</div><div class="dl-qp">准备好就是一切——哈姆雷特接受命运、坦然赴死的最终态度</div></div><div><span class="dl-tag">精讲·骷髅、毒剑与终极的沉默</span><div class="dl-deepbody"><h3>骷髅、毒剑与终极的沉默</h3>
+<p>后世很多文学评论家，喜欢把这段做符号化的解读，说花环代表着她内心残存的感性纯真，而吞噬她的河水代表着冷酷理性的丹麦宫廷。虽然原著并没有明说这层隐喻，但咱们顺着这个思路想，确实能品出一种极致的残忍：当理性的男人们在王座前争夺生死、算计灵魂上不上天堂时，一个感性的女孩，已经在冰冷的河水里无声地沉没了。哈姆雷特用装疯来对抗世界，他的疯里藏着清醒的算计；可奥菲莉娅的疯，是彻头彻尾的毁灭。</p></div></div></div></div><div class="dl-point"><button class="dl-head" onclick="this.parentNode.classList.toggle('open')"><span class="dl-caret">▸</span><span class="dl-text">奥菲莉娅疯癫溺亡与雷欧提斯逼宫：复仇的代价波及无辜，悲剧扩散</span><span class="dl-chap">全书</span></button><div class="dl-panel"><div><span class="dl-tag">原文·全书</span><div class="dl-q">「The readiness is all.」</div><div class="dl-qp">准备好就是一切——哈姆雷特接受命运、坦然赴死的最终态度</div></div><div><span class="dl-tag">精讲 · 骷髅、毒剑与终极的沉默</span><div class="dl-deepbody"><h3>骷髅、毒剑与终极的沉默</h3>
 <p>故事讲到这儿，复仇、误杀、疯癫、溺亡，该发生的都发生了。可莎士比亚还不肯收手，他要在最后的终局里，让哈姆雷特直面那个最大的问题：死亡面前，这一切到底算什么？</p>
 <p>到了第五幕，哈姆雷特从海上死里逃生回到丹麦，他第一件事干嘛？——不是去拔剑报仇，而是去了墓地。在这儿，他碰见两个掘墓人，挖出了一个小丑弄臣的骷髅头。这弄臣叫约里克，小时候还背过哈姆雷特。哈姆雷特捧着这颗骷髅，说出了一段特别通透的死亡哲思。他接着往下推演——书里写得很绝，亚历山大大帝死了，化为尘土，尘土变成泥，这泥说不定就被拿去塞了啤酒桶的窟窿。</p>
 <p>您想想这个画面，一代霸主和宫廷弄臣，在死亡面前被彻底拉平，最后都成了塞酒桶的泥巴。这就是莎士比亚给哈姆雷特安排的“以物为镜”——当死亡这个终极的平等者摆在眼前，生前那些纠结、算计、王位和仇恨，到底还有多大分量？</p>
@@ -114,7 +266,7 @@ details.trace[open]>summary{border-bottom:1px solid var(--line);margin-bottom:10
 <p>咱们来看看这场比剑是怎么收网的。国王设了双重保险：雷欧提斯的剑尖涂了剧毒；桌上还备了一杯毒酒。第一回合，哈姆雷特赢了。国王假惺惺地往酒杯里扔了一颗“珍珠”——其实是毒药。哈姆雷特说，等打完这局再喝。第二回合，王后心疼儿子，端起那杯酒说：“哈姆雷特，母亲替你喝。”国王急了，低声阻拦说“那是毒酒”，但晚了，王后一饮而尽。您看，阴谋的第一个反噬，就这么精准地落在了自己老婆身上。</p>
 <p>到了第三回合，两人一交手，雷欧提斯偷袭划破了哈姆雷特的皮。哈姆雷特大怒，夺过那把毒剑，反手也给了雷欧提斯一下。这时候，王后毒发倒地咽了气。雷欧提斯也倒下了，临死前良心发现，喊出了真相：“是国王，国王才是罪魁祸首！”</p>
 <p>哈姆雷特终于不再犹豫。他拿起那把涂毒的剑，刺向国王，又把剩下的毒酒灌进他嘴里，看着他咽气。大仇得报，但哈姆雷特自己也毒发了。他拦住想喝毒酒殉情的霍拉旭，说：“你必须活下去，在这残酷的世界上忍受痛苦，把我的故事告诉世人。”最后，他留下一句“The rest is silence”——余下的只有沉默，气绝身亡。</p>
-<p>从第一幕的鬼魂降临，到最后一幕的毒剑穿心，哈姆雷特用一场同归于尽，完成了从“想太多”到“准备好就是一切”的蜕变。死亡抹平了国王与弄臣的界限，但也正是在死亡的阴影下，哈姆雷特终于放下了脑子里的那些“如果”和“万一”，用行动给自己的人生盖了章。</p></div></div></div></div><div class="dl-point"><button class="dl-head" onclick="this.parentNode.classList.toggle('open')"><span class="dl-caret">▸</span><span class="dl-text">毒剑毒酒双重阴谋与终局同归于尽：阴谋反噬，所有人付出生命代价</span><span class="dl-chap">全书</span></button><div class="dl-panel"><div><span class="dl-tag">原文·全书</span><div class="dl-q">「The readiness is all.」</div><div class="dl-qp">准备好就是一切——哈姆雷特接受命运、坦然赴死的最终态度</div></div><div><span class="dl-tag">精讲·骷髅、毒剑与终极的沉默</span><div class="dl-deepbody"><h3>骷髅、毒剑与终极的沉默</h3>
+<p>从第一幕的鬼魂降临，到最后一幕的毒剑穿心，哈姆雷特用一场同归于尽，完成了从“想太多”到“准备好就是一切”的蜕变。死亡抹平了国王与弄臣的界限，但也正是在死亡的阴影下，哈姆雷特终于放下了脑子里的那些“如果”和“万一”，用行动给自己的人生盖了章。</p></div></div></div></div><div class="dl-point"><button class="dl-head" onclick="this.parentNode.classList.toggle('open')"><span class="dl-caret">▸</span><span class="dl-text">毒剑毒酒双重阴谋与终局同归于尽：阴谋反噬，所有人付出生命代价</span><span class="dl-chap">全书</span></button><div class="dl-panel"><div><span class="dl-tag">原文·全书</span><div class="dl-q">「The readiness is all.」</div><div class="dl-qp">准备好就是一切——哈姆雷特接受命运、坦然赴死的最终态度</div></div><div><span class="dl-tag">精讲 · 骷髅、毒剑与终极的沉默</span><div class="dl-deepbody"><h3>骷髅、毒剑与终极的沉默</h3>
 <p>故事讲到这儿，复仇、误杀、疯癫、溺亡，该发生的都发生了。可莎士比亚还不肯收手，他要在最后的终局里，让哈姆雷特直面那个最大的问题：死亡面前，这一切到底算什么？</p>
 <p>到了第五幕，哈姆雷特从海上死里逃生回到丹麦，他第一件事干嘛？——不是去拔剑报仇，而是去了墓地。在这儿，他碰见两个掘墓人，挖出了一个小丑弄臣的骷髅头。这弄臣叫约里克，小时候还背过哈姆雷特。哈姆雷特捧着这颗骷髅，说出了一段特别通透的死亡哲思。他接着往下推演——书里写得很绝，亚历山大大帝死了，化为尘土，尘土变成泥，这泥说不定就被拿去塞了啤酒桶的窟窿。</p>
 <p>您想想这个画面，一代霸主和宫廷弄臣，在死亡面前被彻底拉平，最后都成了塞酒桶的泥巴。这就是莎士比亚给哈姆雷特安排的“以物为镜”——当死亡这个终极的平等者摆在眼前，生前那些纠结、算计、王位和仇恨，到底还有多大分量？</p>
@@ -123,7 +275,7 @@ details.trace[open]>summary{border-bottom:1px solid var(--line);margin-bottom:10
 <p>咱们来看看这场比剑是怎么收网的。国王设了双重保险：雷欧提斯的剑尖涂了剧毒；桌上还备了一杯毒酒。第一回合，哈姆雷特赢了。国王假惺惺地往酒杯里扔了一颗“珍珠”——其实是毒药。哈姆雷特说，等打完这局再喝。第二回合，王后心疼儿子，端起那杯酒说：“哈姆雷特，母亲替你喝。”国王急了，低声阻拦说“那是毒酒”，但晚了，王后一饮而尽。您看，阴谋的第一个反噬，就这么精准地落在了自己老婆身上。</p>
 <p>到了第三回合，两人一交手，雷欧提斯偷袭划破了哈姆雷特的皮。哈姆雷特大怒，夺过那把毒剑，反手也给了雷欧提斯一下。这时候，王后毒发倒地咽了气。雷欧提斯也倒下了，临死前良心发现，喊出了真相：“是国王，国王才是罪魁祸首！”</p>
 <p>哈姆雷特终于不再犹豫。他拿起那把涂毒的剑，刺向国王，又把剩下的毒酒灌进他嘴里，看着他咽气。大仇得报，但哈姆雷特自己也毒发了。他拦住想喝毒酒殉情的霍拉旭，说：“你必须活下去，在这残酷的世界上忍受痛苦，把我的故事告诉世人。”最后，他留下一句“The rest is silence”——余下的只有沉默，气绝身亡。</p>
-<p>从第一幕的鬼魂降临，到最后一幕的毒剑穿心，哈姆雷特用一场同归于尽，完成了从“想太多”到“准备好就是一切”的蜕变。死亡抹平了国王与弄臣的界限，但也正是在死亡的阴影下，哈姆雷特终于放下了脑子里的那些“如果”和“万一”，用行动给自己的人生盖了章。</p></div></div></div></div><div class="dl-point"><button class="dl-head" onclick="this.parentNode.classList.toggle('open')"><span class="dl-caret">▸</span><span class="dl-text">临终托孤与福丁布拉斯继位：从个人复仇到历史交接的悲剧收束</span><span class="dl-chap">全书</span></button><div class="dl-panel"><div><span class="dl-tag">原文·全书</span><div class="dl-q">「Something is rotten in the state of Denmark.」</div><div class="dl-qp">丹麦国里有些东西腐烂了。——揭示宫廷道德溃败的名句</div></div><div><span class="dl-tag">精讲·刺穿帷幕的冲动与美人鱼的沉没</span><div class="dl-deepbody"><h3>刺穿帷幕的冲动与美人鱼的沉没</h3>
+<p>从第一幕的鬼魂降临，到最后一幕的毒剑穿心，哈姆雷特用一场同归于尽，完成了从“想太多”到“准备好就是一切”的蜕变。死亡抹平了国王与弄臣的界限，但也正是在死亡的阴影下，哈姆雷特终于放下了脑子里的那些“如果”和“万一”，用行动给自己的人生盖了章。</p></div></div></div></div><div class="dl-point"><button class="dl-head" onclick="this.parentNode.classList.toggle('open')"><span class="dl-caret">▸</span><span class="dl-text">临终托孤与福丁布拉斯继位：从个人复仇到历史交接的悲剧收束</span><span class="dl-chap">全书</span></button><div class="dl-panel"><div><span class="dl-tag">原文·全书</span><div class="dl-q">「Something is rotten in the state of Denmark.」</div><div class="dl-qp">丹麦国里有些东西腐烂了。——揭示宫廷道德溃败的名句</div></div><div><span class="dl-tag">精讲 · 刺穿帷幕的冲动与美人鱼的沉没</span><div class="dl-deepbody"><h3>刺穿帷幕的冲动与美人鱼的沉没</h3>
 <p>哈姆雷特收剑不杀祈祷的国王，转头去了王后的寝宫。夜深人静，母子俩在屋里对峙。老首相波洛涅斯，也就是奥菲莉娅的父亲，为了偷听，悄悄躲在墙上的挂毯帷幕后头。哈姆雷特正言辞激烈地痛斥母亲，王后害怕了，大喊救命。帷幕后头的波洛涅斯跟着喊了一嗓子。</p>
 <p>哈姆雷特神经正紧绷着呢，一听有动静，脱口而出一句：“怎么？有老鼠？”拔出剑来，隔着挂毯就是一记狠刺。等他把尸体拖出来一看，傻眼了，地上躺着的不是篡位的叔父，而是首相波洛涅斯。</p>
 <p>您注意，这是全剧最关键的一个转折点。前面国王祈祷时，他因为“想太多”放弃了绝佳的复仇机会；现在，他因为“想太少”，杀了一个无辜的旁观者。理性过剩让他延宕，理性缺席让他滥杀。当一个人被压抑的仇恨逼到极点，他的第一次爆发，往往不是精准的复仇，而是盲目的破坏。</p>
@@ -131,4 +283,4 @@ details.trace[open]>summary{border-bottom:1px solid var(--line);margin-bottom:10
 <p>波洛涅斯一死，多米诺骨牌倒下的第二张，就是他的女儿奥菲莉娅。</p>
 <p>这里得跟您澄清一个原著的处理手法：奥菲莉娅的溺亡，并不是在舞台上直接演出来的，而是到了第四幕第七场，由王后乔特鲁德用一段极具诗意却又残忍的悼词转述出来的。莎士比亚为什么不直接演？因为这种“别人的讲述”，更凸显了奥菲莉娅在这个宫廷里毫无存在感的悲剧——她连死，都只能成为别人嘴里的一段谈资。</p>
 <p>您回想一下奥菲莉娅的处境。哥哥把她当家族荣誉的挂件，父亲把她当政治试探的棋子，恋人把她当发泄厌女情绪的垃圾桶。当父亲被恋人杀死，她世界里最后一根支柱塌了。王后是怎么描述她死前的画面的呢？她爬上一棵柳树，想把花环挂在树枝上，树枝断了，她掉进了冰冷的河水里。王后的原话美得让人心碎：“Her clothes spread wide, and mermaid-like...”——她的衣服散开，如同美人鱼的裙摆，她在水里漂浮着，嘴里还断断续续地唱着古老的歌谣，仿佛对即将到来的死亡毫无察觉，直到衣服吸满了水，把她拖进泥沼。</p>
-<p>后世很多文学评论家，喜欢把这段做符号化的解读，说花环代表着她内心残存的感性纯真，而吞噬她的河水代表着冷酷理性的丹麦宫廷。虽然原著并没有明说这层隐喻，但咱们顺着这个思路想，确实能品出一种极致的残忍：当理性的男人们在王座前争夺生死、算计灵魂上不上天堂时，一个感性的女孩，已经在冰冷的河水里无声地沉没了。哈姆雷特用装疯来对抗世界，他的疯里藏着清醒的算计；可奥菲莉娅的疯，是彻头彻尾的毁灭。</p></div></div></div></div></div></article><div class="foot">生成 2026-07-11 23:10</div></div></body></html>
+<p>后世很多文学评论家，喜欢把这段做符号化的解读，说花环代表着她内心残存的感性纯真，而吞噬她的河水代表着冷酷理性的丹麦宫廷。虽然原著并没有明说这层隐喻，但咱们顺着这个思路想，确实能品出一种极致的残忍：当理性的男人们在王座前争夺生死、算计灵魂上不上天堂时，一个感性的女孩，已经在冰冷的河水里无声地沉没了。哈姆雷特用装疯来对抗世界，他的疯里藏着清醒的算计；可奥菲莉娅的疯，是彻头彻尾的毁灭。</p></div></div></div></div></div></article></div><footer class="foot"><div class="wrap-f"><span class="brand-f"><span class="dot"></span>书语 · Fathom 评审台</span><span>内部评审子站 · noindex · 生成 2026-07-12 10:34</span></div></footer></body></html>
