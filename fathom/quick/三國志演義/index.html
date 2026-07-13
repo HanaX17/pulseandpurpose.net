@@ -1,0 +1,298 @@
+<!doctype html><html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#100f17"><title>三國志演義 · Quick 评审</title><script>(function(){try{var m=localStorage.getItem('fathom-theme');document.documentElement.dataset.theme=m||((window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light');}catch(e){}})();</script><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&display=swap"><style>:root{
+--coral:oklch(0.705 0.182 35);--ink-2:oklch(0.205 0.026 274);
+--on-ink:oklch(0.965 0.004 250);--on-ink-mut:oklch(0.740 0.016 262);
+--line-dark:color-mix(in oklab,white 14%,transparent);
+--font:"Bricolage Grotesque",ui-sans-serif,system-ui,-apple-system,"PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif;
+--font-quote:"Songti SC","STSong","Noto Serif SC","Source Han Serif SC",Georgia,"Times New Roman",serif;
+--t-h1:clamp(1.85rem, 1.4rem + 1.7vw, 2.6rem);--t-h2:clamp(1.4rem, 1.2rem + 0.8vw, 1.85rem);
+--t-h3:clamp(1.12rem, 1.03rem + 0.4vw, 1.3rem);--read:1.145rem;
+--gutter:clamp(1.15rem, 0.7rem + 2vw, 2.25rem);--maxw:1080px;--readw:44rem;
+--r-sm:9px;--r-md:14px;--r-lg:20px;--r-pill:999px;--ease:cubic-bezier(0.16,1,0.3,1);--z-head:50;
+color-scheme:light dark;
+
+--paper:oklch(0.987 0.002 250);--paper-2:oklch(0.966 0.004 255);--paper-3:oklch(0.945 0.006 258);
+--ink-text:oklch(0.235 0.020 274);--ink-muted:oklch(0.470 0.018 268);
+--coral-ink:oklch(0.555 0.165 33);--indigo:oklch(0.505 0.155 274);
+--good:oklch(0.56 0.12 155);--warn:oklch(0.575 0.14 60);
+--ink:oklch(0.165 0.022 274);
+--line:color-mix(in oklab,oklch(0.165 0.022 274) 12%,transparent);
+--line-2:color-mix(in oklab,oklch(0.165 0.022 274) 7%,transparent);
+--shadow:color-mix(in oklab,oklch(0.165 0.022 274) 20%,transparent);
+}[data-theme="dark"]{
+--paper:oklch(0.185 0.024 274);--paper-2:oklch(0.223 0.026 274);--paper-3:oklch(0.264 0.028 274);
+--ink-text:oklch(0.955 0.004 250);--ink-muted:oklch(0.725 0.016 262);
+--coral-ink:oklch(0.745 0.170 37);--indigo:oklch(0.780 0.110 268);
+--good:oklch(0.75 0.15 158);--warn:oklch(0.80 0.13 72);
+--ink:oklch(0.145 0.020 274);
+--line:color-mix(in oklab,white 13%,transparent);
+--line-2:color-mix(in oklab,white 7%,transparent);
+--shadow:color-mix(in oklab,black 55%,transparent);
+}@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+--paper:oklch(0.185 0.024 274);--paper-2:oklch(0.223 0.026 274);--paper-3:oklch(0.264 0.028 274);
+--ink-text:oklch(0.955 0.004 250);--ink-muted:oklch(0.725 0.016 262);
+--coral-ink:oklch(0.745 0.170 37);--indigo:oklch(0.780 0.110 268);
+--good:oklch(0.75 0.15 158);--warn:oklch(0.80 0.13 72);
+--ink:oklch(0.145 0.020 274);
+--line:color-mix(in oklab,white 13%,transparent);
+--line-2:color-mix(in oklab,white 7%,transparent);
+--shadow:color-mix(in oklab,black 55%,transparent);
+}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink-text);font-family:var(--font);
+  font-size:var(--read);line-height:1.75;font-optical-sizing:auto;
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden;
+  transition:background .3s var(--ease),color .3s var(--ease)}
+a{color:var(--coral-ink);text-decoration:none}
+h1,h2,h3,p,dl,dd,dt,figure{margin:0}ul,ol{margin:0}
+::selection{background:color-mix(in oklab,var(--coral) 28%,transparent);color:var(--ink-text)}
+:focus-visible{outline:2.5px solid var(--coral-ink);outline-offset:3px;border-radius:5px}
+.wrap{width:100%;max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter)}
+
+.btn{display:inline-flex;align-items:center;gap:6px;font-size:.85rem;font-weight:600;
+  padding:7px 14px;border-radius:var(--r-pill);border:1.5px solid var(--line);
+  background:var(--paper);color:var(--ink-text);cursor:pointer;
+  transition:border-color .18s var(--ease),color .18s var(--ease),transform .18s var(--ease),background .18s var(--ease)}
+.btn:hover{border-color:var(--coral-ink);color:var(--coral-ink);transform:translateY(-1px)}
+.btn:active{transform:translateY(0) scale(.985)}
+.btn.ghost{border-color:transparent;color:var(--ink-muted)}
+.btn.ghost:hover{border-color:var(--line);color:var(--ink-text)}
+
+/* 主题开关 */
+.theme-tgl{display:inline-flex;align-items:center;justify-content:center;flex:none;
+  width:36px;height:36px;border-radius:var(--r-pill);border:1.5px solid currentColor;
+  background:transparent;color:currentColor;cursor:pointer;opacity:.72;
+  transition:opacity .18s var(--ease),transform .18s var(--ease),background .18s var(--ease)}
+.theme-tgl:hover{opacity:1;transform:translateY(-1px)}
+.theme-tgl:active{transform:scale(.94)}
+.theme-tgl svg{width:17px;height:17px}
+.theme-tgl .ti-sun{display:none}
+[data-theme="dark"] .theme-tgl .ti-moon{display:none}
+[data-theme="dark"] .theme-tgl .ti-sun{display:inline}
+
+/* 页脚 */
+.foot{border-top:1px solid var(--line);margin-top:clamp(3rem,6vw,5rem);
+  padding:clamp(2rem,3.5vw,2.75rem) var(--gutter);color:var(--ink-muted);font-size:.86rem}
+.foot .wrap-f{max-width:var(--maxw);margin-inline:auto;display:flex;flex-wrap:wrap;gap:8px 18px;
+  align-items:center;justify-content:space-between}
+.foot .brand-f{display:inline-flex;align-items:center;gap:9px;color:var(--ink-text);font-weight:600}
+.foot .brand-f .dot{width:7px;height:7px;border-radius:var(--r-pill);background:var(--coral-ink)}
+
+@keyframes fade{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+@keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition-duration:.01ms !important;animation:none !important}}
+
+.qbar{position:sticky;top:0;z-index:var(--z-head);display:flex;align-items:center;gap:14px;
+  padding:9px var(--gutter);background:color-mix(in oklab,var(--paper) 86%,transparent);
+  backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);
+  border-bottom:1px solid var(--line-2)}
+.qbar .back{font-size:.9rem;font-weight:600;color:var(--ink-muted);flex:none}
+.qbar .back:hover{color:var(--coral-ink)}
+.qbar-title{font-weight:700;letter-spacing:-.01em;font-size:1rem;color:var(--ink-text);flex:1;min-width:0;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.qbar .theme-tgl{width:32px;height:32px}.qbar .theme-tgl svg{width:15px;height:15px}
+
+.qhero{max-width:var(--maxw);margin:0 auto;padding:clamp(1.9rem,3.6vw,2.9rem) var(--gutter) 0}
+.qhero .kick{font-size:.86rem;font-weight:600;color:var(--coral-ink);letter-spacing:.01em}
+.qhero h1{margin-top:8px;font-size:var(--t-h1);font-weight:700;letter-spacing:-.028em;line-height:1.04;text-wrap:balance}
+.qhero .sub{margin-top:.6rem;color:var(--ink-muted);font-size:.95rem;font-variant-numeric:tabular-nums}
+
+main.qwrap{max-width:var(--maxw);margin:0 auto;padding:clamp(1.3rem,2.6vw,1.9rem) var(--gutter) clamp(4rem,7vw,6rem)}
+
+.booklist{display:grid;gap:3px;margin-top:1rem}
+.bookcard{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:16px 18px;
+  border-radius:var(--r-md);background:var(--paper-2);transition:background .2s var(--ease),transform .2s var(--ease)}
+.bookcard:hover{background:var(--paper-3);transform:translateX(2px)}
+.bookcard b{font-size:1.08rem;letter-spacing:-.01em}
+.bookcard .n{color:var(--ink-muted);font-size:.85rem;margin-top:3px;font-variant-numeric:tabular-nums}
+.bookcard .go{color:var(--coral-ink);font-weight:700;font-size:1.1rem;flex:none}
+
+.q{background:var(--paper-2);border:1px solid var(--line);border-radius:var(--r-lg);padding:17px 19px;margin:15px 0}
+.qhead{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px}
+.score{font-size:1.5rem;font-weight:700;color:var(--coral-ink);min-width:30px;font-variant-numeric:tabular-nums}
+.badge{font-size:.75rem;padding:2px 11px;border-radius:var(--r-pill);font-weight:700}
+.pt{font-size:.72rem;color:var(--ink-muted);border:1px solid var(--line);border-radius:var(--r-pill);padding:2px 9px}
+.vbadge{font-size:.72rem;color:var(--good);border:1px solid color-mix(in oklab,var(--good) 40%,transparent);
+  border-radius:var(--r-pill);padding:2px 9px;font-weight:600}
+.qtitle{font-size:1.08rem;font-weight:700;flex:1;min-width:200px;letter-spacing:-.01em}
+.hook{color:var(--ink-muted);font-size:.95rem;margin:2px 0 10px}
+.q audio{width:100%;height:36px;margin:4px 0 10px}
+.cards{display:flex;gap:8px;overflow-x:auto;padding-bottom:8px;scrollbar-width:thin}
+.cards img{height:230px;border-radius:10px;border:1px solid var(--line);flex:0 0 auto}
+.q details{margin-top:6px}
+.q summary{cursor:pointer;color:var(--ink-muted);font-size:.86rem;font-weight:600;list-style:none;padding:4px 0}
+.q summary::-webkit-details-marker{display:none}.q summary::marker{content:""}
+.q summary:hover{color:var(--coral-ink)}
+.script{white-space:pre-wrap;font-size:.96rem;line-height:1.9;color:var(--ink-text);margin-top:8px;
+  padding:14px 16px;background:var(--paper-3);border-radius:var(--r-md)}
+.meta{color:var(--ink-muted);font-size:.8rem;margin-top:8px;font-variant-numeric:tabular-nums}
+.meta b{color:var(--ink-text)}
+.tag{color:var(--ink-muted);font-size:.85rem}
+.note{max-width:var(--maxw);margin:0 auto 1rem;padding:13px 17px;border-radius:var(--r-md);font-size:.92rem;
+  color:var(--ink-text);background:color-mix(in oklab,var(--warn) 9%,var(--paper));
+  border:1px solid color-mix(in oklab,var(--warn) 35%,transparent)}
+.note b{color:color-mix(in oklab,var(--warn) 60%,var(--ink-text))}
+@media (max-width:640px){.qbar-title{display:none}}
+</style></head><body><header class="qbar"><a class="back" href="../index.html">← Quick 评审台</a><span class="qbar-title">三國志演義</span><button class="theme-tgl" type="button" aria-label="切换深色 / 浅色主题" title="深色 / 浅色"><svg class="ti ti-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg class="ti ti-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.4M12 19.6V22M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M2 12h2.4M19.6 12H22M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7"/></svg></button></header><div class="qhero"><p class="kick">Quick 短视频候选</p><h1>三國志演義</h1><p class="sub">5 条 · 映照4 洞见1 · 更新 2026-07-13 12:10</p></div><main class="qwrap"><div class="q"><div class="qhead"><span class="score">80</span><span class="badge" style="background:color-mix(in oklab,#c2456f 16%,transparent);color:#c2456f;border:1px solid color-mix(in oklab,#c2456f 34%,transparent)">映照</span><span class="pt">thread</span><span class="pt">公版</span><span class="vbadge">✓ 判官过审</span><span class="qtitle">明知会输，还要不要打</span></div><div class="hook">🎬 诸葛亮六出祁山，每一天他都知道结局写好了。但他还是出发了。</div><audio controls preload="none" src="assets/094_映照_明知會输還要不要打.mp3"></audio><div class="cards"><img src="assets/094_映照_明知會输還要不要打/01.png" loading="lazy" alt="明知会输，还要不要打 图文卡"><img src="assets/094_映照_明知會输還要不要打/02.png" loading="lazy" alt="明知会输，还要不要打 图文卡"><img src="assets/094_映照_明知會输還要不要打/03.png" loading="lazy" alt="明知会输，还要不要打 图文卡"><img src="assets/094_映照_明知會输還要不要打/04.png" loading="lazy" alt="明知会输，还要不要打 图文卡"><img src="assets/094_映照_明知會输還要不要打/05.png" loading="lazy" alt="明知会输，还要不要打 图文卡"><img src="assets/094_映照_明知會输還要不要打/cover.png" loading="lazy" alt="明知会输，还要不要打 图文卡"></div><details><summary>口播稿全文</summary><div class="script">大家好，我是小京。
+
+上方谷那场火，烧得天地都变色了。司马懿被困在谷底，火光冲天，他抱着两个儿子哭，说今天要死在这里了。那一刻，所有人都以为结局定了——诸葛亮赢了，司马懿死了，天命站在蜀汉这边。
+
+但老天爷偏偏下了一场雨。
+
+那场雨浇灭的不只是火，也浇灭了诸葛亮最后的机会。他站在山上看着这一切，叹了口气说：“谋事在人，成事在天，不可强也。”这句话后来被多少人引用过，但很少有人真的读懂了他那一刻的心情。他不是认命，他是承认有些东西不在自己手里。
+
+后来的事更让人心酸。诸葛亮送了一套女人的衣服给司马懿，羞辱他出战。司马懿问使者，诸葛亮每天吃多少饭？使者说不过数升。司马懿听完对将领们说了一句话：“孔明食少事烦，其能久乎。”他知道诸葛亮活不了多久了。使者把这话带回去，诸葛亮听完长叹一声，说：“彼深知我也。”不是敌人了解我，而是他看穿了我的命。
+
+五丈原上，他病得吐血，每天还是处理公务到深夜。夜观天象，看见客星越来越亮，主星越来越暗，他知道自己的命快到头了。但他还是在帐中设了七盏大灯、四十九盏小灯，踏罡步斗，祈禳北斗。第六天灯还亮着，他心里还抱有希望。第七天魏延冲进来报告军情，脚步太急，把主灯扑灭了。诸葛亮看着灯灭，捡起剑叹了口气说：“死生有命，不可得而禳也。”
+
+你发现没有，他早就知道结局了。从第一次出祁山他就知道，蜀汉和曹魏的国力差距太大，这不是一个人能改变的。但他还是去了六次，明知会输还是去了。
+
+为什么？因为他不是为胜利而战，而是为托付而战。先帝三顾茅庐的知遇之恩，白帝城托孤的信任，这些东西让他无法放弃。他不是不知道自己会死，而是知道之后反而更清醒——正因为时间有限，才要把每一天都用尽全力。
+
+主簿杨颙劝他别太操劳，说“为治有体，上下不可相侵”，他哭着说：“吾非不知，但受先帝托孤之重，惟恐他人不似我尽心也。”这句话里没有豪言壮语，只有一个人的疲惫和不肯放手的执念。
+
+所以诸葛亮的故事从来不是成功学。他是给所有面对无能为力之事的人的一面镜子——明知道结局可能已经写好了，你还会全力以赴吗？诸葛亮用一生回答了这个问题。他出发了六次，每一次都知道可能是最后一次，但他还是出发了。这不是愚蠢，也不是执着，这是一种诚实的选择——既然有些事值得做，那就不问结局，倾尽所有去做。谋事在人，成事在天。但“人”这一步，他一步都没有省。</div></details><div class="meta">🧑‍⚖️ 判官 80 · 收束夸张与绝对化措辞，改回原文动作细节（弃剑），并用原句支撑价值判断，可显著提升忠实度与厚重感。</div><div class="meta">📝 生成 <b>2026-07-13 12:00</b> · 🎙️ 配音 <b>2026-07-13 12:00</b></div><div class="meta">维度 钩子<b>4</b>　清晰<b>4</b>　收获<b>4</b>　透彻<b>4</b>　忠实<b>3</b>　论证诚实<b>3</b>　节奏<b>4</b> · 锚 [第九十二至一○四回六出祁山与五丈原病逝, 第一○三回上方谷大雨, core_thesis谋事在人成事在天]</div></div><div class="q"><div class="qhead"><span class="score">80</span><span class="badge" style="background:color-mix(in oklab,#c2456f 16%,transparent);color:#c2456f;border:1px solid color-mix(in oklab,#c2456f 34%,transparent)">映照</span><span class="pt">scene</span><span class="pt">公版</span><span class="vbadge">✓ 判官过审</span><span class="qtitle">携民渡江：leader的代价</span></div><div class="hook">🎬 刘备说：「数十万百姓跟著我，我怎么忍心抛下他们？」然后他带著这群人，跑了。</div><audio controls preload="none" src="assets/093_映照_携民渡江leader的代價.mp3"></audio><div class="cards"><img src="assets/093_映照_携民渡江leader的代價/01.png" loading="lazy" alt="携民渡江：leader的代价 图文卡"><img src="assets/093_映照_携民渡江leader的代價/02.png" loading="lazy" alt="携民渡江：leader的代价 图文卡"><img src="assets/093_映照_携民渡江leader的代價/03.png" loading="lazy" alt="携民渡江：leader的代价 图文卡"><img src="assets/093_映照_携民渡江leader的代價/04.png" loading="lazy" alt="携民渡江：leader的代价 图文卡"><img src="assets/093_映照_携民渡江leader的代價/05.png" loading="lazy" alt="携民渡江：leader的代价 图文卡"><img src="assets/093_映照_携民渡江leader的代價/cover.png" loading="lazy" alt="携民渡江：leader的代价 图文卡"></div><details><summary>口播稿全文</summary><div class="script">大家好，我是余儿。
+
+你有没有想过一个问题——
+
+携民渡江，为后人所称颂。但你翻开原著看看，那是一次造成巨大代价的抉择。十多万军民跟着他，日行十里，走走停停。曹操的五千铁骑日夜追赶，一天一夜就能追上。最后当阳坡一战，身边仅余百余骑，百姓老小失散。
+
+刘备哭着说：“十数万生灵，皆因恋我，遭此大难；诸将及老小，皆不知存亡，虽土木之人，宁不悲乎！”
+
+你看他这个“仁义”，代价有多大。
+
+但你再看他对手——曹操。在第四回，曹操逃命途中杀了吕伯奢一家人，陈宫问他为什么明知误杀还要灭口，曹操说了一句话：“宁教我负天下人，休教天下人负我。”
+
+这句话够狠，够清醒。此处仅见其“宁负天下人”之选择及其冷酷后果。
+
+可千年之后，你我记住了谁？
+
+不是那个常被视为冷酷决断者的曹操，而是那个下船上哭、说“举大事者必以人为本”的刘玄德。
+
+“举大事者必以人为本”，这是刘备亲口说的，不是后人给他贴的标签。当时众将都劝他放弃百姓、保全实力，这是最理性的选择。刘备说什么？他说：“今人归我，奈何弃之？”——现在百姓愿意跟着我，我怎么能丢下他们？
+
+就这一句话，百姓闻玄德此言，莫不伤感。后人写诗赞他：“临难仁心存百姓，登舟挥泪动三军。至今凭吊襄江口，父老犹然忆使君。”
+
+你看清楚了吗？历史给他的定位，不是“赢了”的那个人，而是那个“舍不得”的人。
+
+现实里我们常常遇到类似的选择。选择善良、选择厚道，你可能要吃亏，可能错失机会，可能在竞争里被人甩在后面。你看那些精明的、决绝的、不管不顾往前冲的，好像总是赢面更大。
+
+但你回头想想，人这一辈子，最后别人怎么评价你？你给这个世界留下了什么印象？
+
+刘备留下来了——一个你一想到“携民渡江”，脑海里就会浮现的名字。不是因为他赢了，是因为他没丢下那些跟着他的人。
+
+善良是有代价的。
+
+但反过来想——你愿意用什么代价，换千年后还有人记得你？
+
+选择善良，最终是你给自己的人生写下的注脚。</div></details><div class="meta">🧑‍⚖️ 判官 80 · 补入同章“买民心”与“愿随者同去”等细节，将对比升级为策略层面的复杂性，避免把曹操简化成单一冷酷形象与“千年只记住谁”式总括。</div><div class="meta">📝 生成 <b>2026-07-13 11:59</b> · 🎙️ 配音 <b>2026-07-13 11:59</b></div><div class="meta">维度 钩子<b>3</b>　清晰<b>4</b>　收获<b>4</b>　透彻<b>3</b>　忠实<b>4</b>　论证诚实<b>3</b>　节奏<b>4</b> · 锚 [第四十一回携民渡江, 第四回曹操名言, core_thesis仁义与权谋的对比]</div></div><div class="q"><div class="qhead"><span class="score">84</span><span class="badge" style="background:color-mix(in oklab,#c2456f 16%,transparent);color:#c2456f;border:1px solid color-mix(in oklab,#c2456f 34%,transparent)">映照</span><span class="pt">scene</span><span class="pt">公版</span><span class="vbadge">✓ 判官过审</span><span class="qtitle">「既生瑜，何生亮」的反转</span></div><div class="hook">🎬 周瑜到死都以为诸葛亮是他的一生之敌。但他不知道的是：诸葛亮根本没有把他当对手。</div><audio controls preload="none" src="assets/091_映照_既生瑜何生亮的反轉.mp3"></audio><div class="cards"><img src="assets/091_映照_既生瑜何生亮的反轉/01.png" loading="lazy" alt="「既生瑜，何生亮」的反转 图文卡"><img src="assets/091_映照_既生瑜何生亮的反轉/02.png" loading="lazy" alt="「既生瑜，何生亮」的反转 图文卡"><img src="assets/091_映照_既生瑜何生亮的反轉/03.png" loading="lazy" alt="「既生瑜，何生亮」的反转 图文卡"><img src="assets/091_映照_既生瑜何生亮的反轉/04.png" loading="lazy" alt="「既生瑜，何生亮」的反转 图文卡"><img src="assets/091_映照_既生瑜何生亮的反轉/05.png" loading="lazy" alt="「既生瑜，何生亮」的反转 图文卡"><img src="assets/091_映照_既生瑜何生亮的反轉/cover.png" loading="lazy" alt="「既生瑜，何生亮」的反转 图文卡"></div><details><summary>口播稿全文</summary><div class="script">大家好，我是余儿。
+
+周瑜死前说的那句话，你肯定听过——“既生瑜，何生亮”。
+
+六个字，道尽了一个天才最后的绝望。他恨，恨自己怎么就遇上了诸葛亮；恨老天既然造了他周瑜，为什么还要再造一个孔明。
+
+但罗贯中在这里埋了一个很残忍的细节，你细品过吗？
+
+周瑜死的时候，诸葛亮在干什么？原文写得很轻：“孔明在荆州，夜观天文，见将星坠地，乃笑曰：‘周瑜死矣。’”
+
+笑着说的。
+
+然后第二天，他跟刘备请命去吊丧。刘备担心吴将加害，诸葛亮怎么回的？“瑜在之日，亮犹不惧；今瑜已死，又何患乎？”
+
+你听出来了吗？周瑜活着的时候，他“不惧”；周瑜死了，他连“惧”都懒得惧。
+
+这才是整件事最心酸的地方。
+
+在赤壁之后、南郡争夺这一阶段，周瑜对孔明多所忌惮、相与角力。赤壁的时候他忌惮，取南郡的时候他拼命，中了箭还要带伤厮杀，结果城被诸葛亮用计取走。临终前再次因孔明来书触发悲愤而发叹“既生瑜，何生亮”。
+
+可诸葛亮呢？他的全部精力，从来不在周瑜身上。
+
+你去看他给周瑜写的祭文——情真意切，泪如涌泉，夸周瑜“雄姿英发”、&quot;文武筹略&quot;。众将看了都说：“人尽道公瑾与孔明不睦，今观其祭奠之情，人皆虚言也。”
+
+但祭奠并受鲁肃设宴，旋即辞归；江边遇庞统后留书而返。不是因为薄情，而是因为——周瑜根本不在他的棋盘上。
+
+他去江东之前就已经料定了：鲁肃会接任都督。他顺道还替庞统铺好了后路，告诉庞统“孙权必不能用你，不得意可来荆州”。
+
+周瑜用尽一生跟诸葛亮较劲，而诸葛亮的心思，已经在荆州、在西川、在整个天下的棋局上。
+
+这不是谁比谁高明的问题。两个人都是顶级的人才，只是周瑜在下棋，而诸葛亮在看棋。下棋的人为了一步棋可以吐血身亡，看棋的人赢了之后，连对手的脸都懒得再回头看一眼。
+
+所以“既生瑜，何生亮”这句话，换一个读法你试试——
+
+不是周瑜在问老天“为什么你要造一个克我的人”，而是老天在问周瑜：“你把谁当对手？”
+
+你以为是你的那个人，根本没有在看你。
+
+这事儿搁到现在也一样。你在格子间里跟同事较劲，觉得他是你最大的威胁，拼了命想证明自己；你在圈子里跟某个人暗暗较量，觉得他挡了你的路。可是你不知道的是，对方可能早就不在这个维度上跟你玩了。
+
+他的眼睛看着更远的地方，根本没把你的焦虑当回事。
+
+你以为打了一场天大的仗，赢了或者输了，重要得不得了。但对那个人来说，那只是他漫长棋局里的一步，他甚至不记得走了没有。
+
+这不是谁赢了谁输了的问题，是你的战争，可能只是你一个人的战争。
+
+有时候，放下那个你以为的对手，不是认输，是终于看见——你值得更大的棋盘。</div></details><div class="meta">🧑‍⚖️ 判官 84 · 收束绝对化措辞（如“从来不在”“用尽一生”“根本不在棋盘”），多用原文现成旁白如“人尽道…人皆虚言也”“孔明自是多情，乃公瑾量窄”来加固论证重心。</div><div class="meta">📝 生成 <b>2026-07-13 11:59</b> · 🎙️ 配音 <b>2026-07-13 11:59</b></div><div class="meta">维度 钩子<b>4</b>　清晰<b>4</b>　收获<b>4</b>　透彻<b>4</b>　忠实<b>4</b>　论证诚实<b>3</b>　节奏<b>4</b> · 锚 [第五十七回周瑜临终叹, 第五十一回周瑜感叹被刘备占城, key_event赤壁之战与周瑜角色]</div></div><div class="q"><div class="qhead"><span class="score">72</span><span class="badge" style="background:color-mix(in oklab,#c2456f 16%,transparent);color:#c2456f;border:1px solid color-mix(in oklab,#c2456f 34%,transparent)">映照</span><span class="pt">scene</span><span class="pt">公版</span><span class="vbadge">✓ 判官过审</span><span class="qtitle">那句「勿以善小而不为」</span></div><div class="hook">🎬 刘备临终前留给儿子的话，不是如何打天下，是：「别因为好事小就不做。」</div><audio controls preload="none" src="assets/088_映照_那句勿以善小而不為.mp3"></audio><div class="cards"><img src="assets/088_映照_那句勿以善小而不為/01.png" loading="lazy" alt="那句「勿以善小而不为」 图文卡"><img src="assets/088_映照_那句勿以善小而不為/02.png" loading="lazy" alt="那句「勿以善小而不为」 图文卡"><img src="assets/088_映照_那句勿以善小而不為/03.png" loading="lazy" alt="那句「勿以善小而不为」 图文卡"><img src="assets/088_映照_那句勿以善小而不為/04.png" loading="lazy" alt="那句「勿以善小而不为」 图文卡"><img src="assets/088_映照_那句勿以善小而不為/05.png" loading="lazy" alt="那句「勿以善小而不为」 图文卡"><img src="assets/088_映照_那句勿以善小而不為/cover.png" loading="lazy" alt="那句「勿以善小而不为」 图文卡"></div><details><summary>口播稿全文</summary><div class="script">大家好，我是余儿。
+
+刘备打了大半辈子仗，彝陵一把火烧光了蜀汉的家底，他退到白帝城，病倒了。
+
+那一夜他做了一个梦，梦见关羽和张飞站在灯影里。他喊他们，兄弟说：「上帝以臣二人平生不失信义，皆敕命为神。哥哥与兄弟聚会不远矣。」
+
+刘备惊醒过来，知道自己时日无多，派人去成都把诸葛亮和李严叫来。
+
+诸葛亮到了，刘备拉著他的手说了很多。说自己当年不听丞相的话，才落到这步田地。说了「君才十倍曹丕，必能安邦定国」。说了「若嗣子可辅，则辅之；如其不才，君可自为成都之主」——这句话让诸葛亮汗流遍体，叩头流血。
+
+但我反复读这段，最打动我的不是这些。
+
+是后来那份遗诏。
+
+刘备死了，诸葛亮率众官奉梓宫还成都，太子刘禅开读遗诏。诏书里有一句话，后来成了整部《三国演义》流传最广的句子之一：
+
+「勿以恶小而为之，勿以善小而不为。」
+
+就这十个字。
+
+你发现没有，这是一个打了一辈子仗的人，留给儿子的最后一句话。不是「如何巩固江山」，不是「怎样防备魏吴」，不是任何一个战略层面的叮嘱。
+
+是一个父亲说：别因为坏事小就去做，也别因为好事小就不做。
+
+他打了那么多年的仗，丢过徐州，丢过荆州，丢了两个把弟，彝陵一把火烧掉了大半辈子积攒的兵马。惠陵埋著他，成都的皇帝是他的儿子，可他自己心里清楚，这个帝业他守不住多久了。
+
+所以他最后对刘禅说的，不是你爹多厉害，而是：你爹德薄，不足效也。
+
+一个六十三岁的老人，在遗诏里承认自己德行不够，然后把全部的嘱托押在了一句最朴素的话上——一件一件的小善。
+
+这件事我每次读都会停下来。
+
+我们今天也一样。打工人想的是什么？大的机会、关键的选择、能不能翻身。好像人生是由那几个高光时刻决定的。
+
+但刘备用他整个一生告诉你：不是的。是你每天怎么对人，怎么处理一件小事，怎么拒绝一个诱惑，怎么坚持一个没人看见的选择。那些东西才构成你这个人。
+
+他没有留下一套兵法，没有留下一张地图，留下的就是这十个字。
+
+而这十个字，比他的江山活得久多了。</div></details><div class="meta">🧑‍⚖️ 判官 72 · 少用「最后一句／全部押在／就这十字」这类绝对化措辞，补齐遗诏全貌（德政与委政部分），并更正「十四字」的细节，以提升忠实与厚度。</div><div class="meta">📝 生成 <b>2026-07-13 11:59</b> · 🎙️ 配音 <b>2026-07-13 11:59</b></div><div class="meta">维度 钩子<b>4</b>　清晰<b>4</b>　收获<b>3</b>　透彻<b>2</b>　忠实<b>3</b>　论证诚实<b>3</b>　节奏<b>4</b> · 锚 [第八十五回白帝城托孤·勿以恶小而为之勿以善小而不为]</div></div><div class="q"><div class="qhead"><span class="score">78</span><span class="badge" style="background:color-mix(in oklab,#2f79c9 16%,transparent);color:#2f79c9;border:1px solid color-mix(in oklab,#2f79c9 34%,transparent)">洞见</span><span class="pt">scene</span><span class="pt">公版</span><span class="vbadge">✓ 判官过审</span><span class="qtitle">赤壁之战的真正英雄</span></div><div class="hook">🎬 火烧连营的计策是黄盖提出的，中间那封假投降信是他冒死送出的。没有黄盖，没有赤壁。</div><audio controls preload="none" src="assets/084_洞见_赤壁之戰的真正英雄.mp3"></audio><div class="cards"><img src="assets/084_洞见_赤壁之戰的真正英雄/01.png" loading="lazy" alt="赤壁之战的真正英雄 图文卡"><img src="assets/084_洞见_赤壁之戰的真正英雄/02.png" loading="lazy" alt="赤壁之战的真正英雄 图文卡"><img src="assets/084_洞见_赤壁之戰的真正英雄/03.png" loading="lazy" alt="赤壁之战的真正英雄 图文卡"><img src="assets/084_洞见_赤壁之戰的真正英雄/04.png" loading="lazy" alt="赤壁之战的真正英雄 图文卡"><img src="assets/084_洞见_赤壁之戰的真正英雄/05.png" loading="lazy" alt="赤壁之战的真正英雄 图文卡"><img src="assets/084_洞见_赤壁之戰的真正英雄/cover.png" loading="lazy" alt="赤壁之战的真正英雄 图文卡"></div><details><summary>口播稿全文</summary><div class="script">大家好，我是小京。
+
+赤壁打完一千八百年了。每次聊起这仗，人们嘴里说的永远是那几个人——周瑜运筹帷幄，诸葛亮神机妙算借来三天三夜的东南风。可你要是翻开演义第四十九回，细细把那些边角料里的人和事捋一遍，会有一个名字从字缝里跳出来，硬生生撑住整场胜利的底座。
+
+这个人，就是黄盖。
+
+周瑜调兵的时候，演义里写得明白——“却令黄盖安排火船，使小卒驰书约曹操令夜来降。”你细品这句话。周瑜是统帅，调兵遣将是他的本分，但“安排火船”这四个字不是随随便便安在谁头上的。那是整整二十只船，船头密布大钉，船舱里装着芦苇干柴，上面浇了鱼油，再铺硫黄焰硝，用青布油单遮盖得严严实实。这套打法是谁想出来的？书里没明说，但周瑜把这件事单独交给黄盖去办，交给那个愿意把自己往火里推的人去办。
+
+为什么是黄盖？因为黄盖自己站出来，做了关键的那一步。
+
+他写了密书，让小卒送进曹营。信里说什么？说周瑜防得太紧，自己找不到脱身的机会，现在正好有鄱阳湖新运到的粮船，周瑜派他巡哨，他打算杀几个江东名将，提着人头来投降，只在今晚三更。曹操看完大喜，亲自跑到水寨船上等着接应。程昱劝过，说来船吃水太浅，恐怕有诈，曹操没听。
+
+黄盖这封信，是拿命在赌。诈降这种事，成了一起功成名就，败了就是身首异处。他当然知道风险，可他还是写，还是送。
+
+二十只火船逼近曹营的时候，黄盖在第三只船上。他一个人披着掩心甲，手提利刃，船头大书四个字——“先锋黄盖”。东风大作，波浪汹涌，曹操在船头迎风大笑，以为自己鸿运当头。黄盖的船越来越近，近到只有二里水面。程昱看出了破绽，曹操猛然惊醒，派文聘去拦。文聘跳上小船立在船头大喊——“南船且休近寨！”话还没说完，文聘被箭射中左臂，船上大乱。距离曹营只剩二里路了。
+
+黄盖手起刀落，一招，前船齐齐发火。火趁风威，风助火势，二十只火船撞进水寨，撞进铁环锁死的船阵里，三江面上火逐风飞，一派通红，漫天彻地。
+
+然后黄盖跳上小船，背后数人驾舟，冒烟突火，去追曹操。他看见一个穿绛红袍子的下船，料定是曹操，催船速进，高声大叫——“曹贼休走！黄盖在此！”曹操叫苦连声。张辽拈弓搭箭，一箭射去，正中黄盖肩窝。黄盖翻身落水。
+
+被张辽一箭中肩窝，翻身落水，生死未卜。
+
+你说火攻的计策是黄盖提的吗？演义里没有明写，但谁安排的二十只火船？谁写的诈降信？谁披甲持刃冲在最前？周瑜在船上运筹帷幄，诸葛亮在七星坛上借风，真正把火点着、把船送进去、把曹军烧成一片火海的，是那个被后人提起赤壁时几乎想不起来的名字。
+
+历史总把聚光灯打在那些运筹帷幄的人身上。我们记住了周瑜火烧赤壁的潇洒，记住了诸葛亮借东风的传奇，却忘了真正点燃那把火的人，是自己走上船、把自己送进火海里的黄盖。
+
+最关键的一步，往往不是最聪明的人想出来的，而是那个愿意拿自己的命去赌、去走的人走出来的。黄盖不是天才，他只是一个愿意去做的普通人。但历史有时候就是这样——差的那一步，永远需要有人站出来，亲自去填。</div></details><div class="meta">🧑‍⚖️ 判官 78 · 别为立意而抹掉文本分工：点明“策在周瑜、风由孔明、行由黄盖”，并更正曹操听取程昱后仍来不及的细节，强化引文与回目来支撑论断。</div><div class="meta">📝 生成 <b>2026-07-13 11:59</b> · 🎙️ 配音 <b>2026-07-13 11:59</b></div><div class="meta">维度 钩子<b>4</b>　清晰<b>4</b>　收获<b>4</b>　透彻<b>3</b>　忠实<b>3</b>　论证诚实<b>3</b>　节奏<b>4</b> · 锚 [第四十九回赤壁之战, key_event赤壁之战]</div></div></main><footer class="foot"><div class="wrap-f"><span class="brand-f"><span class="dot"></span>书语 · Fathom</span><span>Quick 短视频 · 内部评审 · noindex · 生成 2026-07-13 12:10</span></div></footer><script>(function(){function set(t){document.documentElement.dataset.theme=t;try{localStorage.setItem('fathom-theme',t);}catch(e){}}document.querySelectorAll('.theme-tgl').forEach(function(b){b.addEventListener('click',function(){var cur=document.documentElement.dataset.theme==='dark'?'dark':'light';set(cur==='dark'?'light':'dark');});});})();</script></body></html>
