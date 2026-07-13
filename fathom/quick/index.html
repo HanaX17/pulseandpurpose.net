@@ -70,6 +70,30 @@ h1,h2,h3,p,dl,dd,dt,figure{margin:0}ul,ol{margin:0}
 [data-theme="dark"] .theme-tgl .ti-moon{display:none}
 [data-theme="dark"] .theme-tgl .ti-sun{display:inline}
 
+/* 自定义音频播放器：长可拖拽进度轴 + 时间 + 倍速（原生 controls 在窄容器里进度条被挤没） */
+.ap{display:flex;align-items:center;gap:10px;width:100%}
+.ap-btn{flex:none;width:34px;height:34px;border-radius:var(--r-pill);border:1.5px solid var(--line);
+  background:var(--paper);color:var(--ink-text);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;
+  transition:border-color .18s var(--ease),color .18s var(--ease),transform .12s var(--ease)}
+.ap-btn:hover{border-color:var(--coral-ink);color:var(--coral-ink)}
+.ap-btn:active{transform:scale(.93)}
+.ap-btn svg{width:15px;height:15px;fill:currentColor}
+.ap-play .i-pause{display:none}
+.ap-play.playing .i-play{display:none}.ap-play.playing .i-pause{display:inline}
+.ap-time{flex:none;font-size:.78rem;color:var(--ink-muted);font-variant-numeric:tabular-nums;min-width:34px}
+.ap-cur{text-align:right}
+.ap-track{flex:1;min-width:80px;height:26px;display:flex;align-items:center;position:relative;cursor:pointer;touch-action:none}
+.ap-track:focus-visible{outline:2.5px solid var(--coral-ink);outline-offset:4px;border-radius:6px}
+.ap-rail{position:absolute;left:0;right:0;height:5px;border-radius:999px;background:var(--paper-3)}
+.ap-fill{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--coral-ink);border-radius:999px}
+.ap-thumb{position:absolute;top:50%;left:0;width:13px;height:13px;margin:-6px 0 0 -6px;border-radius:50%;
+  background:var(--coral-ink);box-shadow:0 1px 5px var(--shadow);pointer-events:none;transition:transform .12s var(--ease)}
+.ap-track:hover .ap-thumb,.ap-track:focus-visible .ap-thumb{transform:scale(1.2)}
+.ap-rate{flex:none;font-size:.72rem;font-weight:700;color:var(--ink-muted);border:1px solid var(--line);
+  border-radius:var(--r-pill);padding:4px 9px;cursor:pointer;background:transparent;font-variant-numeric:tabular-nums;
+  transition:color .15s,border-color .15s}
+.ap-rate:hover{color:var(--coral-ink);border-color:var(--coral-ink)}
+
 /* 页脚 */
 .foot{border-top:1px solid var(--line);margin-top:clamp(3rem,6vw,5rem);
   padding:clamp(2rem,3.5vw,2.75rem) var(--gutter);color:var(--ink-muted);font-size:.86rem}
@@ -116,7 +140,7 @@ main.qwrap{max-width:var(--maxw);margin:0 auto;padding:clamp(1.3rem,2.6vw,1.9rem
   border-radius:var(--r-pill);padding:2px 9px;font-weight:600}
 .qtitle{font-size:1.08rem;font-weight:700;flex:1;min-width:200px;letter-spacing:-.01em}
 .hook{color:var(--ink-muted);font-size:.95rem;margin:2px 0 10px}
-.q audio{width:100%;height:36px;margin:4px 0 10px}
+.q .ap{margin:4px 0 12px}
 .cards{display:flex;gap:8px;overflow-x:auto;padding-bottom:8px;scrollbar-width:thin}
 .cards img{height:230px;border-radius:10px;border:1px solid var(--line);flex:0 0 auto}
 .q details{margin-top:6px}
@@ -133,4 +157,45 @@ main.qwrap{max-width:var(--maxw);margin:0 auto;padding:clamp(1.3rem,2.6vw,1.9rem
   border:1px solid color-mix(in oklab,var(--warn) 35%,transparent)}
 .note b{color:color-mix(in oklab,var(--warn) 60%,var(--ink-text))}
 @media (max-width:640px){.qbar-title{display:none}}
-</style></head><body><header class="qbar"><a class="back" href="../index.html">← 讲书评审台</a><span class="qbar-title">Quick 短视频评审台</span><button class="theme-tgl" type="button" aria-label="切换深色 / 浅色主题" title="深色 / 浅色"><svg class="ti ti-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg class="ti ti-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.4M12 19.6V22M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M2 12h2.4M19.6 12H22M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7"/></svg></button></header><div class="qhero"><p class="kick">采点 · 图文 · 口播</p><h1>Quick 短视频评审台</h1><p class="sub">每本书的 quick 候选（分数 / 类型 / 口播稿 / 图卡 / 音频）· 内部评审 · 更新 2026-07-12 22:41</p></div><main class="qwrap"><div class="booklist"><a class="bookcard" href="Hamlet/index.html"><div><b>Hamlet</b><div class="n">7 条 · 人物1 洞见3 映照3</div></div><div class="go">→</div></a><a class="bookcard" href="How_to_Live_on_24_Hours_a_Day/index.html"><div><b>How_to_Live_on_24_Hours_a_Day</b><div class="n">10 条 · 洞见4 映照5 冷知识1</div></div><div class="go">→</div></a><a class="bookcard" href="Meditations/index.html"><div><b>Meditations</b><div class="n">11 条 · 映照5 人物1 洞见5</div></div><div class="go">→</div></a><a class="bookcard" href="My_Life_and_Work/index.html"><div><b>My_Life_and_Work</b><div class="n">7 条 · 洞见3 映照4</div></div><div class="go">→</div></a><a class="bookcard" href="Pride_and_Prejudice/index.html"><div><b>Pride_and_Prejudice</b><div class="n">13 条 · 洞见4 映照4 人物2 故事2 冷知识1</div></div><div class="go">→</div></a><a class="bookcard" href="The_Chemical_History_of_a_Candle/index.html"><div><b>The_Chemical_History_of_a_Candle</b><div class="n">9 条 · 映照5 洞见2 人物1 冷知识1</div></div><div class="go">→</div></a><a class="bookcard" href="Walden/index.html"><div><b>Walden</b><div class="n">8 条 · 映照6 洞见2</div></div><div class="go">→</div></a><a class="bookcard" href="三國志演義/index.html"><div><b>三國志演義</b><div class="n">10 条 · 映照4 人物1 洞见2 故事2 冷知识1</div></div><div class="go">→</div></a><a class="bookcard" href="孙子兵法/index.html"><div><b>孙子兵法</b><div class="n">9 条 · 洞见3 映照4 人物1 冷知识1</div></div><div class="go">→</div></a><a class="bookcard" href="孟子/index.html"><div><b>孟子</b><div class="n">10 条 · 映照6 洞见3 人物1</div></div><div class="go">→</div></a><a class="bookcard" href="老子/index.html"><div><b>老子</b><div class="n">7 条 · 洞见4 映照3</div></div><div class="go">→</div></a><a class="bookcard" href="論語/index.html"><div><b>論語</b><div class="n">8 条 · 映照4 洞见2 人物1 故事1</div></div><div class="go">→</div></a></div></main><footer class="foot"><div class="wrap-f"><span class="brand-f"><span class="dot"></span>书语 · Fathom</span><span>Quick 短视频 · 内部评审 · noindex · 生成 2026-07-12 22:41</span></div></footer><script>(function(){function set(t){document.documentElement.dataset.theme=t;try{localStorage.setItem('fathom-theme',t);}catch(e){}}document.querySelectorAll('.theme-tgl').forEach(function(b){b.addEventListener('click',function(){var cur=document.documentElement.dataset.theme==='dark'?'dark':'light';set(cur==='dark'?'light':'dark');});});})();</script></body></html>
+</style></head><body><header class="qbar"><a class="back" href="../index.html">← 讲书评审台</a><span class="qbar-title">Quick 短视频评审台</span><button class="theme-tgl" type="button" aria-label="切换深色 / 浅色主题" title="深色 / 浅色"><svg class="ti ti-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg class="ti ti-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.4M12 19.6V22M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M2 12h2.4M19.6 12H22M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7"/></svg></button></header><div class="qhero"><p class="kick">采点 · 图文 · 口播</p><h1>Quick 短视频评审台</h1><p class="sub">每本书的 quick 候选（分数 / 类型 / 口播稿 / 图卡 / 音频）· 内部评审 · 更新 2026-07-13 08:09</p></div><main class="qwrap"><div class="booklist"><a class="bookcard" href="Hamlet/index.html"><div><b>Hamlet</b><div class="n">7 条 · 人物1 洞见3 映照3</div></div><div class="go">→</div></a><a class="bookcard" href="How_to_Live_on_24_Hours_a_Day/index.html"><div><b>How_to_Live_on_24_Hours_a_Day</b><div class="n">10 条 · 洞见4 映照5 冷知识1</div></div><div class="go">→</div></a><a class="bookcard" href="Meditations/index.html"><div><b>Meditations</b><div class="n">11 条 · 映照5 人物1 洞见5</div></div><div class="go">→</div></a><a class="bookcard" href="My_Life_and_Work/index.html"><div><b>My_Life_and_Work</b><div class="n">7 条 · 洞见3 映照4</div></div><div class="go">→</div></a><a class="bookcard" href="Pride_and_Prejudice/index.html"><div><b>Pride_and_Prejudice</b><div class="n">13 条 · 洞见4 映照4 人物2 故事2 冷知识1</div></div><div class="go">→</div></a><a class="bookcard" href="The_Chemical_History_of_a_Candle/index.html"><div><b>The_Chemical_History_of_a_Candle</b><div class="n">9 条 · 映照5 洞见2 人物1 冷知识1</div></div><div class="go">→</div></a><a class="bookcard" href="Walden/index.html"><div><b>Walden</b><div class="n">8 条 · 映照6 洞见2</div></div><div class="go">→</div></a><a class="bookcard" href="三國志演義/index.html"><div><b>三國志演義</b><div class="n">10 条 · 映照4 人物1 洞见2 故事2 冷知识1</div></div><div class="go">→</div></a><a class="bookcard" href="孙子兵法/index.html"><div><b>孙子兵法</b><div class="n">9 条 · 洞见3 映照4 人物1 冷知识1</div></div><div class="go">→</div></a><a class="bookcard" href="孟子/index.html"><div><b>孟子</b><div class="n">10 条 · 映照6 洞见3 人物1</div></div><div class="go">→</div></a><a class="bookcard" href="老子/index.html"><div><b>老子</b><div class="n">7 条 · 洞见4 映照3</div></div><div class="go">→</div></a><a class="bookcard" href="論語/index.html"><div><b>論語</b><div class="n">8 条 · 映照4 洞见2 人物1 故事1</div></div><div class="go">→</div></a></div></main><footer class="foot"><div class="wrap-f"><span class="brand-f"><span class="dot"></span>书语 · Fathom</span><span>Quick 短视频 · 内部评审 · noindex · 生成 2026-07-13 08:09</span></div></footer><script>(function(){function set(t){document.documentElement.dataset.theme=t;try{localStorage.setItem('fathom-theme',t);}catch(e){}}document.querySelectorAll('.theme-tgl').forEach(function(b){b.addEventListener('click',function(){var cur=document.documentElement.dataset.theme==='dark'?'dark':'light';set(cur==='dark'?'light':'dark');});});})();</script><script>(function(){
+  var RATES=[1,1.25,1.5,2];
+  function fmt(t){t=(isFinite(t)&&t>0)?t:0;var m=Math.floor(t/60),s=Math.floor(t%60);return m+':'+(s<10?'0':'')+s;}
+  var TPL='<button class="ap-play ap-btn" type="button" aria-label="播放 / 暂停">'
+    +'<svg class="i-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>'
+    +'<svg class="i-pause" viewBox="0 0 24 24"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>'
+    +'</button><span class="ap-time ap-cur">0:00</span>'
+    +'<div class="ap-track" role="slider" tabindex="0" aria-label="播放进度" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">'
+    +'<div class="ap-rail"><div class="ap-fill"></div></div><div class="ap-thumb"></div></div>'
+    +'<span class="ap-time ap-dur">0:00</span>'
+    +'<button class="ap-rate" type="button" aria-label="播放速度">1×</button>';
+  function init(ap){
+    if(!ap||ap.__ap)return ap;
+    var audio=ap.querySelector('audio'); if(!audio)return ap; ap.__ap=true;
+    var play=ap.querySelector('.ap-play'),cur=ap.querySelector('.ap-cur'),dur=ap.querySelector('.ap-dur'),
+        track=ap.querySelector('.ap-track'),fill=ap.querySelector('.ap-fill'),thumb=ap.querySelector('.ap-thumb'),rate=ap.querySelector('.ap-rate');
+    var ri=0;
+    function setpos(p){p=Math.max(0,Math.min(1,p||0));fill.style.width=(p*100)+'%';thumb.style.left=(p*100)+'%';if(track)track.setAttribute('aria-valuenow',Math.round(p*100));}
+    function paint(){var d=audio.duration||0,c=audio.currentTime||0;setpos(d?c/d:0);cur.textContent=fmt(c);play.classList.toggle('playing',!audio.paused);}
+    audio.addEventListener('loadedmetadata',function(){dur.textContent=fmt(audio.duration);paint();});
+    audio.addEventListener('timeupdate',paint);audio.addEventListener('play',paint);audio.addEventListener('pause',paint);audio.addEventListener('ended',paint);
+    if(audio.readyState>=1){dur.textContent=fmt(audio.duration);paint();}
+    play.addEventListener('click',function(){if(audio.paused){audio.play();}else{audio.pause();}});
+    var drag=false;
+    function seek(x){var r=track.getBoundingClientRect();var p=(x-r.left)/r.width;p=Math.max(0,Math.min(1,p));setpos(p);if(isFinite(audio.duration)&&audio.duration>0)audio.currentTime=p*audio.duration;}
+    track.addEventListener('pointerdown',function(e){drag=true;try{track.setPointerCapture(e.pointerId);}catch(_){}seek(e.clientX);e.preventDefault();});
+    track.addEventListener('pointermove',function(e){if(drag)seek(e.clientX);});
+    track.addEventListener('pointerup',function(){drag=false;});track.addEventListener('pointercancel',function(){drag=false;});
+    window.addEventListener('pointerup',function(){drag=false;});
+    track.addEventListener('keydown',function(e){if(!(audio.duration>0))return;var k=e.key;
+      if(k==='ArrowRight'||k==='Up'||k==='ArrowUp'){audio.currentTime=Math.min(audio.duration,audio.currentTime+5);e.preventDefault();}
+      else if(k==='ArrowLeft'||k==='ArrowDown'){audio.currentTime=Math.max(0,audio.currentTime-5);e.preventDefault();}
+      else if(k==='Home'){audio.currentTime=0;e.preventDefault();}
+      else if(k==='End'){audio.currentTime=Math.max(0,audio.duration-0.15);e.preventDefault();}
+      else if(k===' '||k==='Enter'){if(audio.paused){audio.play();}else{audio.pause();}e.preventDefault();}});
+    if(rate)rate.addEventListener('click',function(){ri=(ri+1)%RATES.length;audio.playbackRate=RATES[ri];rate.textContent=RATES[ri]+'×';});
+    paint();return ap;
+  }
+  function build(src){var ap=document.createElement('div');ap.className='ap';ap.innerHTML=TPL+'<audio preload="metadata" src="'+src+'"></audio>';return init(ap);}
+  window.__fathomPlayerInit=init;window.__fathomPlayerBuild=build;
+  document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('.ap').forEach(init);});
+})();</script></body></html>
