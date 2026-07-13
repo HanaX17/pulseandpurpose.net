@@ -4,42 +4,62 @@
 <title>Fathom · 测试台</title>
 <style>
 :root{color-scheme:dark light;
-  --serif:'Songti SC','Noto Serif SC',Georgia,'Times New Roman',serif;
+  --serif:'Songti SC','Noto Serif SC',Georgia,serif;
   --sans:-apple-system,'PingFang SC','Noto Sans SC',sans-serif;
-  --bg:#100f17;--panel:#191826;--line:#2a2838;--ink:#ece9f5;--dim:#a49fc0;--coral:#ff6b5e}
+  --bg:#100f17;--panel:#191826;--line:#2a2838;--ink:#ece9f5;--dim:#a49fc0;--coral:#ff6b5e;--good:#5fd3a3}
 *{box-sizing:border-box}
-body{font-family:var(--sans);max-width:760px;margin:0 auto;padding:2.4rem 1.15rem 5rem;
+body{font-family:var(--sans);max-width:780px;margin:0 auto;padding:2.4rem 1.15rem 5rem;
   background:var(--bg);color:var(--ink);line-height:1.6}
 .kick{font-size:.8rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--coral)}
 h1{font-family:var(--serif);font-size:2.4rem;font-weight:700;line-height:1.1;margin:.35rem 0 .5rem;letter-spacing:-.01em}
-.lede{color:var(--dim);font-size:1rem;margin-bottom:1.8rem}
-.section{font-family:var(--sans);font-size:.82rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
-  color:var(--dim);margin:2rem 0 .7rem;padding-top:1.2rem;border-top:1px solid var(--line)}
-.quote{font-family:var(--serif);font-size:1.12rem;line-height:1.9;color:#d7d1ec;
-  background:var(--panel);border:1px solid var(--line);
-  border-radius:10px;padding:18px 22px;margin-bottom:1.4rem}
-.samp{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:15px 19px;margin:11px 0}
-.n{font-size:1.15rem;font-weight:700;color:var(--coral)}
-.d{color:var(--dim);font-size:.86rem;margin:3px 0 10px}
+.lede{color:var(--dim);font-size:1rem;margin-bottom:1.6rem}
+.quote{font-family:var(--serif);font-size:1.1rem;line-height:1.85;color:#d7d1ec;background:var(--panel);
+  border:1px solid var(--line);border-radius:10px;padding:16px 20px;margin-bottom:.5rem}
+.section{font-size:.82rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--dim);
+  margin:2.2rem 0 .7rem;padding-top:1.2rem;border-top:1px solid var(--line)}
+.section small{display:block;text-transform:none;letter-spacing:0;font-weight:400;color:#6f6a8c;margin-top:4px;font-size:.85rem}
+.samp{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin:10px 0}
+.hd{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.n{font-size:1.08rem;font-weight:700}
+.badge{font-size:.72rem;font-weight:700;padding:2px 9px;border-radius:999px}
+.b-use{background:rgba(95,211,163,.16);color:var(--good);border:1px solid rgba(95,211,163,.35)}
+.b-swap{background:rgba(255,107,94,.16);color:var(--coral);border:1px solid rgba(255,107,94,.4)}
+.d{color:var(--dim);font-size:.86rem;margin:3px 0 9px}
 audio{width:100%;height:40px}
-.foot{color:#6f6a8c;font-size:.85rem;margin-top:2.4rem;text-align:center}
+.foot{color:#6f6a8c;font-size:.85rem;margin-top:2.6rem;text-align:center}
 </style></head><body>
 <div class="kick">Fathom · Internal</div>
 <h1>测试台</h1>
-<div class="lede">试听/试看用的固定页面。当前：Quick 男声换声候选。</div>
+<div class="lede">试听/试看固定页。当前：Quick 换声 · 同一段曹操口播稿 · 都无 intro · 已降噪。</div>
+<div class="quote">曹操说了一句话，被骂了整整一千八百年……那句让他背负千年骂名的话——宁教我负天下人，休教天下人负我。</div>
 
-<div class="quote">曹操说了一句话，被骂了整整一千八百年。可看完这个故事，你可能会沉默……曹操说出了那句让他背负千年骂名的话——宁教我负天下人，休教天下人负我。</div>
+<div class="section">现在用的（对照基准）</div>
+<div class="samp"><div class="hd"><span class="n">叙白 / Gentleman</span><span class="badge b-use">Deep 现用 · 男</span></div><div class="d">磁性儒雅（你说用 Quick 稍慢）</div><audio controls preload="none" src="voices/warm_m.mp3"></audio></div>
+<div class="samp"><div class="hd"><span class="n">知微 / 温暖长者</span><span class="badge b-use">Deep 现用 · 女</span></div><div class="d">娓娓道来、讲故事感</div><audio controls preload="none" src="voices/warm_f.mp3"></audio></div>
+<div class="samp"><div class="hd"><span class="n">电台主播</span><span class="badge b-swap">Quick 现用 · 要换</span></div><div class="d">诗意松弛，但句间停顿长、偏慢</div><audio controls preload="none" src="voices/cand_m_radio.mp3"></audio></div>
 
-<div class="section">普通话 · 5 选 1</div>
-<div class="samp"><span class="n">1</span> 叙白 / Gentleman<div class="d">磁性儒雅 · 当前 deep 默认男声</div><audio controls preload="none" src="voices/1.mp3"></audio></div>
-<div class="samp"><span class="n">2</span> 沉稳高管<div class="d">权威可信 · 中年男</div><audio controls preload="none" src="voices/2.mp3"></audio></div>
-<div class="samp"><span class="n">3</span> 思考青年<div class="d">直率有活力 · 最贴短视频</div><audio controls preload="none" src="voices/3.mp3"></audio></div>
-<div class="samp"><span class="n">4</span> 诚恳同龄男<div class="d">拉近距离 · 像朋友讲给你听</div><audio controls preload="none" src="voices/4.mp3"></audio></div>
-<div class="samp"><span class="n">5</span> 老梁式幽默长者<div class="d">抑扬顿挫 · 讲书感最强</div><audio controls preload="none" src="voices/5.mp3"></audio></div>
+<div class="section">Quick 男声候选<small>短视频向：更年轻、有冲劲、句间更紧</small></div>
+<div class="samp"><div class="hd"><span class="n">思考青年</span></div><div class="d">直率有活力（speed 1.0）</div><audio controls preload="none" src="voices/cand_m_boy.mp3"></audio></div>
+<div class="samp"><div class="hd"><span class="n">自由青年</span></div><div class="d">自由不羁、有冲劲（speed 1.1）</div><audio controls preload="none" src="voices/cand_m_unres.mp3"></audio></div>
+<div class="samp"><div class="hd"><span class="n">南方青年</span></div><div class="d">南方口音、诚恳亲切（speed 1.1）</div><audio controls preload="none" src="voices/cand_m_south.mp3"></audio></div>
+<div class="samp"><div class="hd"><span class="n">不羁损友</span></div><div class="d">损友聊天感、随性（speed 1.05）</div><audio controls preload="none" src="voices/cand_m_stub.mp3"></audio></div>
+<div class="samp"><div class="hd"><span class="n">沉稳高管</span></div><div class="d">权威可信（speed 1.0）</div><audio controls preload="none" src="voices/cand_m_exec.mp3"></audio></div>
+<div class="samp"><div class="hd"><span class="n">老梁式幽默长者</span></div><div class="d">抑扬顿挫、讲书感强（speed 1.0）</div><audio controls preload="none" src="voices/cand_m_humor.mp3"></audio></div>
 
-<div class="section">方言 · 海螺仅有粤语（无川/东北话）</div>
-<div class="samp"><span class="n">6</span> 粤语 · 专业主播<div class="d">受众仅限听得懂粤语的人</div><audio controls preload="none" src="voices/6.mp3"></audio></div>
-<div class="samp"><span class="n">7</span> 粤语 · 活泼男<div class="d">更年轻活泼</div><audio controls preload="none" src="voices/7.mp3"></audio></div>
+<div class="section">🏃 倍速演示<small>同一把声音（思考青年）· 1.0 → 1.15 → 1.25，听句间快慢差别</small></div>
+<div class="samp"><div class="hd"><span class="n">思考青年 · 1.0x</span></div><div class="d">原速</div><audio controls preload="none" src="voices/cand_m_boy.mp3"></audio></div>
+<div class="samp"><div class="hd"><span class="n">思考青年 · 1.15x</span></div><div class="d">略快</div><audio controls preload="none" src="voices/cand_m_boyfast.mp3"></audio></div>
+<div class="samp"><div class="hd"><span class="n">思考青年 · 1.25x</span></div><div class="d">抖音向、停顿明显更短</div><audio controls preload="none" src="voices/cand_m_boyx125.mp3"></audio></div>
+
+<div class="section">女声候选</div>
+<div class="samp"><div class="hd"><span class="n">新闻女主播</span></div><div class="d">专业干练</div><audio controls preload="none" src="voices/cand_f_news.mp3"></audio></div>
+<div class="samp"><div class="hd"><span class="n">清脆女孩</span></div><div class="d">年轻有活力</div><audio controls preload="none" src="voices/cand_f_crisp.mp3"></audio></div>
+<div class="samp"><div class="hd"><span class="n">成熟女</span></div><div class="d">成熟有魅力</div><audio controls preload="none" src="voices/cand_f_mature.mp3"></audio></div>
+<div class="samp"><div class="hd"><span class="n">知性女</span></div><div class="d">知性睿智</div><audio controls preload="none" src="voices/cand_f_wise.mp3"></audio></div>
+
+<div class="section">方言<small>海螺仅粤语 · 无川/东北话 · 受众仅限粤语区</small></div>
+<div class="samp"><div class="hd"><span class="n">粤语 · 专业主播</span></div><audio controls preload="none" src="voices/cant_m_host.mp3"></audio></div>
+<div class="samp"><div class="hd"><span class="n">粤语 · 活泼男</span></div><audio controls preload="none" src="voices/cant_m_play.mp3"></audio></div>
 
 <div class="foot">Fathom 测试台 · 内部 · noindex</div>
 </body></html>
