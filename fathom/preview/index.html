@@ -1,87 +1,80 @@
 <!doctype html>
-<html lang="zh">
+<html lang="zh-CN">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="robots" content="noindex,nofollow">
-<title>鲸读经典 · 视频形式对比（内部）</title>
+<meta name="theme-color" content="#101821">
+<title>鲸读经典 · 成片预览</title>
 <style>
-body{margin:0 auto;background:#14161b;color:#e8e6e0;font:13px/1.6 -apple-system,"PingFang SC",sans-serif;padding:20px;max-width:520px}
-h1{font-size:20px;margin:8px 0 2px}
-p{color:#9aa3af;font-size:13px;margin:0 0 18px}
-h2{font-size:16px;margin:26px 0 2px}
-video{width:100%;border-radius:10px;background:#000;margin:8px 0 4px}
-.meta{color:#9aa3af;font-size:13px;margin:0 0 6px}
-.tag{display:inline-block;border:1px solid #3a4150;border-radius:99px;padding:0 10px;font-size:13px;color:#9aa3af;margin-left:8px;vertical-align:2px}
-.featured{margin:20px 0 34px;padding:16px;border:1px solid #353b48;border-radius:14px;background:#1b1e25}
-.featured h2{margin:0 0 2px}
-.featured video{max-height:78vh;object-fit:contain}
-.direct{display:inline-block;margin-top:8px;color:#ff8a72;text-decoration:none;font-weight:600}
-.direct:hover{text-decoration:underline}
+:root{color-scheme:dark;--bg:#101821;--card:#18232d;--line:#31414d;--text:#fff8ea;--muted:#aeb9c1;--red:#b74d3f;--gold:#d4b374}
+*{box-sizing:border-box}
+body{margin:0;background:linear-gradient(180deg,#0d151d,#131d26 42%,#0b1218);color:var(--text);font:15px/1.55 -apple-system,BlinkMacSystemFont,"PingFang SC","Noto Sans CJK SC",sans-serif}
+main{width:min(100%,560px);margin:0 auto;padding:calc(28px + env(safe-area-inset-top)) 16px calc(40px + env(safe-area-inset-bottom))}
+header{padding:4px 4px 22px}
+.eyebrow{margin:0 0 8px;color:var(--gold);font-size:12px;font-weight:750;letter-spacing:.18em;text-transform:uppercase}
+h1{margin:0;font-family:"Songti SC","Noto Serif CJK SC",serif;font-size:30px;line-height:1.2;letter-spacing:.05em}
+.intro{margin:10px 0 0;color:var(--muted);font-size:14px}
+.grid{display:grid;gap:20px}
+.card{overflow:hidden;border:1px solid var(--line);border-radius:18px;background:rgba(24,35,45,.96);box-shadow:0 18px 45px rgba(0,0,0,.2)}
+.card-head{padding:18px 18px 12px}
+.number{display:inline-flex;align-items:center;justify-content:center;min-width:44px;height:25px;margin:0 0 10px;padding:0 10px;border:1px solid rgba(212,179,116,.48);border-radius:99px;color:var(--gold);font-size:12px;font-weight:800;letter-spacing:.08em}
+h2{margin:0;font-family:"Songti SC","Noto Serif CJK SC",serif;font-size:23px;line-height:1.3}
+.hook{margin:6px 0 0;color:var(--muted);font-size:14px}
+.meta{margin:10px 0 0;color:#81909b;font-size:12px}
+video{display:block;width:100%;max-height:78vh;background:#000;object-fit:contain}
+.actions{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 18px 16px}
+.tag{color:#96a4ad;font-size:12px}
+a{color:#ff9c87;font-size:13px;font-weight:750;text-decoration:none}
+a:focus-visible{outline:2px solid var(--gold);outline-offset:4px;border-radius:3px}
+footer{padding:24px 4px 0;color:#697984;text-align:center;font-size:12px}
+@media (min-width:700px){main{padding-left:0;padding-right:0}}
 </style>
 </head>
 <body>
-<h1>三种视频形式 · 同一条内容对比</h1>
-<p>同一条三国 Quick（088 勿以善小而不为，2:35，鱼儿）多形式横向对比。720p 预览版（原片 1080×1920）。</p>
+<main>
+  <header>
+    <p class="eyebrow">Fathom · Internal Review</p>
+    <h1>鲸读经典 · 成片预览</h1>
+    <p class="intro">当前保留三条 Editorial 知识板成片，适配抖音、TikTok 与 YouTube Shorts 的 9:16 手机画布。</p>
+  </header>
 
-<section class="featured">
-<h2>《君主论》090 · 眼睛与手<span class="tag">Editorial v1 · Review</span></h2>
-<p class="meta">1080×1920 · 2:00 · H.264/AAC · 鲸读经典编辑拼贴知识板</p>
-<video src="090_眼睛与手_editorial_v1_review.mp4" controls playsinline preload="metadata"></video>
-<a class="direct" href="090_眼睛与手_editorial_v1_review.mp4">直接打开 / 下载 MP4 →</a>
-</section>
+  <section class="grid" aria-label="视频列表">
+    <article class="card">
+      <div class="card-head">
+        <span class="number">086</span>
+        <h2>《论语》· 为什么越学越糊涂</h2>
+        <p class="hook">收藏很多，不等于真正学会。</p>
+        <p class="meta">1080×1920 · 1:39 · 小鲸</p>
+      </div>
+      <video src="086_为什么越学越糊涂_editorial_v2.mp4" controls playsinline preload="metadata"></video>
+      <div class="actions"><span class="tag">Editorial v2</span><a href="086_为什么越学越糊涂_editorial_v2.mp4">直接打开 / 下载</a></div>
+    </article>
 
-<h2>动作素材库 · 原片直下<span class="tag">拼接素材</span></h2>
-<p class="meta">480p · 16fps · 无声 · 长按/右键即可保存 · 小鲸拜拜 2s 成品裁切在最前，完整版 1.0-3.0s 为抬手挥的窗口</p>
-<video src="xiaojing_bye_2s.mp4" controls playsinline preload="metadata"></video>
-<p class="meta">↑ 小鲸 · 拜拜挥手（2s 成品）</p>
-<video src="xiaojing_bye.mp4" controls playsinline preload="metadata"></video>
-<p class="meta">↑ 小鲸 · 拜拜完整原片（4.8s）</p>
-<video src="yuer_nod.mp4" controls playsinline preload="metadata"></video>
-<p class="meta">↑ 鱼儿 · 点头微笑（V1 同款原片）</p>
-<video src="yuer_wave.mp4" controls playsinline preload="metadata"></video>
-<p class="meta">↑ 鱼儿 · 自然版（微笑侧头眨眼）</p>
-<video src="xiaojing_nod.mp4" controls playsinline preload="metadata"></video>
-<p class="meta">↑ 小鲸 · 点头</p>
-<video src="xiaojing_wave_down.mp4" controls playsinline preload="metadata"></video>
-<p class="meta">↑ 小鲸 · 旧放手版（备用）</p>
+    <article class="card">
+      <div class="card-head">
+        <span class="number">090</span>
+        <h2>《君主论》· 眼睛与手</h2>
+        <p class="hook">为什么能力强的人，反而容易被低估？</p>
+        <p class="meta">1080×1920 · 2:00 · 小鲸</p>
+      </div>
+      <video src="090_眼睛与手_editorial_v1_review.mp4" controls playsinline preload="metadata"></video>
+      <div class="actions"><span class="tag">Editorial v1 · Review</span><a href="090_眼睛与手_editorial_v1_review.mp4">直接打开 / 下载</a></div>
+    </article>
 
-<h2>品牌片尾 · 三版挑一（2.2 秒）<span class="tag">新</span></h2>
-<p class="meta">鲸读经典字标 + 鱼儿/小鲸双圆窗（S2V 静音驱动动作，闭嘴微笑）· V1 鱼儿点头+小鲸挥手 · V2 双点头 · V3 自然版 · 选定后接到每条视频音乐尾</p>
-<video src="outro_v1.mp4" controls playsinline preload="metadata"></video>
-<video src="outro_v2.mp4" controls playsinline preload="metadata"></video>
-<video src="outro_v3.mp4" controls playsinline preload="metadata"></video>
+    <article class="card">
+      <div class="card-head">
+        <span class="number">091</span>
+        <h2>《论语》· 努力为了什么</h2>
+        <p class="hook">别让一直赶路，替代真正想过的生活。</p>
+        <p class="meta">1080×1920 · 2:05 · 鱼儿</p>
+      </div>
+      <video src="091_努力为了什么_editorial_v2.mp4" controls playsinline preload="metadata"></video>
+      <div class="actions"><span class="tag">Editorial v2</span><a href="091_努力为了什么_editorial_v2.mp4">直接打开 / 下载</a></div>
+    </article>
+  </section>
 
-<h2>形式七 · 金句锚点流<span class="tag">v2 新 · 完整条</span></h2>
-<p class="meta">按章节切 10 段：水墨图+竖排锚词 / 原文金句卡（宣纸底·朱砂·出处可核）交替 · 鱼儿朗读角标常驻（正放无缝循环，一次性资产）· 尾句 0.9× 放慢+音乐淡入收尾 · 字幕退居底部辅助 · 边际 ¥0</p>
-<video src="anchor-v2-088.mp4" controls playsinline preload="metadata"></video>
-
-<h2>形式六 · 大字排版 + 鱼儿活体角标<span class="tag">对照 · 已定性为字幕感过重</span></h2>
-<p class="meta">鱼儿 16s 念叨循环（一次性资产）小圆窗常驻左下角 + 大字扛内容 · 每条边际 ¥0（纯 ffmpeg 叠加）· 此条为旧版配音（改名前），最新语音见形式七</p>
-<video src="type-livecorner-088.mp4" controls playsinline preload="metadata"></video>
-
-<h2>口播 demo · 鱼儿开口 10 秒<span class="tag">S2V 本地渲</span></h2>
-<p class="meta">Wan2.2-S2V 音频驱动：鱼儿形象图 + 暖闺蜜配音 → 对口型开口 · M5 Max 本地 24 分钟渲出，边际 ¥0（4 步闪电 LoRA，480p）</p>
-<video src="yuer-s2v-10s.mp4" controls playsinline preload="metadata"></video>
-
-<h2>形式一 · 图卡幻灯片<span class="tag">v1 现状</span></h2>
-<p class="meta">现成图卡居中轮播 + 模糊底 + 缓推 + 整句字幕 · 边际成本 ≈0</p>
-<video src="sanguo-088.mp4" controls playsinline preload="metadata"></video>
-
-<h2>形式二 · 大字排版流<span class="tag">新</span></h2>
-<p class="meta">文字即画面：墨底大字随语音逐句硬切，引文朱砂 · 边际成本 ≈0</p>
-<video src="sanguo-088-type.mp4" controls playsinline preload="metadata"></video>
-
-<h2>形式三 · 水墨插画流<span class="tag">新</span></h2>
-<p class="meta">AI 水墨分镜满屏 + 交替推拉 + 整句字幕 · 7 张图 ≈¥2/条（画中假题字待修）</p>
-<video src="sanguo-088-art.mp4" controls playsinline preload="metadata"></video>
-
-<h2>形式四 · 古籍绣像流<span class="tag">新</span></h2>
-<p class="meta">明万历十九年（1591）刊本原刻插图，版上题句为原版所刻 · Wikimedia 公版，边际成本 ¥0，"忠实可追溯"的视觉化</p>
-<video src="sanguo-088-relic.mp4" controls playsinline preload="metadata"></video>
-
-<h2>形式五 · 主播锚点流<span class="tag">新</span></h2>
-<p class="meta">舒音插画形象固定出镜 + 大字排版随语音走 · 形象一次性设计，边际成本 ≈0</p>
-<video src="sanguo-088-host.mp4" controls playsinline preload="metadata"></video>
+  <footer>鲸读经典 · 跨越时间的对话，看见更广的世界</footer>
+</main>
 </body>
 </html>
