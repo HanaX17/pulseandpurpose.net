@@ -23,6 +23,11 @@ h2{margin:0;font-family:"Songti SC","Noto Serif CJK SC",serif;font-size:23px;lin
 .hook{margin:6px 0 0;color:var(--muted);font-size:14px}
 .meta{margin:10px 0 0;color:#81909b;font-size:12px}
 video{display:block;width:100%;max-height:78vh;background:#000;object-fit:contain}
+audio{display:block;width:calc(100% - 36px);margin:0 18px 4px}
+.note{margin:12px 18px 0;padding:11px 13px;border-left:2px solid var(--gold);background:rgba(212,179,116,.07);color:var(--muted);font-size:13px;line-height:1.6}
+.note b{color:var(--text);font-weight:700}
+.note ul{margin:7px 0 0;padding-left:18px}
+.note li{margin:3px 0}
 .actions{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 18px 16px}
 .tag{color:#96a4ad;font-size:12px}
 a{color:#ff9c87;font-size:13px;font-weight:750;text-decoration:none}
@@ -82,6 +87,26 @@ footer{padding:24px 4px 0;color:#697984;text-align:center;font-size:12px}
       </div>
       <video src="091_吾与点也_editorial_v3_20260804.mp4" poster="091_吾与点也_cover_v3_20260804.png" controls playsinline preload="metadata"></video>
       <div class="actions"><span class="tag">Editorial v3 · AI 伴读</span><a href="091_吾与点也_editorial_v3_20260804.mp4">直接打开 / 下载</a></div>
+    </article>
+
+    <article class="card">
+      <div class="card-head">
+        <span class="number">DEEP</span>
+        <h2>《君主论》· 深读全本</h2>
+        <p class="hook">一本被骂了五百年的「恶人手册」，它到底在回答什么问题？</p>
+        <p class="meta">音频 · 58:24 · 女声鱼儿 · 按审片意见重新生成</p>
+      </div>
+      <audio src="../audio/the-prince_deep_f.mp3" controls preload="none"></audio>
+      <div class="note">
+        <b>这一版改了什么</b>（对照上一支成片的审片意见）
+        <ul>
+          <li>开场不再假设听众认识作者，改从 1502 年西尼加利亚城门口那场诱杀切入</li>
+          <li>以书为主：作者名 84 次 → 31 次，「作者」4 次 → 23 次</li>
+          <li>破折号 183 处 → 0 处（此前会被念成突兀停顿、字幕上也糊）</li>
+          <li>两处「说几个字、实际几个字」对不上的自相矛盾已修</li>
+        </ul>
+      </div>
+      <div class="actions"><span class="tag">Deep · Opus 4.8 重生成</span><a href="../audio/the-prince_deep_f.mp3">直接打开 / 下载</a></div>
     </article>
   </section>
 
