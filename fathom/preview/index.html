@@ -91,6 +91,20 @@ footer{padding:24px 4px 0;color:#697984;text-align:center;font-size:12px}
 
     <article class="card">
       <div class="card-head">
+        <span class="number">D</span>
+        <h2>《君主论》· 通顺终版（5:32）</h2>
+        <p class="hook">专治「三四个字停一下」：逗号砍半、碎片句并回长句，配 C3 的声音配方。</p>
+        <p class="meta">停顿密度：卡顿版每 11 字停一次、30% 是四字以内碎片 → 这版每 17 字停一次、碎片 6%。声音沿用 C3（voice_modify 有劲清亮 + 换官袍前轻叹、说骂人词时轻笑）。</p>
+      </div>
+      <audio src="the-prince_fluent_D_20260808.mp3" controls preload="none"></audio>
+      <div class="note">
+        <b>千问二审结论</b>：把这版交给 OpenRouter 最新的 235B 千问（qwen3-vl-235b-a22b-instruct）做通顺度二审，57 句里它只动了 1 句，且那处修改还违反我们的破折号禁令。卡顿是上一版碎片句式的手艺问题，不是 Claude 中文不如千问，这个假设可以放下。
+      </div>
+      <div class="actions"><span class="tag">满意的话按这套（文字规范+C3 配方）重做全本</span><a href="the-prince_fluent_D_20260808.mp3">直接打开 / 下载</a></div>
+    </article>
+
+    <article class="card">
+      <div class="card-head">
         <span class="number">参数</span>
         <h2>《君主论》· MiniMax 原生参数三选（各 5 分钟）</h2>
         <p class="hook">同一段 A 版文字，一字不动、整段单次渲染零拼接，只换 MiniMax 原生参数。</p>
