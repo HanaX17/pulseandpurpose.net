@@ -91,54 +91,22 @@ footer{padding:24px 4px 0;color:#697984;text-align:center;font-size:12px}
 
     <article class="card">
       <div class="card-head">
-        <span class="number">语速</span>
-        <h2>《君主论》· 语速三选（同一段开场）</h2>
-        <p class="hook">语速参数从来没被改过，一直是默认 1.0。下面这条全本之所以听着快，是两个副作用叠出来的。</p>
-        <p class="meta">① emotion=fluent 本身就比不带情绪快 2.1%（同一段 1445 字：299.1 秒 → 292.8 秒）；② 为治卡顿把停顿标点从每 13 字稀释到每 20 字，休止点少了三成多。现在用原生 speed 参数补回来（模型内部生效，不是事后拉伸，没有拼接感）。</p>
-      </div>
-      <div class="note" style="margin-top:0">
-        <b>speed 0.95</b> · 4.91 字/秒 · 全本约 54 分钟（比现在慢 3%）
-      </div>
-      <audio src="the-prince_speed095_20260808.mp3" controls preload="none"></audio>
-      <div class="note">
-        <b>speed 0.92</b> · 4.84 字/秒 · 全本约 55 分钟（比现在慢 4.4%）
-      </div>
-      <audio src="the-prince_speed092_20260808.mp3" controls preload="none"></audio>
-      <div class="note">
-        <b>speed 0.90</b> · 4.67 字/秒 · 全本约 57 分钟（比现在慢 8%）
-      </div>
-      <audio src="the-prince_speed090_20260808.mp3" controls preload="none"></audio>
-      <div class="note">
-        <b>speed 0.88</b> · 4.60 字/秒 · 全本约 58 分钟（比现在慢 9%）
-      </div>
-      <audio src="the-prince_speed088_20260808.mp3" controls preload="none"></audio>
-      <div class="note">
-        <b>speed 0.85</b> · 4.41 字/秒 · 全本约 61 分钟（比现在慢 13%，比线上那条旧版还慢一截）
-      </div>
-      <audio src="the-prince_speed085_20260808.mp3" controls preload="none"></audio>
-      <div class="actions"><span class="tag">挑一档，我按它重渲全本</span><a href="the-prince_speed085_20260808.mp3">下载 0.85</a></div>
-    </article>
-
-    <article class="card">
-      <div class="card-head">
         <span class="number">V3</span>
-        <h2>《君主论》· 深读全本 · 通顺重写版（当前语速）</h2>
-        <p class="hook">透视镜读法不变，整稿按通顺规范重写一遍，配音换成选中的 fluent 音。</p>
-        <p class="meta">音频 · 53:28 · 女声鱼儿 · emotion=fluent（C1 中选）· 全稿 18504 字 → 16190 字</p>
+        <h2>《君主论》· 深读全本 · 定稿音</h2>
+        <p class="hook">通顺重写稿 + 选定的 fluent 音色 + 定档语速 0.88。</p>
+        <p class="meta">音频 · 60:51 · 女声鱼儿 · emotion=fluent · speed=0.88（4.60 字/秒）· 16190 字</p>
       </div>
-      <audio src="the-prince_deep_v3_20260808.mp3" controls preload="none"></audio>
+      <audio src="the-prince_deep_v3_s088_20260808.mp3" controls preload="none"></audio>
       <div class="note">
-        <b>这一版修了什么</b>（对着你提的「墨迹重复 + 配音太平 + 三四个字一卡」三条）
+        <b>这条是三轮反馈的合流</b>
         <ul>
-          <li>停顿密度：每 13 字一停、19% 是四字碎片 → 每 20 字一停、碎片 8%。碎片短语并回长句，节奏改靠长句流后面接一记短整句</li>
-          <li>口癖清零：「我跟您讲」9 次 → 0，「你想想」6 次 → 0，「到这儿」13 次 → 3，「说白了」6 次 → 2</li>
-          <li>点名瘦身：《君主论》24 次 → 5 次，「这本书」42 次 → 29 次，不再每分钟提醒一次「我在讲书」</li>
-          <li>章节桥的双层复述全部拆掉，每章只留一句真过渡；段落长度不再清一色 135 字</li>
-          <li>配音：emotion=fluent（你选的 C1），整段单次渲染零拼接；变速曲线和 voice_modify+语气词两条路已废弃</li>
-          <li>事实与引用零损失：【依据】标注 54 条原样保留，破折号 0，书外对照的标注话术照旧</li>
+          <li>机位：不是教你当君主，是教你看穿你头上的「君主」（卢梭读法提到开场，博尔贾串成全片主线，每章落一拍到听众身上）</li>
+          <li>文字：停顿密度每 20 字一停、四字碎片 8%；口癖清零；《君主论》点名 24 次降到 5 次；比上一版短 2300 字</li>
+          <li>配音：emotion=fluent（C1 中选），speed 0.88（五档试听定），整段单次渲染零拼接</li>
+          <li>事实零损失：【依据】54 条原样保留，破折号 0，书外对照标注话术照旧</li>
         </ul>
       </div>
-      <div class="actions"><span class="tag">草案 · deep_best 未替换，转正需重过门</span><a href="the-prince_deep_v3_20260808.mp3">直接打开 / 下载</a></div>
+      <div class="actions"><span class="tag">草案 · deep_best 未替换，转正需重过门</span><a href="the-prince_deep_v3_s088_20260808.mp3">直接打开 / 下载</a></div>
     </article>
 
   </section>
