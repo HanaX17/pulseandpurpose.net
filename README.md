@@ -6,15 +6,25 @@ The marketing site for Pulse and Purpose — a technology company building cutti
 
 Open `index.html` directly in a browser, or serve the folder with any static file server (for example: `python3 -m http.server`).
 
-## NeatRoll routes
+## App routes
 
-- `/neatroll/` is the primary branded landing page and owns the canonical Privacy,
-  Terms, Support, and `version.json` URLs.
-- `/phototogo/` remains a compatibility copy for older app builds and previously
-  published App Store links. Keep it available; its canonical tags point to the
-  matching `/neatroll/` pages.
-- The NeatRoll landing page intentionally reuses the existing screenshots under
-  `/phototogo/img/`. When product or legal copy changes, update both route copies.
+The iOS app is **TidyTidy**. It shipped as **PhotoToGo** through version 2.1; an
+intermediate **NeatRoll** rename was abandoned and never shipped in any build.
+
+- `/tidytidy/` is the canonical branded landing page and owns the Privacy, Terms,
+  Support and `version.json` URLs used by the app from version 2.2 onward. It is
+  self-contained (its own `img/`).
+- `/phototogo/` **must stay online and must stay PhotoToGo-branded**: the live 2.1
+  build hardcodes these URLs, so anyone who has not updated still reads them. Its
+  canonical tags point at the matching `/tidytidy/` pages.
+- `/neatroll/` is redirect-only (meta refresh + canonical + `noindex`) to
+  `/tidytidy/`. No build ever pointed at it; the stubs exist purely because the
+  pages were briefly published and may have been indexed or linked.
+- `version.json` is **not** an App Store Connect field — it is fetched at launch by
+  `UpdateNudgeManager` in the app and must return HTTP 200, because the check is
+  fail-open and a 404 silently disables the in-app update prompt forever.
+
+When product or legal copy changes, update `/tidytidy/` and `/phototogo/` together.
 
 ## Deploy
 
