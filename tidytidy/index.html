@@ -28,8 +28,8 @@
     <link rel="stylesheet" href="/styles.css">
     <style>
       /* ---- TidyTidy product page: device mockups, showcase, tighter rhythm ---- */
-      main .section { padding-block: clamp(3.25rem, 2.4rem + 3.4vw, 5.5rem); }
-      main > .section:first-child { padding-top: calc(var(--header-h) + clamp(1.75rem, 4vw, 3.25rem)); }
+      main .section { padding-block: clamp(2.25rem, 1.6rem + 2.6vw, 3.75rem); }
+      main > .section:first-child { padding-top: calc(var(--header-h) + clamp(1.5rem, 3vw, 2.5rem)); }
 
       /* Hero: copy beside a device */
       .pt-hero {
@@ -58,7 +58,7 @@
       .pt-hero .device { max-width: 300px; }
 
       /* Showcase: alternating device + copy rows */
-      .showcase { display: grid; gap: clamp(2.5rem, 5vw, 4.5rem); margin-top: clamp(2.5rem, 5vw, 4rem); }
+      .showcase { display: grid; gap: clamp(1.75rem, 3.5vw, 3rem); }
       .showcase-row {
         display: grid;
         grid-template-columns: 0.9fr 1.1fr;
@@ -100,6 +100,11 @@
         .showcase-row.reverse .showcase-media { order: 0; }
         .device, .pt-hero .device { max-width: 264px; }
       }
+      @media (max-width: 400px) {
+        /* Same pattern as the root page: drop the longest section link at the
+           narrowest widths; keep Support and the primary CTA. */
+        nav a[href="#how"] { display: none; }
+      }
     </style>
   </head>
   <body>
@@ -132,19 +137,22 @@
               <p class="pillar-name pillar-name-pulse">TidyTidy &middot; Sort &amp; clean photos</p>
               <h1>Sort your photos. <span class="accent-pulse-ink">Clear the clutter.</span></h1>
               <p class="lead">
-                Swipe to clean up your camera roll &mdash; sort keepers into albums,
-                clear duplicates, and free up space. All on your iPhone.
+                One swipe files a keeper, clears a duplicate, or frees the space
+                it was wasting. Entirely on your iPhone.
               </p>
-              <div class="hero-actions">
+              <div class="pill-row" aria-label="Highlights">
+                <span class="pill">100% on-device</span>
+                <span class="pill">No ads</span>
+                <span class="pill">No account</span>
+                <span class="pill">iOS 17+</span>
+              </div>
+              <div class="hero-actions" style="margin-top: 1.75rem;">
                 <a class="button button-coral button-lg" href="https://apps.apple.com/app/id6776543079">
                   Get it on the App Store
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
                 </a>
                 <a class="button button-quiet" href="#how" style="border-color: var(--line); color: var(--ink-text);">See how it works</a>
               </div>
-              <p style="color: var(--ink-muted); font-size: var(--t-small); margin-top: 1.5rem;">
-                iPhone &middot; iOS 17+ &middot; No accounts, no ads
-              </p>
             </div>
             <div class="device">
               <img src="/tidytidy/img/swipe-web.jpg" width="720" height="1564"
@@ -160,13 +168,13 @@
             <div class="showcase-row">
               <div class="showcase-media">
                 <div class="device">
-                  <img src="/tidytidy/img/home-web.jpg" width="720" height="1565" loading="lazy"
-                       alt="TidyTidy home dashboard showing review progress and gigabytes freed.">
+                  <img src="/tidytidy/img/albums-web.jpg" width="720" height="1564" loading="lazy"
+                       alt="TidyTidy &ldquo;Save to album&rdquo; picker filing a photo into an album.">
                 </div>
               </div>
               <div class="showcase-copy">
-                <h3>Save storage, effortlessly.</h3>
-                <p>Watch the gigabytes come back as you sort &mdash; no more &ldquo;Storage Full.&rdquo;</p>
+                <h3>Tidy photos. Sort to albums.</h3>
+                <p>File keepers into any album right as you swipe. Every change lands straight in iOS Photos.</p>
               </div>
             </div>
 
@@ -178,21 +186,27 @@
                 </div>
               </div>
               <div class="showcase-copy">
-                <h3>Find duplicates, automatically.</h3>
-                <p>We group near-identical shots and bursts, then pick the best to keep. Looks great in light or dark.</p>
+                <h3>Save space. Clear duplicates.</h3>
+                <p>Near-identical shots and bursts are grouped for you, with the best one already picked to keep.</p>
               </div>
             </div>
 
             <div class="showcase-row">
               <div class="showcase-media">
                 <div class="device">
-                  <img src="/tidytidy/img/albums-web.jpg" width="720" height="1564" loading="lazy"
-                       alt="TidyTidy &ldquo;Save to album&rdquo; picker for filing a photo into an album.">
+                  <img src="/tidytidy/img/celebrate-web.jpg" width="720" height="1564" loading="lazy"
+                       alt="TidyTidy's clean-up celebration: 445 MB freed this session, 2.14 GB all-time, confetti around the app icon.">
                 </div>
               </div>
               <div class="showcase-copy">
-                <h3>Sort into albums, in a tap.</h3>
-                <p>File keepers into any album right as you swipe &mdash; every change lands straight in iOS Photos.</p>
+                <h3>See progress. And celebrate!</h3>
+                <p>Watch the gigabytes come back, this session and all-time. Every confirmed clean-up ends with a little celebration.</p>
+                <div class="pill-row" aria-label="Make it yours">
+                  <span class="pill">Custom swipe order &amp; actions</span>
+                  <span class="pill">Light &amp; dark</span>
+                  <span class="pill">9 languages</span>
+                  <span class="pill">Haptics &amp; sounds</span>
+                </div>
               </div>
             </div>
           </div>
@@ -201,10 +215,10 @@
 
       <section class="section">
         <div class="wrap">
-          <div class="section-head" style="margin-bottom: clamp(1.75rem, 3vw, 2.5rem);">
+          <div class="section-head" style="margin-bottom: clamp(1.25rem, 2.5vw, 1.75rem);">
             <h2>Ready to tidy up?</h2>
             <p class="lead">
-              Free to start. Private by design &mdash; nothing leaves your iPhone.
+              Free to start. Private by design: nothing leaves your iPhone.
             </p>
           </div>
           <div class="hero-actions">
@@ -213,7 +227,7 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
             </a>
           </div>
-          <p class="lead" style="margin-top: clamp(2.5rem, 5vw, 3.5rem);">
+          <p style="color: var(--ink-muted); margin-top: clamp(1.5rem, 3vw, 2rem);">
             More about TidyTidy:
             <a href="support.html" style="color: var(--indigo); border-bottom: 1px solid color-mix(in oklab, var(--indigo) 35%, transparent);">Support &amp; FAQ</a> &middot;
             <a href="privacy.html" style="color: var(--indigo); border-bottom: 1px solid color-mix(in oklab, var(--indigo) 35%, transparent);">Privacy Policy</a> &middot;
@@ -224,7 +238,7 @@
     </main>
 
     <footer>
-      <div class="footer-inner">
+      <div class="wrap footer-inner">
         <div class="footer-brand">
           <img class="logo-mark" src="/assets/logo-mark.png" alt="" width="22" height="22" aria-hidden="true">
           <span>Pulse and Purpose</span>

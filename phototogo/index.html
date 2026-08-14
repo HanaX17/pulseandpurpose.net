@@ -100,6 +100,11 @@
         .showcase-row.reverse .showcase-media { order: 0; }
         .device, .pt-hero .device { max-width: 264px; }
       }
+      @media (max-width: 400px) {
+        /* Same pattern as the root page: drop the longest section link at the
+           narrowest widths; keep Support and the primary CTA. */
+        nav a[href="#how"] { display: none; }
+      }
     </style>
   </head>
   <body>
@@ -224,7 +229,7 @@
     </main>
 
     <footer>
-      <div class="footer-inner">
+      <div class="wrap footer-inner">
         <div class="footer-brand">
           <img class="logo-mark" src="/assets/logo-mark.png" alt="" width="22" height="22" aria-hidden="true">
           <span>Pulse and Purpose</span>
