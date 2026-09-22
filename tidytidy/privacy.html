@@ -48,7 +48,7 @@
     <main class="legal-page">
       <p class="eyebrow"><span class="eyebrow-dot"></span>TidyTidy &middot; Legal</p>
       <h1>TidyTidy Privacy Policy</h1>
-      <p class="legal-meta">Last updated &middot; August 2, 2026</p>
+      <p class="legal-meta">Last updated &middot; September 22, 2026</p>
 
       <div class="legal-tldr-box">
         <p class="legal-tldr-label">In plain English</p>
@@ -56,7 +56,7 @@
           <li>TidyTidy runs <strong>entirely on your iPhone</strong>.</li>
           <li>Your photos never leave your device through TidyTidy.</li>
           <li>No accounts, ads, analytics, or third-party trackers.</li>
-          <li>We don&rsquo;t run servers, so there&rsquo;s nothing for us to collect.</li>
+          <li>We don&rsquo;t run servers. The one thing the App ever stores off your device is an <strong>invite code</strong>, and only if you use the invite feature (see section 4).</li>
           <li>Payments are handled entirely by Apple.</li>
         </ul>
       </div>
@@ -77,7 +77,9 @@
         <strong>not</strong> collect, upload, sell, or share your photos, usage
         data, or personal data. There are no user accounts, advertising,
         analytics, or ad trackers. Your photo library never leaves your iPhone
-        through TidyTidy.
+        through TidyTidy. The single exception to &ldquo;nothing leaves your
+        device&rdquo; is the optional invite feature, which stores an invite code
+        in iCloud &mdash; never a photo &mdash; and is described in section 4.
       </p>
 
       <h2>2. What the App accesses</h2>
@@ -96,8 +98,8 @@
       <h2>3. What the App stores</h2>
       <p>
         All of the following is stored <strong>only on your device</strong> (in
-        the app&rsquo;s local storage), never on our servers (we don&rsquo;t
-        operate any):
+        the app&rsquo;s local storage). We do not operate servers; the only
+        off-device record the App ever creates is the invite code in section 4.
       </p>
       <ul>
         <li>
@@ -114,9 +116,34 @@
         review progress</strong>, or by deleting the App.
       </p>
 
-      <h2>4. What we do not do</h2>
+      <h2>4. Invite codes (optional)</h2>
+      <p>
+        TidyTidy lets you invite friends. Your invite code is a random
+        8-character string generated on your device. When you open the invite
+        screen, or when a friend enters your code after installing the App,
+        TidyTidy stores a small record in the App&rsquo;s
+        <strong>Apple iCloud (CloudKit) public database</strong>: the invite code
+        and Apple&rsquo;s anonymous, app-specific account identifier
+        (the CloudKit &ldquo;user record ID&rdquo;). That is all it contains
+        &mdash; no photos, no names, no email address, nothing about your library
+        or how you use the App. It exists so the person who sent the invite
+        receives their bonus credits and so each Apple Account can use an invite
+        code once. Writing this record requires being signed in to iCloud on the
+        device; the person who <em>uses</em> a code receives nothing.
+      </p>
+      <p>
+        Because we can read these records in Apple&rsquo;s CloudKit console, the
+        App&rsquo;s App Store privacy label lists <strong>Identifiers (User ID)
+        &mdash; not linked to you, not used for tracking</strong>. If you never
+        open the invite screen and never enter a code, no such record is created.
+        To have your record removed, email
+        <a href="mailto:hello@pulseandpurpose.net">hello@pulseandpurpose.net</a>
+        with your invite code.
+      </p>
+
+      <h2>5. What we do not do</h2>
       <ul>
-        <li>We do not run servers of our own, and TidyTidy does not send us analytics or usage data.</li>
+        <li>We do not run servers of our own, and TidyTidy does not send us analytics or usage data. The invite record above is stored with Apple, and is the only thing the App stores off your device.</li>
         <li>We do not use advertising identifiers, ad networks, analytics SDKs, or cross-app trackers, and we never build a personal profile of you.</li>
         <li>
           We do not require an account or collect your name, email, contacts,
@@ -128,14 +155,14 @@
         <li>We do not sell or share any data with anyone.</li>
       </ul>
 
-      <h2>5. No analytics or tracking</h2>
+      <h2>6. No analytics or tracking</h2>
       <p>
         TidyTidy does not collect analytics or usage data. It does not send app
         launches, organizing actions, photo counts, device identifiers, or
         advertising identifiers to us or to an analytics provider.
       </p>
 
-      <h2>6. Subscriptions and Apple</h2>
+      <h2>7. Subscriptions and Apple</h2>
       <p>
         TidyTidy offers optional auto-renewing Plus and Unlimited subscriptions
         with monthly and yearly billing options. <strong>All payments are
@@ -145,7 +172,7 @@
         <a href="https://www.apple.com/legal/privacy/">Apple&rsquo;s Privacy Policy</a>.
       </p>
 
-      <h2>7. Optional feedback</h2>
+      <h2>8. Optional feedback</h2>
       <p>
         If you choose to email us at
         <a href="mailto:hello@pulseandpurpose.net">hello@pulseandpurpose.net</a>,
@@ -153,13 +180,13 @@
         them only to respond to you. We do not add you to any mailing list.
       </p>
 
-      <h2>8. Children&rsquo;s privacy</h2>
+      <h2>9. Children&rsquo;s privacy</h2>
       <p>
         TidyTidy is not directed to children under 13 and does not knowingly
         collect any personal information from anyone.
       </p>
 
-      <h2>9. Your controls</h2>
+      <h2>10. Your controls</h2>
       <p>
         Because everything is on-device, you are in full control: manage Photos
         access in iOS Settings, manage or cancel your subscription in
@@ -167,14 +194,14 @@
         and remove all app data by deleting the App.
       </p>
 
-      <h2>10. Changes to this policy</h2>
+      <h2>11. Changes to this policy</h2>
       <p>
         If we ever change this policy we will update the date above and post the
         new version at this URL. Material changes will be reflected in an app
         update.
       </p>
 
-      <h2>11. Contact</h2>
+      <h2>12. Contact</h2>
       <p>
         <strong>APRIL&rsquo;S CHOICE LLC</strong>
         (doing business as <strong>Pulse and Purpose</strong>)<br>
