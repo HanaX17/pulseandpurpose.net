@@ -116,18 +116,17 @@
       </ul>
       <p>
         We never receive any of this &mdash; we don&rsquo;t run servers for the
-        App. But when you&rsquo;re connected to Game Center, your scores and
-        bests are also sent to and read from Apple (see section&nbsp;4), so Apple
-        may hold them too.
+        App. But when you&rsquo;re connected to Game Center, your scores are also
+        sent to Apple (see section&nbsp;4), so Apple holds them too. The App
+        never reads them back: the records you see in the App are the ones set
+        on this iPhone.
       </p>
       <p>
         <strong>Settings &rarr; Clear records</strong> removes only your records
         &mdash; recent runs, best island counts, and each animal&rsquo;s best
         &mdash; from this iPhone. It can&rsquo;t erase scores already sent to
-        Game Center; no app can. If you&rsquo;re connected to Game Center, each
-        animal&rsquo;s best may come back from Apple the next time the App
-        syncs. Deleting the App removes everything it stored on your iPhone, but
-        not Apple&rsquo;s leaderboard entries.
+        Game Center; no app can. Deleting the App removes everything it stored
+        on your iPhone, but not Apple&rsquo;s leaderboard entries.
       </p>
 
       <h2>4. Game Center (optional, run by Apple)</h2>
@@ -147,11 +146,13 @@
       </p>
       <p>While connected, the App:</p>
       <ul>
-        <li>sends each finished run&rsquo;s island count to Apple&rsquo;s leaderboard for that difficulty (Easy or Hard) and to the leaderboard for the animal you played;</li>
-        <li>reads your own best for each animal and difficulty back from Apple, and keeps whichever is higher &mdash; that one or the one on your iPhone;</li>
-        <li>sends a best to Apple again when the one on your iPhone is higher, including bests set on this iPhone while no one was signed in;</li>
+        <li>sends each finished run&rsquo;s island count to one of two leaderboards, Easy or Hard, chosen by the difficulty the run started on;</li>
+        <li>each time you connect, sends your best on each difficulty from this iPhone again, including bests set while no one was signed in, so runs played offline still count;</li>
         <li>receives your Game Center nickname and photo from Apple, to show on the result card.</li>
       </ul>
+      <p>
+        The App does not read scores or bests back from Game Center.
+      </p>
       <p>
         This information is handled by Apple under
         <a href="https://www.apple.com/legal/privacy/">Apple&rsquo;s Privacy
