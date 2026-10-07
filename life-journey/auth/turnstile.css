@@ -1,0 +1,5 @@
+:root { color-scheme: light dark; }
+body { margin: 0; background: transparent; color: #545454; font: 15px/1.5 system-ui, sans-serif; }
+#challenge { min-height: 65px; }
+p { margin: 8px 0; }
+@media (prefers-color-scheme: dark) { body { color: #b3b3b8; } }
